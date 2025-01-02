@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { FaRocket, FaHandshake, FaLightbulb, FaUsers } from 'react-icons/fa';
+import { FaRocket, FaHandshake, FaLightbulb, FaUsers, FaBullseye, FaStar } from 'react-icons/fa';
 import { motion, useInView } from 'framer-motion';
 
 const PurposeSection = () => {
@@ -31,13 +31,25 @@ const PurposeSection = () => {
         'We embrace integrity, innovation, collaboration, customer-first mindset, and continuous improvement in all our projects and partnerships.',
       icon: <FaUsers className="text-4xl text-purple-600" />,
     },
+    {
+      title: 'Strategic Goals',
+      description:
+        'To expand into new markets, enhance operational efficiency, and continuously innovate our services to maintain competitive advantage.',
+      icon: <FaBullseye className="text-4xl text-teal-600" />,
+    },
+    {
+      title: 'Unique Strengths',
+      description:
+        'Our expertise in emerging technologies, customer-centric approach, and commitment to sustainability set us apart in the industry.',
+      icon: <FaStar className="text-4xl text-purple-600" />,
+    },
   ];
 
   return (
     <div className="bg-white py-12" ref={ref}>
-      <div className="container mx-auto px-6 sm:px-8 lg:px-16 text-center">
+      <div className="container mx-auto px-6 sm:px-8 lg:px-16 text-center py-16">
         <motion.h2
-          className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-teal-600"
+          className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-teal-600 mb-8"
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1 }}
@@ -50,9 +62,7 @@ const PurposeSection = () => {
           {values.map((item, index) => (
             <motion.div
               key={index}
-              className={`bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center ${
-                index === values.length - 1 ? 'lg:col-span-3' : ''
-              }`}
+              className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 * index }}

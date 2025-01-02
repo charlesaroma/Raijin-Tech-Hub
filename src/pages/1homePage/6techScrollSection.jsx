@@ -20,7 +20,7 @@ import {
 
 const TechIcon = ({ icon, name }) => (
   <motion.div
-    className="flex flex-col items-center justify-center py-10 w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-white shadow-lg rounded-full border-4 border-gray-200 transform hover:scale-110 transition-all duration-300"
+    className="flex flex-col items-center justify-center py-5 lg:py-10 w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-white shadow-lg rounded-full border-4 border-gray-200 transform hover:scale-110 transition-all duration-300"
   >
     <div className="flex items-center justify-center w-full h-full">{icon}</div>
     <p className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg font-semibold mt-1">{name}</p>

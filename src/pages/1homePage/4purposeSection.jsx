@@ -58,7 +58,7 @@ const PurposeSection = () => {
         </motion.h2>
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
           {values.map((item, index) => (
             <motion.div
               key={index}
@@ -69,7 +69,7 @@ const PurposeSection = () => {
             >
               <div className="mb-4">{item.icon}</div>
               <motion.h3
-                className="text-xl sm:text-2xl font-bold text-gray-800 mb-4"
+                className="text-xl sm:text-2xl font-bold text-gray-800 md:mb-4"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 1, delay: 0.5 }}

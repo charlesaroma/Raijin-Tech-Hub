@@ -20,10 +20,10 @@ import {
 
 const TechIcon = ({ icon, name }) => (
   <motion.div
-    className="flex flex-col items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 bg-white shadow-lg rounded-full border-4 border-gray-200 transform hover:scale-110 transition-all duration-300"
+    className="flex flex-col items-center justify-center py-10 w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 bg-white shadow-lg rounded-full border-4 border-gray-200 transform hover:scale-110 transition-all duration-300"
   >
-    {icon}
-    <p className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg font-semibold mt-3">{name}</p>
+    <div className="flex items-center justify-center w-full h-full">{icon}</div>
+    <p className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg font-semibold mt-1">{name}</p>
   </motion.div>
 );
 
@@ -70,21 +70,28 @@ const TechScrollSection = () => {
   }, [scrollSpeed]);
 
   return (
-    <div className="bg-gray-100 h-[40vh] lg:py-16 lg:h-[50vh] flex items-center justify-center relative overflow-hidden">
-      <h2 className="absolute top-6 text-gray-800 sm:text-2xl md:text-3xl lg:text-4xl z-10 font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 mb-8">
-        Technologies We Love
-      </h2>
+    <div className="bg-gray-100 h-auto py-16 flex flex-col items-center justify-center overflow-hidden">
+      {/* First div for heading */}
+      <div className="w-full text-center mb-8">
+        <h2 className="text-gray-800 sm:text-2xl md:text-3xl lg:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600">
+          Technologies We Love
+        </h2>
+      </div>
 
-      <div
-        ref={containerRef}
-        className="absolute flex items-center space-x-6 sm:space-x-8 md:space-x-12 lg:space-x-16 py-16"
-      >
-        {technologies.map((tech, index) => (
-          <TechIcon key={index} icon={tech.icon} name={tech.name} />
-        ))}
-        {technologies.map((tech, index) => (
-          <TechIcon key={index + technologies.length} icon={tech.icon} name={tech.name} />
-        ))}
+      {/* Wrapper div for technology icons */}
+      <div className="w-full py-16 flex justify-center">
+        {/* Second div for technologies icons */}
+        <div
+          ref={containerRef}
+          className="flex items-center space-x-6 sm:space-x-8 md:space-x-12 lg:space-x-16"
+        >
+          {technologies.map((tech, index) => (
+            <TechIcon key={index} icon={tech.icon} name={tech.name} />
+          ))}
+          {technologies.map((tech, index) => (
+            <TechIcon key={index + technologies.length} icon={tech.icon} name={tech.name} />
+          ))}
+        </div>
       </div>
     </div>
   );

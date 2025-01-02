@@ -49,10 +49,11 @@ const PurposeSection = () => {
     <div className="bg-white py-12" ref={ref}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-16 text-center py-16">
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600"
+          className="text-3xl md:text-4xl font-extrabold text-gray-900 bg-gradient-to-r from-teal-500 to-purple-600 bg-clip-text text-transparent shadow-sm"
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 1, delay: 0.3 }}
+          style={{ WebkitTextStroke: '0.5px rgba(0, 0, 0, 0.1)' }} // Fallback for devices
         >
           Our Purpose & Values
         </motion.h2>
@@ -69,14 +70,16 @@ const PurposeSection = () => {
             >
               <div className="mb-4">{item.icon}</div>
               <motion.h3
-                className="text-xl sm:text-2xl font-bold md:mb-4"
+                className="text-xl sm:text-2xl font-bold text-gray-900 md:mb-4"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 1, delay: 0.5 }}
               >
                 {item.title}
               </motion.h3>
-              <p className="text-gray-600 text-sm sm:text-base text-center">{item.description}</p>
+              <p className="text-gray-800 text-sm sm:text-base text-center">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

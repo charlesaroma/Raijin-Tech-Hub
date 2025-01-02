@@ -81,7 +81,7 @@ const PurposeSection = () => {
               </motion.h3>
 
               {/* Description */}
-              <p className="text-sm text-gray-500">
+              <p className="text-sm md:text-base text-gray-500">
                 {item.description}
               </p>
             </motion.div>

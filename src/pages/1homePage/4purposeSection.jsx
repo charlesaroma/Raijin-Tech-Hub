@@ -49,34 +49,41 @@ const PurposeSection = () => {
     <div className="bg-white py-12" ref={ref}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-16 text-center py-16">
         <motion.h2
-          className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600"
+          className="text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 mb-12"
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 1 }}
         >
           Our Purpose & Values
         </motion.h2>
 
         {/* Responsive Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {values.map((item, index) => (
             <motion.div
               key={index}
-              className="bg-gray-100 p-6 rounded-lg shadow-lg transform hover:scale-105 transition duration-300 ease-in-out flex flex-col items-center"
+              className="group bg-gray-100 p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
               initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 0.3 * index }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 1, delay: index * 0.2 }}
             >
+              {/* Icon */}
               <div className="mb-4">{item.icon}</div>
+
+              {/* Title */}
               <motion.h3
-                className="text-2xl font-bold md:mb-4"
+                className="text-xl font-semibold mb-2 text-gray-700 transition-colors duration-300 group-hover:text-teal-600"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
-                transition={{ duration: 1, delay: 0.5 }}
+                transition={{ duration: 1, delay: 0.2 }}
               >
                 {item.title}
               </motion.h3>
-              <p className="text-gray-600 text-base text-center">{item.description}</p>
+
+              {/* Description */}
+              <p className="text-sm text-gray-500">
+                {item.description}
+              </p>
             </motion.div>
           ))}
         </div>

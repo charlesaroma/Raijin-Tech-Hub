@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { FaRocket, FaHandshake, FaLightbulb, FaUsers, FaBullseye, FaStar } from 'react-icons/fa';
 import { motion, useInView } from 'framer-motion';
 
@@ -49,10 +49,10 @@ const PurposeSection = () => {
     <div className="bg-white py-12" ref={ref}>
       <div className="container mx-auto px-6 sm:px-8 lg:px-16 text-center py-16">
         <motion.h2
-          className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-teal-600 mb-8"
+          className="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600"
           initial={{ opacity: 0, y: -50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 1 }}
+          transition={{ duration: 1, delay: 0.3 }}
         >
           Our Purpose & Values
         </motion.h2>
@@ -69,7 +69,7 @@ const PurposeSection = () => {
             >
               <div className="mb-4">{item.icon}</div>
               <motion.h3
-                className="text-xl sm:text-2xl font-bold text-gray-800 md:mb-4"
+                className="text-xl sm:text-2xl font-bold md:mb-4"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
                 transition={{ duration: 1, delay: 0.5 }}

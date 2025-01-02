@@ -70,7 +70,7 @@ const TechScrollSection = () => {
   }, [scrollSpeed]);
 
   return (
-    <div className="bg-gray-100 h-[40vh] lg:h-[50vh] flex items-center justify-center relative overflow-hidden">
+    <div className="bg-gray-100 h-[40vh] lg:py-16 lg:h-[50vh] flex items-center justify-center relative overflow-hidden">
       <h2 className="absolute top-6 text-gray-800 sm:text-2xl md:text-3xl lg:text-4xl z-10 font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 mb-8">
         Technologies We Love
       </h2>

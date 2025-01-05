@@ -9,7 +9,7 @@ const RequestQuote = () => {
 
   // Available service options
   const services = [
-    { label: 'PC software Development', value: 'software-web' },
+    { label: 'Cybersecurity & Pen testing', value: 'cybersecurity' },
     { label: 'IT Consultancy & Strategy', value: 'it-consultancy' },
     { label: 'Cloud Solutions & Migration', value: 'cloud-migration' },
     { label: 'UI/UX Design & Development', value: 'ui-ux' },

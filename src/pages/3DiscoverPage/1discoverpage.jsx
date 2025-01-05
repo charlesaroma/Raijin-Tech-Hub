@@ -84,7 +84,7 @@ const DiscoverPage = () => {
           <p className="text-lg text-white mb-8">
             Our team is here to help you grow. Let’s discuss how we can assist you in achieving your business goals.
           </p>
-          <Link to="/discover">
+          <Link to="/contact">
             <button className="bg-gradient-to-r from-teal-500 to-purple-600 text-white px-8 py-4 rounded-md shadow-md hover:bg-gradient-to-l focus:outline-none">
               Get in Touch
             </button>

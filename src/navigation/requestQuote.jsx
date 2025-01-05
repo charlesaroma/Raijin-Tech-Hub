@@ -50,7 +50,7 @@ const RequestQuote = () => {
           to_name: 'Raijin Tech Hub',
           from_name: values.name,
           message: values.comments,
-          services: selectedServices,
+          services: selectedServices,  // Send the selected services properly formatted
           from_email: values.email,
           from_phone: values.phone,
           company_name: values.company || 'N/A',

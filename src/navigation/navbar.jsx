@@ -4,7 +4,7 @@ import Logo from "../assets/logo/RaijinLogo.png";
 
 const MenuItemData = [
   { title: "Home", path: "/" },
-  { title: "About", path: "/about" },
+  { title: "Company", path: "/company" },
   { title: "Services", path: "/services" },
   { title: "Contact", path: "/contact" },
 ];

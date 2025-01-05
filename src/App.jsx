@@ -6,6 +6,7 @@ import About from "./pages/2aboutPage/1aboutHeroSection";
 import Services from "./pages/3servicesPage/1servicePage";
 import Contact from "./pages/4contactPage/contactPage";
 import Footer from "./navigation/footer"
+import RequestQuote from './navigation/requestQuote'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/request-quote" element={<RequestQuote />} />
         </Routes>
       </div>
       {/* Add Footer component */}

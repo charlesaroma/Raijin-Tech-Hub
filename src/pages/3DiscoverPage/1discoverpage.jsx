@@ -51,7 +51,7 @@ const DiscoverPage = () => {
 
   return (
     <section className="pt-15 bg-gray-100">
-      <div className="container mx-auto px-6 text-center">
+      <div className="container mx-auto px-6 py-14 text-center">
         <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 mb-8">
           Discover Our Expertise
         </h2>
@@ -59,6 +59,7 @@ const DiscoverPage = () => {
           Explore the wide range of services that we offer to enhance your business operations and technology stack.
         </p>
 
+        {/* Grid for expertise items */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {expertiseItems.map((item, index) => (
             <div

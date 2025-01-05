@@ -1,0 +1,89 @@
+{
+    "heroSection": {
+      "title": "Empowering Your Digital Future with Innovation",
+      "description": "Raijin Tech Hub is committed to crafting state-of-the-art digital solutions tailored to drive your business forward. From custom software to IT consultancy, we deliver results that matter.",
+      "ctaText": "Discover Our Expertise",
+      "ctaLink": "/services",
+      "lottieSrc": "https://lottie.host/07ea4a48-0e54-490e-bcdc-2f7008d24869/bfTKdQ0l9b.json",
+      "typingEffect": [
+        "Custom Software & Web Development",
+        "IT Consultancy & Strategy",
+        "Cloud Solutions & Migration",
+        "UI/UX Design & Development",
+        "Digital Transformation & Automation"
+      ]
+    },
+    "aboutSection": {
+      "title": "About Us",
+      "subtitle": "Transforming Ideas into Action with Speed and Precision",
+      "description": "At Raijin Tech Hub, we specialize in providing fast, efficient, and cutting-edge technology solutions designed to drive your business forward. Whether it's custom software development, IT consultancy, or digital transformation, we deliver results that are fast and impactful, ensuring you stay ahead in an ever-evolving digital landscape.",
+      "ctaText": "Learn More",
+      "ctaLink": "#learn-more",
+      "lottieSrc": "https://lottie.host/e6218e5d-fda2-4650-a315-8ecad78d7e98/Fppw1HgoQi.lottie"
+    },
+    "purposeSection": [
+      {
+        "title": "Vision",
+        "description": "To be a global leader in providing innovative and sustainable digital solutions that empower businesses and industries, shaping a smarter and more efficient future.",
+        "icon": "FaRocket"
+      },
+      {
+        "title": "Mission",
+        "description": "To deliver cutting-edge technology solutions with excellence in software development, consultancy, and digital transformation, enabling businesses to thrive.",
+        "icon": "FaHandshake"
+      },
+      {
+        "title": "Objectives",
+        "description": "To drive business growth through tailored software solutions, foster customer engagement, and lead digital transformation initiatives that ensure measurable results.",
+        "icon": "FaLightbulb"
+      },
+      {
+        "title": "Core Values",
+        "description": "We embrace integrity, innovation, collaboration, customer-first mindset, and continuous improvement in all our projects and partnerships.",
+        "icon": "FaUsers"
+      },
+      {
+        "title": "Strategic Goals",
+        "description": "To expand into new markets, enhance operational efficiency, and continuously innovate our services to maintain competitive advantage.",
+        "icon": "FaBullseye"
+      },
+      {
+        "title": "Unique Strengths",
+        "description": "Our expertise in emerging technologies, customer-centric approach, and commitment to sustainability set us apart in the industry.",
+        "icon": "FaStar"
+      }
+    ],
+    "servicesSection": [
+      {
+        "title": "Website & App Development",
+        "description": "Bring your ideas to life with custom websites and mobile applications tailored to your business needs and user expectations.",
+        "icon": "FaLaptopCode"
+      },
+      {
+        "title": "Backup & Recovery",
+        "description": "Ensure your data is safe and accessible with our robust backup and recovery solutions designed for businesses of all sizes.",
+        "icon": "FaCloud"
+      },
+      {
+        "title": "Graphics Design & Branding",
+        "description": "Elevate your brand with professional graphic design services, including logos, marketing materials, and complete brand identities.",
+        "icon": "FaBrush"
+      },
+      {
+        "title": "SEO Optimization",
+        "description": "Improve your online visibility and drive traffic to your website with our expert SEO strategies and optimization techniques.",
+        "icon": "FaChartLine"
+      },
+      {
+        "title": "IT Consultancy",
+        "description": "Get expert advice and guidance on leveraging technology to streamline operations, reduce costs, and achieve your goals.",
+        "icon": "FaCogs"
+      },
+      {
+        "title": "Dedicated Support",
+        "description": "Rely on our team for round-the-clock support to ensure your systems run smoothly and efficiently, minimizing downtime.",
+        "icon": "FaUsers"
+      }
+    ]
+  }
+  

@@ -5,7 +5,7 @@ import Logo from "../assets/logo/RaijinLogo.png";
 const MenuItemData = [
   { title: "Home", path: "/" },
   { title: "Company", path: "/company" },
-  { title: "Services", path: "/services" },
+  { title: "Discover Our Expertise", path: "/discover" },
   { title: "Contact", path: "/contact" },
 ];
 
@@ -37,8 +37,8 @@ const Navbar = () => {
               to={item.path}
               className={({ isActive }) =>
                 isActive
-                  ? "relative text-teal-500 after:absolute after:left-0 after:bottom-[-1px] after:w-full after:h-[2px] after:bg-teal-500"
-                  : "relative text-neutral-800 after:absolute after:left-0 after:bottom-[-1px] after:w-0 after:h-[2px] after:bg-teal-500 hover:after:w-full hover:text-teal-400 transition-all duration-300 ease-in-out"
+                  ? "relative text-teal-500 after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-teal-500"
+                  : "relative text-neutral-800 after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-teal-500 hover:after:w-full hover:text-teal-400 transition-all duration-300 ease-in-out"
               }
             >
               {item.title}

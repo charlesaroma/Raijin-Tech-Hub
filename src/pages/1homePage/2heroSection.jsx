@@ -60,7 +60,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.9 }}
           >
             <Link
-              to="/services"
+              to="/discover"
               className="bg-gradient-to-r from-teal-500 to-purple-600 text-white py-3 px-6 rounded-md text-base font-semibold transition duration-300 ease-in-out transform hover:scale-105 inline-block"
             >
               Discover Our Expertise

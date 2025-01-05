@@ -71,7 +71,7 @@ const TechScrollSection = () => {
   }, [scrollSpeed]);
 
   return (
-    <div className="bg-gray-100 h-auto py-10 md:py-16 flex flex-col items-center justify-center overflow-hidden">
+    <div className="bg-[#efefef] h-auto py-10 md:py-16 flex flex-col items-center justify-center overflow-hidden">
       {/* First div for heading */}
       <div className="w-full text-center mb-8">
         <h2 className="text-3xl lg:text-4xl text-center md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600">

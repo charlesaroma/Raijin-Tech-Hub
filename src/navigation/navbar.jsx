@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="w-full h-[10vh] lg:h-[12vh] fixed z-10 top-0 flex items-center justify-between px-4 lg:px-[5%] shadow-md bg-white">
       {/* Logo Section */}
-      <div className="flex items-center">
+      <div className="flex items-center z-20"> {/* Added z-index for logo */}
         <Link to="/">
           <img
             src={Logo}
@@ -49,13 +49,12 @@ const Navbar = () => {
 
       {/* Request Quote Button */}
       <div className="hidden lg:flex">
-      <Link
-  to="/request-quote"
-  className="bg-gradient-to-r from-teal-500 to-purple-600 text-white py-3 px-6 rounded-md text-base font-semibold transition duration-300 ease-in-out transform hover:scale-105 inline-block"
->
-  Request Quote
-</Link>
-
+        <Link
+          to="/request-quote"
+          className="bg-gradient-to-r from-teal-500 to-purple-600 text-white py-3 px-6 rounded-md text-base font-semibold transition duration-300 ease-in-out transform hover:scale-105 inline-block"
+        >
+          Request Quote
+        </Link>
       </div>
 
       {/* Burger Menu */}
@@ -70,7 +69,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-[10vh] left-0 w-full bg-transparent backdrop-blur-2xl bg-opacity-40 bg-white shadow-md">
+        <div className="absolute top-[10vh] left-0 w-full bg-transparent backdrop-blur-2xl bg-opacity-40 bg-white shadow-md z-10"> {/* Lowered z-index */}
           <ul className="flex flex-col items-center space-y-2 py-4 text-neutral-800">
             {MenuItemData.map((item, index) => (
               <li key={index}>

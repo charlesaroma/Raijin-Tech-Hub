@@ -50,7 +50,7 @@ const DiscoverPage = () => {
   ];
 
   return (
-    <section className="pt-16 bg-gray-100">
+    <section className="pt-15 bg-gray-100">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600 mb-8">
           Discover Our Expertise

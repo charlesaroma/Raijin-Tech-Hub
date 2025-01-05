@@ -7,7 +7,6 @@ const RequestQuote = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState('');
 
-  // Available service options
   const services = [
     { label: 'Cybersecurity & Pen testing', value: 'cybersecurity' },
     { label: 'IT Consultancy & Strategy', value: 'it-consultancy' },
@@ -165,7 +164,7 @@ const RequestQuote = () => {
                   {/* Service Selection Section */}
                   <div className="mb-4">
                     <label htmlFor="service" className="block text-sm font-semibold text-gray-700">Service(s) Needed</label>
-                    <div className="grid grid-cols-2 gap-3 pt-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3">
                       {services.map((service) => (
                         <label key={service.value} className="inline-flex items-center">
                           <Field

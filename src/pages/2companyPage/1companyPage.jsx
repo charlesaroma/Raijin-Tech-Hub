@@ -63,8 +63,8 @@ const CompanyPage = () => {
           <p className="text-gray-700 text-base mb-4">
             For more information, you can reach us at:
           </p>
-          <p className="text-gray-700 text-base font-semibold">Email: support@raijintech.com</p>
-          <p className="text-gray-700 text-base font-semibold">Phone: +1 (123) 456-7890</p>
+          <p className="text-gray-700 text-base font-semibold">Email: raijintechug@gmail.com</p>
+          <p className="text-gray-700 text-base font-semibold">Phone: +256 777 982066</p>
         </div>
       </div>
     </div>

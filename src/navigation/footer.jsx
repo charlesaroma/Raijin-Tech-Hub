@@ -29,7 +29,7 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-4">Our Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-gray-400 hover:text-teal-400">Custom Software & Web Development</Link>
+                <Link to="/services" className="text-gray-400 hover:text-teal-400">Custom Software & Web Development.</Link>
               </li>
               <li>
                 <Link to="/services" className="text-gray-400 hover:text-teal-400">IT Consultancy & Strategy</Link>

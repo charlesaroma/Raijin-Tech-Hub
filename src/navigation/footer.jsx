@@ -17,7 +17,7 @@ const Footer = () => {
               <p className="text-gray-400">
                 <strong>Email:</strong>{" "}
                 <a href="mailto:raijintech@gmail.com" className="text-teal-400 hover:text-teal-500">
-                  raijintech@gmail.com
+                  raijintechug@gmail.com
                 </a>
               </p>
             </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link for navigation
+import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import social media icons from react-icons
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
               <h4 className="font-semibold mb-2">Contact</h4>
               <p className="text-gray-400">
                 <strong>Email:</strong>{" "}
-                <a href="mailto:raijintech@gmail.com" className="text-teal-400 hover:text-teal-500">
+                <a href="mailto:raijintechug@gmail.com" className="text-teal-400 hover:text-teal-500">
                   raijintechug@gmail.com
                 </a>
               </p>
@@ -48,30 +49,33 @@ const Footer = () => {
           {/* Social Media Section */}
           <div>
             <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 items-center">
               <a
-                href="https://www.linkedin.com"
+                href="https://wa.me/256777982066"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-teal-400"
+                className="text-gray-400 hover:text-teal-400 flex items-center"
               >
+                <FaWhatsapp size={24} className="mr-2" />
+                WhatsApp
+              </a>
+              <a
+                href="https://www.instagram.com/raijin_tech_hub/profilecard/?igsh=dGxqd3kwMzVxZjR3"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-teal-400 flex items-center"
+              >
+                <FaInstagram size={24} className="mr-2" />
+                Instagram
+              </a>
+              <a
+                href="https://www.linkedin.com/in/charles-aroma-8955b62a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-teal-400 flex items-center"
+              >
+                <FaLinkedin size={24} className="mr-2" />
                 LinkedIn
-              </a>
-              <a
-                href="https://www.twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-teal-400"
-              >
-                Twitter
-              </a>
-              <a
-                href="https://www.github.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-teal-400"
-              >
-                GitHub
               </a>
             </div>
           </div>

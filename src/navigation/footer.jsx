@@ -49,14 +49,14 @@ const Footer = () => {
           {/* Social Media Section */}
           <div>
             <h3 className="text-xl font-bold mb-4">Connect With Us</h3>
-            <div className="flex space-x-4 items-center">
+            <div className="flex space-x-3 items-center">
               <a
                 href="https://wa.me/256777982066"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-teal-400 flex items-center"
               >
-                <FaWhatsapp size={24} className="mr-2" />
+                <FaWhatsapp size={24} className="mr-1" />
                 WhatsApp
               </a>
               <a
@@ -65,7 +65,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-teal-400 flex items-center"
               >
-                <FaInstagram size={24} className="mr-2" />
+                <FaInstagram size={24} className="mr-1" />
                 Instagram
               </a>
               <a
@@ -74,7 +74,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-teal-400 flex items-center"
               >
-                <FaLinkedin size={24} className="mr-2" />
+                <FaLinkedin size={24} className="mr-1" />
                 LinkedIn
               </a>
             </div>

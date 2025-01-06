@@ -1,39 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import emailjs from 'emailjs-com'; // Make sure to install emailjs-com package
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+    validationSchema: Yup.object({
+      name: Yup.string().required('Name is required'),
+      email: Yup.string().email('Invalid email address').required('Email is required'),
+      message: Yup.string().required('Message is required'),
+    }),
+    onSubmit: (values, { setSubmitting, resetForm }) => {
+      // Send data to EmailJS
+      emailjs
+        .send(
+          'service_ann8l9a', // Your EmailJS service ID
+          'template_8ct7xxg', // Your EmailJS template ID
+          {
+            from_name: values.name, // Ensure the name field is mapped correctly
+            from_email: values.email, // Ensure the email field is mapped correctly
+            message: values.message, // Ensure the message field is mapped correctly
+          },
+          '8KTDGoFLmKVPlRQFZ' // Your EmailJS user ID
+        )
+        .then(
+          (response) => {
+            console.log('Message sent successfully:', response);
+            setSubmitting(false);
+            resetForm();
+          },
+          (error) => {
+            console.log('Error sending message:', error);
+            setSubmitting(false);
+          }
+        );
+    },
   });
-
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState('');
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    // Simple validation
-    if (!formData.name || !formData.email || !formData.message) {
-      setError('All fields are required.');
-      return;
-    }
-
-    // Clear previous error and simulate form submission
-    setError('');
-    setIsSubmitted(true);
-
-    // Here, you would typically send the data to your backend or email service
-    console.log('Form Submitted:', formData);
-  };
 
   return (
     <section className="w-full py-12 bg-gray-50">
@@ -46,27 +53,28 @@ const Contact = () => {
         </div>
 
         <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
-          {isSubmitted ? (
+          {formik.isSubmitting ? (
             <div className="text-center">
               <h3 className="text-2xl font-semibold text-teal-500">Thank you for your message!</h3>
               <p className="mt-4 text-gray-600">We will get back to you soon.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit}>
-              {error && <p className="text-red-500 text-center mb-4">{error}</p>}
-
+            <form onSubmit={formik.handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700">Your Name</label>
                 <input
                   type="text"
                   id="name"
                   name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
+                  value={formik.values.name}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your full name"
-                  required
                 />
+                {formik.touched.name && formik.errors.name && (
+                  <p className="text-red-500 text-sm">{formik.errors.name}</p>
+                )}
               </div>
 
               <div className="mb-4">
@@ -75,12 +83,15 @@ const Contact = () => {
                   type="email"
                   id="email"
                   name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
+                  value={formik.values.email}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
                   placeholder="Enter your email address"
-                  required
                 />
+                {formik.touched.email && formik.errors.email && (
+                  <p className="text-red-500 text-sm">{formik.errors.email}</p>
+                )}
               </div>
 
               <div className="mb-4">
@@ -88,13 +99,16 @@ const Contact = () => {
                 <textarea
                   id="message"
                   name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
+                  value={formik.values.message}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
                   className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
                   rows="5"
                   placeholder="Write your message here"
-                  required
                 ></textarea>
+                {formik.touched.message && formik.errors.message && (
+                  <p className="text-red-500 text-sm">{formik.errors.message}</p>
+                )}
               </div>
 
               <div className="text-center">

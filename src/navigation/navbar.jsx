@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
-import Logo from "../assets/logo/RaijinLogo.png";
+import Logo from "../assets/logo/RaijinTech.png";
 
 const MenuItemData = [
   { title: "Home", path: "/" },
@@ -17,9 +17,9 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-[10vh] lg:h-[12vh] fixed z-10 top-0 flex items-center justify-between px-4 lg:px-[5%] shadow-md bg-white">
+    <nav className="w-full h-[10vh] lg:h-[12vh] fixed z-10 top-0 flex items-center justify-between px-4 lg:px-[5%] shadow-md bg-[var(--color-accent-500)]">
       {/* Logo Section */}
-      <div className="flex items-center z-20"> {/* Added z-index for logo */}
+      <div className="flex items-center z-20">
         <Link to="/">
           <img
             src={Logo}
@@ -30,15 +30,15 @@ const Navbar = () => {
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden lg:flex items-center space-x-8 text-sm md:text-base xl:text-lg font-medium text-neutral-800">
+      <ul className="hidden lg:flex items-center space-x-8 text-sm md:text-base xl:text-lg font-medium text-[var(--color-primary-500)]">
         {MenuItemData.map((item, index) => (
           <li key={index}>
             <NavLink
               to={item.path}
               className={({ isActive }) =>
                 isActive
-                  ? "relative text-teal-500 after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-teal-500"
-                  : "relative text-neutral-800 after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-teal-500 hover:after:w-full hover:text-teal-400 transition-all duration-300 ease-in-out"
+                  ? "relative text-[var(--color-primary-800)] font-semibold after:absolute after:left-0 after:bottom-[-4px] after:w-full after:h-[2px] after:bg-[var(--color-primary-700)]"
+                  : "relative text-[var(--color-primary-500)] after:absolute after:left-0 after:bottom-[-4px] after:w-0 after:h-[2px] after:bg-[var(--color-primary-500)] hover:after:w-full hover:text-[var(--color-primary-500)] transition-all duration-300 ease-in-out"
               }
             >
               {item.title}
@@ -51,7 +51,7 @@ const Navbar = () => {
       <div className="hidden lg:flex">
         <Link
           to="/request-quote"
-          className="bg-gradient-to-r from-teal-500 to-purple-600 text-white py-3 px-6 rounded-md text-base font-semibold transition duration-300 ease-in-out transform hover:scale-105 inline-block"
+          className="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-700)] text-white py-3 px-6 rounded-md text-base font-semibold transition duration-300 ease-in-out transform hover:scale-105"
         >
           Request Quote
         </Link>
@@ -69,8 +69,8 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-[10vh] left-0 w-full bg-transparent backdrop-blur-2xl bg-opacity-40 bg-white shadow-md z-10"> {/* Lowered z-index */}
-          <ul className="flex flex-col items-center space-y-2 py-4 text-neutral-800">
+        <div className="absolute top-[10vh] left-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md z-10">
+          <ul className="flex flex-col items-center space-y-2 py-4 text-[var(--color-primary-500)]">
             {MenuItemData.map((item, index) => (
               <li key={index}>
                 <NavLink
@@ -78,8 +78,8 @@ const Navbar = () => {
                   onClick={toggleMenu}
                   className={({ isActive }) =>
                     isActive
-                      ? "relative text-teal-500 after:absolute after:left-0 after:bottom-[-1px] after:w-full after:h-[2px] after:bg-teal-500"
-                      : "relative text-neutral-800 after:absolute after:left-0 after:bottom-[-1px] after:w-0 after:h-[2px] after:bg-teal-500 hover:after:w-full hover:text-teal-400 transition-all duration-300 ease-in-out"
+                      ? "relative text-[var(--color-primary-800)] font-semibold after:absolute after:left-0 after:bottom-[-2px] after:w-full after:h-[2px] after:bg-[var(--color-primary-700)]"
+                      : "relative text-[var(--color-primary-500)] after:absolute after:left-0 after:bottom-[-2px] after:w-0 after:h-[2px] after:bg-[var(--color-primary-400)] hover:after:w-full hover:text-[var(--color-primary-300)] transition-all duration-300 ease-in-out"
                   }
                 >
                   {item.title}
@@ -89,7 +89,7 @@ const Navbar = () => {
             <div className="mt-4">
               <Link
                 to="/request-quote"
-                className="bg-gradient-to-r from-teal-500 to-purple-600 text-white py-2 px-4 rounded-md text-sm font-semibold transition duration-300 ease-in-out transform hover:scale-105 inline-block"
+                className="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-700)] text-white py-2 px-4 rounded-md text-sm font-semibold transition duration-300 ease-in-out transform hover:scale-105"
               >
                 Request Quote
               </Link>

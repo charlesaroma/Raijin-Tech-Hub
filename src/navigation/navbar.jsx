@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-[10vh] lg:h-[12vh] fixed z-10 top-0 flex items-center justify-between px-4 lg:px-[5%] shadow-md bg-[var(--color-accent-500)]">
+    <nav className="w-full h-[10vh] lg:h-[10vh] fixed z-10 top-0 flex items-center justify-between px-4 lg:px-[5%] shadow-md bg-[var(--color-accent-500)]">
       {/* Logo Section */}
       <div className="flex items-center z-20">
         <Link to="/">

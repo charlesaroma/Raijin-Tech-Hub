@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
-      <div className="mt-[12vh]">
+      <div className="mt-[10vh]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/company" element={<Company />} />

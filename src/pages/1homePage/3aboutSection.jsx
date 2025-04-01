@@ -15,7 +15,7 @@ const AboutSection = () => {
         {/* Left Section: Lottie Animation */}
         <div className="flex justify-center lg:w-1/2 mb-8 lg:mb-0">
           <DotLottieReact
-            src="https://lottie.host/735aa124-9414-4149-b016-8a56ed62d9dd/LRQP9TFNA0.lottie"
+            src="https://lottie.host/82c36aeb-9cbb-4082-8e17-0b3824afb899/4IkI0vfsUi.lottie"
             loop
             autoplay
             className="w-full max-w-[800px] h-full lg:h-[600px] object-cover"

@@ -41,7 +41,7 @@ const PurposeSection = () => {
   ];
 
   return (
-    <section className="bg-[var(--color-accent-500)]/70 py-12">
+    <section className="bg-[var(--color-accent-500)] py-12">
       <div className="container mx-auto px-6 sm:px-8 lg:px-16 text-center py-16">
         <h2 className="text-4xl font-extrabold text-[var(--color-primary-500)] mb-12">
           Our Purpose & Values

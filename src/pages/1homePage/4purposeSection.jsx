@@ -1,14 +1,11 @@
 import React, { useState } from "react";
 import {
-  FaEye, // Changed from FaRocket
-  FaTasks, // Changed from FaHandshake
-  FaChartLine, // Changed from FaLightbulb
+  FaEye,
+  FaTasks,
+  FaChartLine,
   FaUsers,
   FaBullseye,
   FaStar,
-  FaGlobe, // Alternative for Vision
-  FaRoad, // Alternative for Mission
-  FaFlagCheckered, // Alternative for Objectives
 } from "react-icons/fa";
 
 const VALUES = [
@@ -16,19 +13,19 @@ const VALUES = [
     title: "Vision",
     description:
       "To be a global leader in providing innovative and sustainable digital solutions, shaping the future of technology and empowering businesses worldwide.",
-    icon: <FaEye />, // Or <FaGlobe />
+    icon: <FaEye />,
   },
   {
     title: "Mission",
     description:
       "To deliver cutting-edge technology solutions with excellence in software development, fostering strong client relationships and driving their success through our technical expertise.",
-    icon: <FaTasks />, // Or <FaRoad />
+    icon: <FaTasks />,
   },
   {
     title: "Objectives",
     description:
       "To drive business growth through tailored software solutions, focusing on efficiency, scalability, and user-centric design to meet the evolving needs of our clients.",
-    icon: <FaChartLine />, // Or <FaFlagCheckered />
+    icon: <FaChartLine />,
   },
   {
     title: "Core Values",
@@ -58,13 +55,13 @@ const TabComponent = () => {
       <h2 className="text-4xl font-bold text-[var(--color-primary-500)]">
         Our Purpose & Values
       </h2>
-      <div className="flex justify-center mt-5">
+      <div className="flex justify-center mt-5 flex-wrap">
         {VALUES.map((value) => (
           <button
             key={value.title}
             onClick={() => setActiveTab(value.title)}
             className={`
-              px-5 py-2 mx-1 rounded-md border-none cursor-pointer flex items-center transition-colors duration-300
+              px-5 py-2 mx-1 my-1 rounded-md border-none cursor-pointer flex items-center transition-colors duration-300
               ${activeTab === value.title
                 ? "bg-[var(--color-primary-500)] text-[var(--color-accent-500)]"
                 : "bg-[var(--color-primary-100)] text-[var(--color-primary-500)] hover:bg-[var(--color-primary-200)]"}

@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <ScrollToTop />
       <Navbar />
-      <div className="mt-[10vh]">
+      <div className="w-full mt-[10vh] md:mt-[12vh] lg:mt-[13vh] px-4 md:px-6 lg:px-[5%] bg-[var(--color-accent-200)] min-h-screen flex flex-col items-center">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/company" element={<Company />} />

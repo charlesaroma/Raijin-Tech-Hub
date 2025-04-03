@@ -8,7 +8,7 @@ import TechScroll from "./6techScrollSection"
 
 const homePage = () => {
   return (
-    <div className="relative w-full h-full flex flex-col space-y-0 overflow-x-hidden">
+    <div className="relative container w-full h-full flex flex-col space-y-0 overflow-x-hidden">
       {/* Hero Section */}
       <Hero />
       {/* About Section */}

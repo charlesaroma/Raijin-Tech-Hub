@@ -6,8 +6,8 @@ import Typical from "react-typical"; // Import Typical for the typing effect
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full bg-[var(--color-accent-500)] lg:h-[90vh]">
-      <div className="flex flex-col-reverse lg:flex-row w-full h-full pb-8 lg:pb-0 px-6 lg:px-16 items-center justify-center lg:justify-between">
+    <section className="relative w-full h-[calc(100vh-10vh)]">
+      <div className="flex flex-col-reverse lg:flex-row w-full h-full pb-8 lg:pb-0 items-center justify-center lg:justify-between">
         
         {/* Left Section: Text Content, CTA */}
         <div className="space-y-4 lg:space-y-8 max-w-lg text-center lg:text-left">
@@ -33,7 +33,7 @@ const HeroSection = () => {
 
           {/* Services List with Typing Effect */}
           <div className="space-y-4">
-            <div className="lg:text-left lg:text-lg font-medium lg:font-bold italic text-[var(--color-secondary-500)] text-center">
+            <div className="lg:text-left lg:text-lg font-medium lg:font-bold italic text-[var(--color-primary-400)] text-center">
               <Typical
                 steps={[
                   "Custom Software & Web Development",
@@ -74,7 +74,7 @@ const HeroSection = () => {
             src="https://lottie.host/07f46691-757c-4dcb-8638-530f7f8182d4/JMJkROXuyl.lottie"
             loop
             autoplay
-            className="w-full max-w-[400px] lg:max-w-[900px] h-auto lg:h-[700px] object-contain"
+            className="w-full max-w-[500px] md:max-w-[600px] lg:max-w-[900px] h-auto lg:h-[700px] object-contain"
           />
         </div>
       </div>

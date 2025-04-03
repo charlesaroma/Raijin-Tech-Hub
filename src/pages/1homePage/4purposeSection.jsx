@@ -48,7 +48,7 @@ const VALUES = [
 ];
 
 const TabComponent = () => {
-  const [activeTab, setActiveTab] = useState("Core Values");
+  const [activeTab, setActiveTab] = useState("Vision");
 
   return (
     <div className="text-center py-10 px-5 lg:px-[5%] bg-[var(--color-primary-50)]">

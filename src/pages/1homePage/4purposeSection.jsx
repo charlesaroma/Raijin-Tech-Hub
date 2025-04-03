@@ -52,7 +52,7 @@ const PurposeSection = () => {
           {values.map(({ title, description, icon }, index) => (
             <div
               key={index}
-              className="group bg-[var(--color-accent-500)]/90 border border-[var(--color-primary-500)] p-6 rounded-lg shadow-lg flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
+              className="group bg-transparent border border-[var(--color-primary-500)] p-6 rounded-lg shadow-md flex flex-col items-center text-center transform transition-transform duration-300 hover:scale-105"
             >
               {/* Icon */}
               <div className="mb-4">{icon}</div>

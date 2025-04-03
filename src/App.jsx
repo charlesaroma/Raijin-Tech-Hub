@@ -12,18 +12,20 @@ import RequestQuote from "./navigation/requestQuote";
 function App() {
   return (
     <BrowserRouter>
-      <ScrollToTop />
-      <Navbar />
-      <div className="w-full mt-[10vh] md:mt-[12vh] lg:mt-[13vh] px-4 md:px-6 lg:px-[5%] bg-[var(--color-accent-200)] min-h-screen flex flex-col items-center">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/company" element={<Company />} />
-          <Route path="/discover" element={<Discover />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/request-quote" element={<RequestQuote />} />
-        </Routes>
+      <div className="w-full overflow-x-hidden">
+        <ScrollToTop />
+        <Navbar />
+        <div className="w-full mt-[10vh] md:mt-[12vh] lg:mt-[13vh] bg-[var(--color-accent-300)] min-h-screen flex flex-col items-center">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/company" element={<Company />} />
+            <Route path="/discover" element={<Discover />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/request-quote" element={<RequestQuote />} />
+          </Routes>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </BrowserRouter>
   );
 }

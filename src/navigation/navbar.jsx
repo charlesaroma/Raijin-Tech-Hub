@@ -17,7 +17,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="w-full h-[10vh] md:h-[12vh] lg:h-[13vh] fixed z-10 top-0 flex items-center justify-between px-4 md:px-6 lg:px-[5%] shadow-md bg-[var(--color-accent-200)]">
+    <nav className="w-full min-h-[10vh] md:min-h-[12vh] lg:min-h-[13vh] fixed z-10 top-0 flex items-center justify-between px-4 md:px-6 lg:px-[5%] shadow-md bg-[var(--color-accent-300)]">
       {/* Logo Section */}
       <div className="flex items-center z-20">
         <Link to="/">
@@ -69,7 +69,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="absolute top-[10vh] left-0 w-full bg-white bg-opacity-90 backdrop-blur-md shadow-md z-10">
+        <div className="absolute top-[10.1vh] left-0 w-full bg-[var(--color-accent-200)] bg-opacity-90 backdrop-blur-md shadow-md z-10">
           <ul className="flex flex-col items-center space-y-2 py-4 text-[var(--color-primary-500)]">
             {MenuItemData.map((item, index) => (
               <li key={index}>

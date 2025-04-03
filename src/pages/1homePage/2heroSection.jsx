@@ -6,7 +6,7 @@ import Typical from "react-typical"; // Import Typical for the typing effect
 
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-[calc(100vh-10vh)]">
+    <section className="relative w-full h-[calc(100vh-10vh)] md:h-full px-4 md:px-6 lg:px-[5%] bg-[var(--color-accent-300)]">
       <div className="flex flex-col-reverse lg:flex-row w-full h-full pb-8 lg:pb-0 items-center justify-center lg:justify-between">
         
         {/* Left Section: Text Content, CTA */}
@@ -74,7 +74,7 @@ const HeroSection = () => {
             src="https://lottie.host/07f46691-757c-4dcb-8638-530f7f8182d4/JMJkROXuyl.lottie"
             loop
             autoplay
-            className="w-full max-w-[500px] md:max-w-[600px] lg:max-w-[900px] h-auto lg:h-[700px] object-contain"
+            className="w-full max-w-[800px] md:max-w-[600px] lg:max-w-[900px] h-auto lg:h-[700px] object-contain"
           />
         </div>
       </div>

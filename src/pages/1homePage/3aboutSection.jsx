@@ -9,7 +9,7 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, amount: 0.5 });
 
   return (
-    <section className="w-full bg-[var(--color-accent-500)] py-10 lg:py-0" ref={ref}>
+    <section className="w-full bg-[var(--color-accent-300)] py-10 lg:py-0" ref={ref}>
       <div className="container mx-auto px-6 lg:px-16 flex flex-col lg:flex-row items-center justify-between">
         
         {/* Left Section: Lottie Animation */}

@@ -37,7 +37,7 @@ const CompanyUserAgreement = () => {
           className="text-center mb-16"
         >
           <h1 className="text-4xl md:text-5xl font-extrabold text-[var(--color-primary-500)] mb-4">
-            Raijin Tech Hub
+            Raijin Tech
           </h1>
           <p className="text-[var(--color-primary-600)] text-lg md:text-xl max-w-2xl mx-auto">
             Important legal information. Please read carefully.

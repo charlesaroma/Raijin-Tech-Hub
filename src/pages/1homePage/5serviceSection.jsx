@@ -41,24 +41,24 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-12 md:py-16 lg:py-20 bg-transparent">
-      <div className="max-w-6xl mx-auto text-center px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-[var(--color-primary-500)]">Our Services</h2>
-        <p className="mt-3 md:mt-4 text-lg text-[var(--color-primary-500)] max-w-2xl mx-auto">
+    <section className="py-16  bg-transparent">
+      <div className="max-w-6xl mx-auto text-center">
+        <h2 className="text-4xl font-bold text-[var(--color-primary-500)]">Our Services</h2>
+        <p className="mt-4 text-[var(--color-primary-500)] dark:text-[var(--color-primary-500)] max-w-2xl mx-auto">
           Discover the range of services we offer to help your business grow and thrive.
         </p>
       </div>
-      <div className="mt-8 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto px-4">
+      <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto px-6">
         {services.map((service, index) => (
           <div
             key={index}
-            className="group relative p-6 md:p-8 rounded-xl flex flex-col items-center text-center border-2 border-[var(--color-primary-500)] transition-transform duration-300 hover:scale-105 before:absolute before:top-0 before:left-0 before:w-8 md:w-10 before:h-8 md:h-10 before:border-t-4 before:border-l-4 before:border-[var(--color-primary-500)] after:absolute after:bottom-0 after:right-0 after:w-8 md:w-10 after:h-8 md:h-10 after:border-b-4 after:border-r-4 after:border-[var(--color-primary-500)]"
+            className="group relative p-8 rounded-xl flex flex-col items-center text-center border-2 border-[var(--color-primary-500)] before:absolute before:top-0 before:left-0 before:w-10 before:h-10 before:border-t-4 before:border-l-4 before:border-[var(--color-primary-500)] after:absolute after:bottom-0 after:right-0 after:w-10 after:h-10 after:border-b-4 after:border-r-4 after:border-[var(--color-primary-500)]"
           >
-            <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center bg-[var(--color-primary-100)] rounded-lg mb-3 md:mb-4">
+            <div className="w-16 h-16 flex items-center justify-center bg-[var(--color-primary-100)] rounded-lg mb-4">
               {service.icon}
             </div>
-            <h3 className="text-xl font-semibold text-[var(--color-primary-500)] mb-1 md:mb-2">{service.title}</h3>
-            <p className="text-sm md:text-base text-[var(--color-primary-600)]">{service.description}</p>
+            <h3 className="text-xl font-semibold text-[var(--color-primary-500)] mb-2">{service.title}</h3>
+            <p className="text-[var(--color-primary-600)]">{service.description}</p>
           </div>
         ))}
       </div>

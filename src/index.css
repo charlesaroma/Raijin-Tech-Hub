@@ -4,58 +4,58 @@
 
 /* apply the font globally */
 html, body {
-    font-family: 'Quicksand', sans-serif;
-    scroll-behavior: smooth;
-  }
+  font-family: 'Quicksand', sans-serif;
+  scroll-behavior: smooth;
+}
 
-  /* Custom Theme Extensions */
-  @layer base {
-    :root {
-      /* Primary color (Deep Blue) */
-      --color-primary: #2b2c64;
-      --color-primary-50: #e2e3f0;
-      --color-primary-100: #c5c7e2;
-      --color-primary-200: #a8abd4;
-      --color-primary-300: #8a8ec6;
-      --color-primary-400: #6d72b8;
-      --color-primary-500: #2b2c64;
-      --color-primary-600: #27285a;
-      --color-primary-700: #1e1e48;
-      --color-primary-800: #151534;
-      --color-primary-900: #0c0c21;
-      --color-primary-950: #05050f;
-  
-      /* Secondary Color (Vibrant Red) */
-      --color-secondary: #ec3f24;
-      --color-secondary-50: #fee7e3;
-      --color-secondary-100: #fdcdc8;
-      --color-secondary-200: #fcae9f;
-      --color-secondary-300: #fc8f77;
-      --color-secondary-400: #fb6f4f;
-      --color-secondary-500: #ec3f24;
-      --color-secondary-600: #c6361f;
-      --color-secondary-700: #9f2a19;
-      --color-secondary-800: #791f12;
-      --color-secondary-900: #52150c;
-      --color-secondary-950: #2b0a06;
-      
-      /* Accent Color (Warm Yellow) */
-      --color-tertiary: #f6bf44;
-      --color-tertiary-50: #fef7e3;
-      --color-tertiary-100: #fdeec7;
-      --color-tertiary-200: #fce4ab;
-      --color-tertiary-300: #fbdb8e;
-      --color-tertiary-400: #fad272;
-      --color-tertiary-500: #f6bf44;
-      --color-tertiary-600: #d1a33a;
-      --color-tertiary-700: #ac8630;
-      --color-tertiary-800: #866925;
-      --color-tertiary-900: #604c1a;
-      --color-tertiary-950: #3a2f0e;
+/* Custom Theme Extensions */
+@layer base {
+  :root {
+    /* Primary color (Deep Blue) */
+    --color-primary: #2b2c64;
+    --color-primary-50: #e2e3f0;
+    --color-primary-100: #c5c7e2;
+    --color-primary-200: #a8abd4;
+    --color-primary-300: #8a8ec6;
+    --color-primary-400: #6d72b8;
+    --color-primary-500: #2b2c64;
+    --color-primary-600: #27285a;
+    --color-primary-700: #1e1e48;
+    --color-primary-800: #151534;
+    --color-primary-900: #0c0c21;
+    --color-primary-950: #05050f;
 
-      /* Accent */
+    /* Secondary Color (Vibrant Red) */
+    --color-secondary: #ec3f24;
+    --color-secondary-50: #fee7e3;
+    --color-secondary-100: #fdcdc8;
+    --color-secondary-200: #fcae9f;
+    --color-secondary-300: #fc8f77;
+    --color-secondary-400: #fb6f4f;
+    --color-secondary-500: #ec3f24;
+    --color-secondary-600: #c6361f;
+    --color-secondary-700: #9f2a19;
+    --color-secondary-800: #791f12;
+    --color-secondary-900: #52150c;
+    --color-secondary-950: #2b0a06;
+
+    /* Accent Color (Warm Yellow) */
+    --color-tertiary: #f6bf44;
+    --color-tertiary-50: #fef7e3;
+    --color-tertiary-100: #fdeec7;
+    --color-tertiary-200: #fce4ab;
+    --color-tertiary-300: #fbdb8e;
+    --color-tertiary-400: #fad272;
+    --color-tertiary-500: #f6bf44;
+    --color-tertiary-600: #d1a33a;
+    --color-tertiary-700: #ac8630;
+    --color-tertiary-800: #866925;
+    --color-tertiary-900: #604c1a;
+    --color-tertiary-950: #3a2f0e;
+
+    /* Accent */
     --color-accent: #e1e1dd;
-    --color-accent-0: #ffffff,
+    --color-accent-0: #ffffff;
     --color-accent-50: #fafaf9;
     --color-accent-100: #f5f5f4;
     --color-accent-200: #f0f0ee;
@@ -67,14 +67,25 @@ html, body {
     --color-accent-800: #71716f;
     --color-accent-900: #4b4b4a;
     --color-accent-950: #262625;
+  }
+}
 
+/* Background Images + Scroll Animation */
+@layer utilities {
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
-  
-  /* Background Images */
-  @layer utilities {
-    .bg-gradient-radial {
-      background-image: radial-gradient(var(--tw-gradient-stops));
-    }
+
+  .animate-scroll {
+    animation: scroll 60s linear infinite;
   }
-  
+}

@@ -25,12 +25,9 @@ const TechIcon = ({ icon, name }) => (
 const TechScrollSection = () => {
     const containerRef = useRef(null);
     const [scrollPosition, setScrollPosition] = useState(0);
-    const [isDragging, setIsDragging] = useState(false);
-    const [dragOffset, setDragOffset] = useState(0); // Store the drag offset
     const animationControls = useAnimation();
     const scrollSpeed = 0.8;
-    const damping = 0.05; // Reduced damping for smoother deceleration
-    const minDragDistance = 10; // Minimum drag distance to consider it a drag
+    const damping = 0.05;
 
     const technologies = useMemo(() => [
         { name: 'React', icon: <FaReact className="text-3xl text-cyan-400" /> },
@@ -51,7 +48,6 @@ const TechScrollSection = () => {
     useEffect(() => {
         const container = containerRef.current;
         const contentWidth = container.scrollWidth;
-        const originalWidth = container.offsetWidth;
         container.style.width = `${contentWidth}px`;
     }, [technologies]);
 
@@ -62,15 +58,13 @@ const TechScrollSection = () => {
         let velocity = 0;
 
         const autoScroll = () => {
-            if (!isDragging) {
-                targetScrollPosition += scrollSpeed;
-                if (targetScrollPosition >= containerRef.current.offsetWidth) {
-                    targetScrollPosition -= containerRef.current.offsetWidth;
-                    autoScrollPosition -= containerRef.current.offsetWidth;
-                } else if (targetScrollPosition < 0) {
-                    targetScrollPosition += containerRef.current.offsetWidth;
-                    autoScrollPosition += containerRef.current.offsetWidth;
-                }
+            targetScrollPosition += scrollSpeed;
+            if (targetScrollPosition >= containerRef.current.scrollWidth) {
+                targetScrollPosition = 0;
+                autoScrollPosition = 0;
+            } else if (targetScrollPosition < 0) {
+                targetScrollPosition = containerRef.current.scrollWidth;
+                autoScrollPosition = containerRef.current.scrollWidth;
             }
 
             velocity = (targetScrollPosition - autoScrollPosition) * damping;
@@ -90,59 +84,7 @@ const TechScrollSection = () => {
         return () => {
             cancelAnimationFrame(animationFrameId);
         };
-    }, [isDragging, scrollSpeed, animationControls]);
-
-    const handleDragStart = () => {
-        setIsDragging(true);
-        animationControls.stop();
-    };
-
-    const handleDrag = (event, info) => {
-        if (Math.abs(info.offset.x) > minDragDistance) {
-            setIsDragging(true);
-            setDragOffset(info.offset.x);
-            setScrollPosition(prevPosition => prevPosition + info.delta.x);
-        }
-    };
-
-
-    const handleDragEnd = (event, info) => {
-        setIsDragging(false);
-        setDragOffset(0);
-
-        // "Fling" effect (optional, but recommended for a natural feel)
-        const dragVelocity = info.velocity.x;
-        const flingVelocity = dragVelocity * 0.5; // Adjust the multiplier for the strength of the fling
-        const animationDuration = Math.min(Math.abs(flingVelocity) * 0.002, 1); // Cap the duration
-
-        if (Math.abs(dragVelocity) > 50) { // Only fling if the drag was fast enough
-            animationControls.start({
-                x: -scrollPosition + flingVelocity * 10, // Project the end position
-                transition: {
-                    duration: animationDuration,
-                    ease: "easeOut",
-                }
-            }).then(() => {
-                if (!isDragging) { // Check again after animation
-                    // Continue auto-scrolling
-                    animationControls.start({
-                        x: -scrollPosition,
-                        transition: { duration: 0, ease: 'linear' },
-                    });
-                }
-            });
-        } else if (!isDragging) {
-            animationControls.start({
-                x: -scrollPosition,
-                transition: { duration: 0, ease: 'linear' },
-            });
-        }
-
-
-
-    };
-
-
+    }, [scrollSpeed, animationControls]);
 
     return (
         <div className="bg-gradient-to-b from-[var(--color-primary-800)] via-[var(--color-primary-600)] to-[var(--color-primary-900)] py-20 overflow-hidden">
@@ -156,14 +98,9 @@ const TechScrollSection = () => {
             <div className="w-full flex justify-center">
                 <motion.div
                     ref={containerRef}
-                    className="flex items-center space-x-6 md:space-x-8 lg:space-x-10 whitespace-nowrap cursor-grab active:cursor-grabbing"
-                    drag="x"
-                    onDragStart={handleDragStart}
-                    onDrag={handleDrag}
-                    onDragEnd={handleDragEnd}
+                    className="flex items-center space-x-6 md:space-x-8 lg:space-x-10 whitespace-nowrap"
                     style={{ x: 0 }}
                     animate={animationControls}
-                    dragConstraints={{ left: -1000, right: 1000 }} // Adjust constraints as needed
                 >
                     {technologies.map((tech, index) => (
                         <TechIcon key={index} icon={tech.icon} name={tech.name} />

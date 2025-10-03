@@ -1,10 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"; // Lottie animation import
-import { motion } from "framer-motion"; // Framer Motion for text animations
+import { motion, AnimatePresence } from "framer-motion"; // Framer Motion for text animations
 import { Link } from "react-router-dom"; // React Router Link import
-import Typical from "react-typical"; // Import Typical for the typing effect
 
 const HeroSection = () => {
+  const services = [
+    "Custom Software & Web Development",
+    "IT Consultancy & Strategy",
+    "Cloud Solutions & Migration",
+    "UI/UX Design & Development",
+    "Digital Transformation & Automation",
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % services.length);
+    }, 2000);
+
+    return () => clearInterval(interval);
+  }, [services.length]);
+
   return (
     <section className="relative w-full h-[calc(100vh-10vh)] md:h-full px-4 md:px-6 lg:px-[5%] bg-[var(--color-accent-300)]">
       <div className="flex flex-col-reverse lg:flex-row w-full h-full pb-8 lg:pb-0 items-center justify-center lg:justify-between">
@@ -32,24 +49,19 @@ const HeroSection = () => {
           </motion.p>
 
           {/* Services List with Typing Effect */}
-          <div className="space-y-4">
+          <div className="space-y-4 h-16 flex items-center justify-center lg:justify-start">
             <div className="lg:text-left lg:text-lg font-medium lg:font-bold italic text-[var(--color-primary-400)] text-center">
-              <Typical
-                steps={[
-                  "Custom Software & Web Development",
-                  2000,
-                  "IT Consultancy & Strategy",
-                  2000,
-                  "Cloud Solutions & Migration",
-                  2000,
-                  "UI/UX Design & Development",
-                  2000,
-                  "Digital Transformation & Automation",
-                  2000,
-                ]}
-                loop={Infinity}
-                wrapper="div"
-              />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {services[currentIndex]}
+                </motion.div>
+              </AnimatePresence>
             </div>
           </div>
 

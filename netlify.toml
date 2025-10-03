@@ -2,6 +2,9 @@
   publish = "dist" # This is the folder where your app is built
   command = "yarn build" # Build command to create the production version of your site
 
+[build.environment]
+  NODE_VERSION = "20"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"

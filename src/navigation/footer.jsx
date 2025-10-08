@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom"; // Import Link for navigation
-import { FaWhatsapp, FaInstagram, FaLinkedin } from "react-icons/fa"; // Import social media icons from react-icons
+import { FaWhatsapp, FaInstagram, FaLinkedin, FaFacebook } from "react-icons/fa"; // Import social media icons from react-icons
 
 const Footer = () => {
   return (
@@ -83,7 +83,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="text-[var(--color-accent-500)] hover:text-[var(--color-secondary-400)] flex items-center"
               >
-                <FaLinkedin size={24} className="mr-1" />
+                <FaFacebook size={24} className="mr-1" />
                 Facebook
               </a>
             </div>

@@ -65,7 +65,7 @@ const TabComponent = () => {
       </div>
 
       {/* Vertical Tabs Layout */}
-      <div className="max-w-3xl mx-auto grid grid-cols-1 lg:grid-cols-[240px_1fr] gap-4">
+      <div className="max-w-3xl mx-auto grid grid-cols-1 lg:grid-cols-[290px_1fr] gap-4">
         {/* Left Side - Vertical Tabs */}
         <div className="flex flex-col space-y-2">
           {VALUES.map((value, index) => (

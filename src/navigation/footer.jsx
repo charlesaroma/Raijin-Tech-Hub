@@ -77,6 +77,15 @@ const Footer = () => {
                 <FaLinkedin size={24} className="mr-1" />
                 LinkedIn
               </a>
+              <a
+                href="https://www.facebook.com/GVNG8/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[var(--color-accent-500)] hover:text-[var(--color-secondary-400)] flex items-center"
+              >
+                <FaLinkedin size={24} className="mr-1" />
+                Facebook
+              </a>
             </div>
           </div>
         </div>

@@ -3,7 +3,6 @@ import About from "./3aboutSection";
 import Purpose from "./4purposeSection";
 import Services from "./5serviceSection";
 import TechScroll from "./6techScrollSection";
- import Feature from "./7featureSection";
 
 const homePage = () => {
   return (
@@ -23,8 +22,7 @@ const homePage = () => {
       {/* techScroll Section */}
       <TechScroll />
 
-      {/* Feature Section */}
-      <Feature />
+
     </div>
   );
 };

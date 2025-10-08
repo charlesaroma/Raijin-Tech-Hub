@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react"; // Lottie animation import
 import { motion, AnimatePresence } from "framer-motion"; // Framer Motion for text animations
 import { Link } from "react-router-dom"; // React Router Link import

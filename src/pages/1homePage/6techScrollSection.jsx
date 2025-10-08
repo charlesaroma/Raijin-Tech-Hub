@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useMemo } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import {
     FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare,

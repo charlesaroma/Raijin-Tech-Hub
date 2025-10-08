@@ -1,0 +1,17 @@
+{
+  "name": "Raijin Tech Hub Uganda",
+  "short_name": "Raijin Tech Hub",
+  "description": "We are dedicated to providing innovative digital solutions for businesses. Our team specializes in custom software, IT consultancy, and more.",
+  "icons": [
+    {
+      "src": "/RaijinIcon.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/"
+}

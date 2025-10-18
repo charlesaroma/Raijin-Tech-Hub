@@ -2,9 +2,9 @@
 <browserconfig>
   <msapplication>
     <tile>
-      <square150x150logo src="/RaijinIcon.png"/>
-      <square310x310logo src="/RaijinIcon.png"/>
-      <wide310x150logo src="/RaijinIcon.png"/>
+      <square150x150logo src="/logo-512x512.png"/>
+      <square310x310logo src="/logo-512x512.png"/>
+      <wide310x150logo src="/logo-512x512.png"/>
       <TileColor>#2b2c64</TileColor>
     </tile>
   </msapplication>

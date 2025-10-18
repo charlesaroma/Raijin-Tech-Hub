@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
+import { FaUser, FaEnvelope, FaPhone, FaBuilding, FaGlobe, FaCommentDots, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import SEO from '../components/SEO';
+import { BreadcrumbStructuredData } from '../components/StructuredData';
 
 const RequestQuote = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -69,160 +73,305 @@ const RequestQuote = () => {
   };
 
   return (
-    <section className="w-full py-12 bg-gray-50">
-      <div className="container mx-auto px-6 md:px-12">
-        {/* Heading Section */}
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-purple-600">
-            Request a Quote
-          </h2>
-          <p className="text-lg text-gray-600 mt-4">Let us know your needs and we'll provide a custom quote for you.</p>
+    <>
+      <SEO 
+        title="Request a Quote | Raijin Tech Hub Uganda"
+        description="Get a custom quote for your software development, IT consultancy, or digital transformation project. Professional tech solutions tailored to your business needs in Uganda."
+        keywords="request quote Uganda, software development quote, IT services pricing, custom quote Kampala, tech consultation Uganda"
+      />
+      <BreadcrumbStructuredData 
+        items={[
+          { name: 'Home', path: '/' },
+          { name: 'Request Quote', path: '/request-quote' }
+        ]}
+      />
+      
+      <section className="relative w-full min-h-screen py-16 px-4 md:px-6 lg:px-[5%] bg-transparent overflow-hidden">
+        {/* Animated Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Gradient Orbs */}
+          <div className="absolute top-20 -left-20 w-72 h-72 bg-[var(--color-primary-500)]/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 -right-20 w-96 h-96 bg-[var(--color-primary-600)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          
+          {/* Floating Particles */}
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[var(--color-primary-500)]/30 rounded-full animate-float"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-[var(--color-primary-500)]/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-[var(--color-primary-500)]/25 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
         </div>
 
-        {/* Form Section */}
-        <div className="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-md">
-          {isSubmitted ? (
-            <div className="text-center">
-              <h3 className="text-2xl font-semibold text-teal-500">Thank you for your request!</h3>
-              <p className="mt-4 text-gray-600">We will contact you with a custom quote shortly.</p>
-            </div>
-          ) : (
-            <Formik
-              initialValues={initialValues}
-              validationSchema={validationSchema}
-              onSubmit={handleSubmit}
-            >
-              {({ isSubmitting }) => (
-                <Form>
-                  {/* Error Message */}
-                  {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Heading Section */}
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary-600)] mb-4">
+              Request a Quote
+            </h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] mx-auto mb-6 rounded-full"></div>
+            <p className="text-base sm:text-lg text-[var(--color-primary-500)]/80 max-w-2xl mx-auto">
+              Let us know your needs and we&apos;ll provide a custom quote tailored to your business requirements.
+            </p>
+          </motion.div>
 
-                  {/* Name Field */}
-                  <div className="mb-4">
-                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700">Your Name</label>
-                    <Field
-                      type="text"
-                      id="name"
-                      name="name"
-                      className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      placeholder="Enter your full name"
-                    />
-                    <ErrorMessage name="name" component="div" className="text-red-500 text-sm" />
-                  </div>
+          {/* Form Section */}
+          <motion.div 
+            className="relative"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            {/* Futuristic Card Container */}
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-10 border-2 border-[var(--color-primary-500)]/20 overflow-hidden group hover:border-[var(--color-primary-500)]/40 transition-all duration-300">
+              {/* Grid Pattern Overlay */}
+              <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(var(--color-primary-500) 1px, transparent 1px),
+                                   linear-gradient(90deg, var(--color-primary-500) 1px, transparent 1px)`,
+                  backgroundSize: '20px 20px'
+                }}
+              ></div>
 
-                  {/* Email Field */}
-                  <div className="mb-4">
-                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700">Your Email</label>
-                    <Field
-                      type="email"
-                      id="email"
-                      name="email"
-                      className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      placeholder="Enter your email address"
-                    />
-                    <ErrorMessage name="email" component="div" className="text-red-500 text-sm" />
-                  </div>
+              {/* Gradient Orbs */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary-500)]/5 rounded-full blur-2xl group-hover:bg-[var(--color-primary-500)]/10 transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-[var(--color-primary-600)]/5 rounded-full blur-2xl group-hover:bg-[var(--color-primary-600)]/10 transition-all duration-500"></div>
 
-                  {/* Phone Field */}
-                  <div className="mb-4">
-                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700">Your Phone</label>
-                    <Field
-                      type="text"
-                      id="phone"
-                      name="phone"
-                      className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      placeholder="Enter your phone number"
-                    />
-                    <ErrorMessage name="phone" component="div" className="text-red-500 text-sm" />
-                  </div>
+              {isSubmitted ? (
+                <motion.div 
+                  className="text-center py-12"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.div
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                  >
+                    <FaCheckCircle className="text-6xl text-[var(--color-primary-500)] mx-auto mb-6" />
+                  </motion.div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-[var(--color-primary-600)] mb-4">
+                    Thank You for Your Request!
+                  </h3>
+                  <p className="text-base sm:text-lg text-[var(--color-primary-500)]/80 mb-8">
+                    We&apos;ve received your quote request and will contact you with a custom proposal shortly.
+                  </p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="px-6 py-3 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
+                  >
+                    Submit Another Request
+                  </button>
+                </motion.div>
+              ) : (
+                <Formik
+                  initialValues={initialValues}
+                  validationSchema={validationSchema}
+                  onSubmit={handleSubmit}
+                >
+                  {({ isSubmitting }) => (
+                    <Form className="relative z-10 space-y-6">
+                      {/* Error Message */}
+                      {error && (
+                        <motion.div 
+                          className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-r-lg"
+                          initial={{ opacity: 0, x: -20 }}
+                          animate={{ opacity: 1, x: 0 }}
+                        >
+                          <p className="font-semibold">{error}</p>
+                        </motion.div>
+                      )}
 
-                  {/* Company Name Field */}
-                  <div className="mb-4">
-                    <label htmlFor="company" className="block text-sm font-semibold text-gray-700">Company Name (Optional)</label>
-                    <Field
-                      type="text"
-                      id="company"
-                      name="company"
-                      className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      placeholder="Enter your company name (optional)"
-                    />
-                  </div>
-
-                  {/* Website Field */}
-                  <div className="mb-4">
-                    <label htmlFor="website" className="block text-sm font-semibold text-gray-700">Your Website (Optional)</label>
-                    <Field
-                      type="text"
-                      id="website"
-                      name="website"
-                      className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      placeholder="Enter your website URL (optional)"
-                    />
-                    <ErrorMessage name="website" component="div" className="text-red-500 text-sm" />
-                  </div>
-
-                  {/* Service Selection Section */}
-                  <div className="mb-4">
-                    <label htmlFor="service" className="block text-sm font-semibold text-gray-700">Service(s) Needed</label>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-3">
-                      {services.map((service) => (
-                        <label key={service.value} className="inline-flex items-center">
-                          <Field
-                            type="checkbox"
-                            name="service"
-                            value={service.value}
-                            className="form-checkbox text-teal-500"
-                          />
-                          <span className="ml-2 text-gray-700">{service.label}</span>
+                      {/* Name Field */}
+                      <div className="space-y-2">
+                        <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
+                          <FaUser className="text-[var(--color-primary-500)]" />
+                          Your Name *
                         </label>
-                      ))}
-                    </div>
-                    <ErrorMessage name="service" component="div" className="text-red-500 text-sm" />
-                  </div>
+                        <Field
+                          type="text"
+                          id="name"
+                          name="name"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          placeholder="Enter your full name"
+                        />
+                        <ErrorMessage name="name" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+                      </div>
 
-                  {/* Other Services Section */}
-                  <div className="mb-4">
-                    <label htmlFor="otherService" className="block text-sm font-semibold text-gray-700">Other Services (if not listed above)</label>
-                    <Field
-                      type="text"
-                      id="otherService"
-                      name="otherService"
-                      className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      placeholder="Describe any other services"
-                    />
-                  </div>
+                      {/* Email Field */}
+                      <div className="space-y-2">
+                        <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
+                          <FaEnvelope className="text-[var(--color-primary-500)]" />
+                          Your Email *
+                        </label>
+                        <Field
+                          type="email"
+                          id="email"
+                          name="email"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          placeholder="your.email@example.com"
+                        />
+                        <ErrorMessage name="email" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+                      </div>
 
-                  {/* Comments Section */}
-                  <div className="mb-4">
-                    <label htmlFor="comments" className="block text-sm font-semibold text-gray-700">Additional Comments</label>
-                    <Field
-                      as="textarea"
-                      id="comments"
-                      name="comments"
-                      className="w-full mt-2 p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-                      rows="5"
-                      placeholder="Provide more details about your requirements"
-                    />
-                    <ErrorMessage name="comments" component="div" className="text-red-500 text-sm" />
-                  </div>
+                      {/* Phone Field */}
+                      <div className="space-y-2">
+                        <label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
+                          <FaPhone className="text-[var(--color-primary-500)]" />
+                          Your Phone *
+                        </label>
+                        <Field
+                          type="text"
+                          id="phone"
+                          name="phone"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          placeholder="+256 XXX XXX XXX"
+                        />
+                        <ErrorMessage name="phone" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+                      </div>
 
-                  {/* Submit Button */}
-                  <div className="text-center">
-                    <button
-                      type="submit"
-                      disabled={isSubmitting}
-                      className="bg-gradient-to-r from-teal-500 to-purple-600 text-white px-6 py-3 rounded-md shadow-md hover:bg-gradient-to-l focus:outline-none focus:ring-2 focus:ring-teal-500"
-                    >
-                      {isSubmitting ? 'Submitting...' : 'Request Quote'}
-                    </button>
-                  </div>
-                </Form>
+                      {/* Two Column Layout for Company and Website */}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Company Name Field */}
+                        <div className="space-y-2">
+                          <label htmlFor="company" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
+                            <FaBuilding className="text-[var(--color-primary-500)]" />
+                            Company Name
+                          </label>
+                          <Field
+                            type="text"
+                            id="company"
+                            name="company"
+                            className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                            placeholder="Your company (optional)"
+                          />
+                        </div>
+
+                        {/* Website Field */}
+                        <div className="space-y-2">
+                          <label htmlFor="website" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
+                            <FaGlobe className="text-[var(--color-primary-500)]" />
+                            Your Website
+                          </label>
+                          <Field
+                            type="text"
+                            id="website"
+                            name="website"
+                            className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                            placeholder="https://example.com"
+                          />
+                          <ErrorMessage name="website" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+                        </div>
+                      </div>
+
+                      {/* Service Selection Section */}
+                      <div className="space-y-3">
+                        <label className="block text-sm font-semibold text-[var(--color-primary-600)] mb-3">
+                          Service(s) Needed *
+                        </label>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {services.map((service) => (
+                            <label 
+                              key={service.value} 
+                              className="flex items-start p-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg hover:border-[var(--color-primary-500)]/40 hover:bg-white/80 transition-all duration-300 cursor-pointer group"
+                            >
+                              <Field
+                                type="checkbox"
+                                name="service"
+                                value={service.value}
+                                className="mt-1 mr-3 h-4 w-4 text-[var(--color-primary-500)] border-[var(--color-primary-500)]/30 rounded focus:ring-[var(--color-primary-500)] cursor-pointer"
+                              />
+                              <span className="text-sm text-[var(--color-primary-600)] group-hover:text-[var(--color-primary-500)] transition-colors">
+                                {service.label}
+                              </span>
+                            </label>
+                          ))}
+                        </div>
+                        <ErrorMessage name="service" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+                      </div>
+
+                      {/* Other Services Section */}
+                      <div className="space-y-2">
+                        <label htmlFor="otherService" className="block text-sm font-semibold text-[var(--color-primary-600)]">
+                          Other Services <span className="text-xs font-normal text-[var(--color-primary-500)]/60">(if not listed above)</span>
+                        </label>
+                        <Field
+                          type="text"
+                          id="otherService"
+                          name="otherService"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          placeholder="Describe any other services you need"
+                        />
+                      </div>
+
+                      {/* Comments Section */}
+                      <div className="space-y-2">
+                        <label htmlFor="comments" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
+                          <FaCommentDots className="text-[var(--color-primary-500)]" />
+                          Project Details *
+                        </label>
+                        <Field
+                          as="textarea"
+                          id="comments"
+                          name="comments"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40 resize-none"
+                          rows="5"
+                          placeholder="Tell us more about your project requirements, timeline, budget range, and any specific features you need..."
+                        />
+                        <ErrorMessage name="comments" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
+                      </div>
+
+                      {/* Submit Button */}
+                      <motion.div 
+                        className="pt-4"
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <button
+                          type="submit"
+                          disabled={isSubmitting}
+                          className="w-full px-8 py-4 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-[var(--color-primary-600)] hover:to-[var(--color-primary-500)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 cursor-pointer group"
+                        >
+                          {isSubmitting ? (
+                            <>
+                              <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                              <span>Submitting...</span>
+                            </>
+                          ) : (
+                            <>
+                              <FaPaperPlane className="group-hover:translate-x-1 transition-transform" />
+                              <span>Request Your Custom Quote</span>
+                            </>
+                          )}
+                        </button>
+                      </motion.div>
+
+                      {/* Privacy Notice */}
+                      <p className="text-xs text-center text-[var(--color-primary-500)]/60 mt-4">
+                        We respect your privacy. Your information will only be used to provide you with a quote.
+                      </p>
+                    </Form>
+                  )}
+                </Formik>
               )}
-            </Formik>
-          )}
+            </div>
+          </motion.div>
         </div>
-      </div>
-    </section>
+
+        {/* Custom Float Animation */}
+        <style jsx>{`
+          @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+          }
+          .animate-float {
+            animation: float 6s ease-in-out infinite;
+          }
+        `}</style>
+      </section>
+    </>
   );
 };
 

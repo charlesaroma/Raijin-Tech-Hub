@@ -75,48 +75,45 @@ const Footer = () => {
 
           {/* Social Media Section */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-[var(--color-accent-100)]">
-              Connect With Us
+            <h4 className="text-lg font-bold mb-6 text-[var(--color-accent-100)]">
+              Follow Us
             </h4>
-            <p className="text-[var(--color-accent-400)] text-sm mb-6">
-              Follow us on social media for updates, insights, and the latest tech trends.
-            </p>
-            <div className="grid grid-cols-2 gap-3">
+            <div className="flex gap-4">
               <a
                 href="https://wa.me/256777982066"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-3 bg-[var(--color-primary-800)] hover:bg-green-600 rounded-xl transition-all duration-300 cursor-pointer border border-[var(--color-primary-700)] hover:border-green-500"
+                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-green-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                aria-label="WhatsApp"
               >
                 <FaWhatsapp className="text-xl text-green-400 group-hover:text-white transition-colors duration-300" />
-                <span className="text-sm font-medium text-[var(--color-accent-300)] group-hover:text-white transition-colors duration-300">WhatsApp</span>
               </a>
               <a
-                href="https://www.instagram.com/raijin_tech_hub/profilecard/?igsh=dGxqd3kwMzVxZjR3"
+                href="https://www.instagram.com/raijin_tech_hub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-3 bg-[var(--color-primary-800)] hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 rounded-xl transition-all duration-300 cursor-pointer border border-[var(--color-primary-700)] hover:border-pink-500"
+                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                aria-label="Instagram"
               >
                 <FaInstagram className="text-xl text-pink-400 group-hover:text-white transition-colors duration-300" />
-                <span className="text-sm font-medium text-[var(--color-accent-300)] group-hover:text-white transition-colors duration-300">Instagram</span>
               </a>
               <a
-                href="https://www.linkedin.com/in/charles-aroma-8955b62a2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                href="https://www.linkedin.com/in/charles-aroma-8955b62a2"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-3 bg-[var(--color-primary-800)] hover:bg-blue-600 rounded-xl transition-all duration-300 cursor-pointer border border-[var(--color-primary-700)] hover:border-blue-500"
+                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-blue-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                aria-label="LinkedIn"
               >
                 <FaLinkedin className="text-xl text-blue-400 group-hover:text-white transition-colors duration-300" />
-                <span className="text-sm font-medium text-[var(--color-accent-300)] group-hover:text-white transition-colors duration-300">LinkedIn</span>
               </a>
               <a
-                href="https://www.facebook.com/GVNG8/"
+                href="https://www.facebook.com/GVNG8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-2 px-4 py-3 bg-[var(--color-primary-800)] hover:bg-blue-700 rounded-xl transition-all duration-300 cursor-pointer border border-[var(--color-primary-700)] hover:border-blue-600"
+                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-blue-700 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                aria-label="Facebook"
               >
                 <FaFacebook className="text-xl text-blue-500 group-hover:text-white transition-colors duration-300" />
-                <span className="text-sm font-medium text-[var(--color-accent-300)] group-hover:text-white transition-colors duration-300">Facebook</span>
               </a>
             </div>
           </div>

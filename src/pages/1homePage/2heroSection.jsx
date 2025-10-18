@@ -103,20 +103,20 @@ const HeroSection = () => {
                 <span className="text-lg">⚡</span>
               </div>
               <div className="flex-1 max-w-md">
-                <AnimatePresence mode="wait">
-                  <motion.div
-                    key={currentIndex}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentIndex}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
-                    transition={{ duration: 0.5 }}
+                  transition={{ duration: 0.5 }}
                     className="text-lg lg:text-xl font-bold text-[var(--color-primary-600)]"
-                  >
-                    {services[currentIndex]}
-                  </motion.div>
-                </AnimatePresence>
-              </div>
+                >
+                  {services[currentIndex]}
+                </motion.div>
+              </AnimatePresence>
             </div>
+          </div>
           </motion.div>
 
           {/* CTA Buttons */}
@@ -128,7 +128,7 @@ const HeroSection = () => {
           >
             <Link
               to="/discover"
-              className="group relative px-8 py-4 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.4)] hover:scale-105 inline-flex items-center gap-2"
+              className="group relative px-8 py-4 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.4)] hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
             >
               <span className="relative z-10">Discover Our Expertise</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -139,7 +139,7 @@ const HeroSection = () => {
 
             <Link
               to="/contact"
-              className="group relative px-8 py-4 bg-transparent border-2 border-[var(--color-primary-500)] text-[var(--color-primary-600)] rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 hover:bg-[var(--color-primary-500)] hover:text-white hover:shadow-lg inline-flex items-center gap-2"
+              className="group relative px-8 py-4 bg-transparent border-2 border-[var(--color-primary-500)] text-[var(--color-primary-600)] rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 hover:bg-[var(--color-primary-500)] hover:text-white hover:shadow-lg inline-flex items-center gap-2 cursor-pointer"
             >
               <span className="relative z-10">Get in Touch</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -190,13 +190,13 @@ const HeroSection = () => {
 
           {/* Lottie Animation */}
           <div className="relative z-10">
-            <DotLottieReact
-              src="https://lottie.host/07f46691-757c-4dcb-8638-530f7f8182d4/JMJkROXuyl.lottie"
-              loop
-              autoplay
-              className="w-full max-w-[800px] md:max-w-[600px] lg:max-w-[900px] h-auto lg:h-[700px] object-contain"
-            />
-          </div>
+          <DotLottieReact
+            src="https://lottie.host/07f46691-757c-4dcb-8638-530f7f8182d4/JMJkROXuyl.lottie"
+            loop
+            autoplay
+            className="w-full max-w-[800px] md:max-w-[600px] lg:max-w-[900px] h-auto lg:h-[700px] object-contain"
+          />
+        </div>
         </motion.div>
       </div>
     </section>

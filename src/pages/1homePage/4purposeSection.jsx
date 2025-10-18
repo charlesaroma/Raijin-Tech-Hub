@@ -93,7 +93,7 @@ const TabComponent = () => {
                 key={value.title}
                 onClick={() => setActiveTab(value.title)}
                 className={`
-                  group relative flex items-center gap-2 px-4 py-2.5 rounded-full text-left transition-all duration-300 whitespace-nowrap border-2
+                group relative flex items-center gap-2 px-4 py-2.5 rounded-full text-left transition-all duration-300 whitespace-nowrap border-2 cursor-pointer
                   ${activeTab === value.title
                     ? "bg-[var(--color-primary-500)] text-white border-[var(--color-primary-500)] shadow-lg"
                     : "bg-transparent text-[var(--color-primary-500)] border-[var(--color-primary-500)]/20 hover:border-[var(--color-primary-500)] hover:bg-[var(--color-primary-500)]/5"}

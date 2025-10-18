@@ -1,2 +1,15 @@
+# Raijin Tech Hub - robots.txt
+# Allow all crawlers to index all content
+
 User-agent: *
 Allow: /
+
+# Sitemap location
+Sitemap: https://raijintechhub.com/sitemap.xml
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
+
+# Block access to sensitive files (if any in future)
+# Disallow: /admin/
+# Disallow: /private/

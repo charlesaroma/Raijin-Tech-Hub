@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState, useMemo } from 'react';
-import { motion, useAnimation } from 'framer-motion';
+import { useEffect, useRef, useMemo, useCallback } from 'react';
+import { motion } from 'framer-motion';
 import {
     FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare,
     FaAngular, FaPython, FaJava
@@ -10,107 +10,244 @@ import {
 
 const TechIcon = ({ icon, name }) => (
     <motion.div
-        className="flex flex-col items-center justify-center p-4 lg:p-6 w-24 h-24 lg:w-32 lg:h-32 rounded-full shadow-lg border border-white/10 hover:scale-110 transition-transform duration-300"
-        whileHover={{ y: -5 }}
-        style={{
-            background: 'radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), rgba(255,255,255,0))',
-            backdropFilter: 'blur(10px)',
-        }}
+        className="flex flex-col items-center justify-center p-3 sm:p-4 lg:p-6 min-w-[100px] sm:min-w-[120px] lg:min-w-[140px] h-24 sm:h-28 lg:h-32 rounded-2xl shadow-lg border-2 border-[var(--color-primary-500)]/20 hover:border-[var(--color-primary-500)] transition-all duration-300 backdrop-blur-sm bg-gradient-to-br from-[var(--color-primary-50)]/10 to-transparent"
+        whileHover={{ y: -8, scale: 1.05 }}
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        aria-label={name}
+        role="img"
     >
-        <div className="flex items-center justify-center w-full h-full">{icon}</div>
-        <p className="text-white text-sm md:text-base font-medium mt-2">{name}</p>
+        <div className="flex items-center justify-center mb-2">{icon}</div>
+        <p className="text-[var(--color-primary-500)] text-xs sm:text-sm font-semibold text-center leading-tight">{name}</p>
     </motion.div>
 );
 
 const TechScrollSection = () => {
-    const containerRef = useRef(null);
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const animationControls = useAnimation();
-    const scrollSpeed = 0.8;
-    const damping = 0.05;
+    const scrollContainerRef = useRef(null);
+    const animationRef = useRef(null);
+    const scrollPositionRef = useRef(0);
+    const touchStartRef = useRef(0);
+    const touchCurrentRef = useRef(0);
+    const isDraggingRef = useRef(false);
 
     const technologies = useMemo(() => [
-        { name: 'React', icon: <FaReact className="text-3xl text-cyan-400" /> },
-        { name: 'Node.js', icon: <FaNodeJs className="text-3xl text-green-500" /> },
-        { name: 'TailwindCSS', icon: <SiTailwindcss className="text-3xl text-sky-300" /> },
-        { name: 'MongoDB', icon: <SiMongodb className="text-3xl text-emerald-400" /> },
-        { name: 'JavaScript', icon: <FaJsSquare className="text-3xl text-yellow-400" /> },
-        { name: 'HTML5', icon: <FaHtml5 className="text-3xl text-orange-400" /> },
-        { name: 'CSS3', icon: <FaCss3Alt className="text-3xl text-blue-400" /> },
-        { name: 'Angular', icon: <FaAngular className="text-3xl text-red-400" /> },
-        { name: 'Python', icon: <FaPython className="text-3xl text-green-400" /> },
-        { name: 'Java', icon: <FaJava className="text-3xl text-orange-500" /> },
-        { name: 'Next.js', icon: <SiNextdotjs className="text-3xl text-white" /> },
-        { name: 'Flutter', icon: <SiFlutter className="text-3xl text-sky-400" /> },
-        { name: 'Kotlin', icon: <SiKotlin className="text-3xl text-violet-400" /> },
+        { name: 'React', icon: <FaReact className="text-2xl sm:text-3xl text-cyan-400" /> },
+        { name: 'Node.js', icon: <FaNodeJs className="text-2xl sm:text-3xl text-green-500" /> },
+        { name: 'TailwindCSS', icon: <SiTailwindcss className="text-2xl sm:text-3xl text-sky-300" /> },
+        { name: 'MongoDB', icon: <SiMongodb className="text-2xl sm:text-3xl text-emerald-400" /> },
+        { name: 'JavaScript', icon: <FaJsSquare className="text-2xl sm:text-3xl text-yellow-400" /> },
+        { name: 'HTML5', icon: <FaHtml5 className="text-2xl sm:text-3xl text-orange-400" /> },
+        { name: 'CSS3', icon: <FaCss3Alt className="text-2xl sm:text-3xl text-blue-400" /> },
+        { name: 'Angular', icon: <FaAngular className="text-2xl sm:text-3xl text-red-400" /> },
+        { name: 'Python', icon: <FaPython className="text-2xl sm:text-3xl text-green-400" /> },
+        { name: 'Java', icon: <FaJava className="text-2xl sm:text-3xl text-orange-500" /> },
+        { name: 'Next.js', icon: <SiNextdotjs className="text-2xl sm:text-3xl text-[var(--color-primary-500)]" /> },
+        { name: 'Flutter', icon: <SiFlutter className="text-2xl sm:text-3xl text-sky-400" /> },
+        { name: 'Kotlin', icon: <SiKotlin className="text-2xl sm:text-3xl text-violet-400" /> },
     ], []);
 
-    useEffect(() => {
-        const container = containerRef.current;
-        const contentWidth = container.scrollWidth;
-        container.style.width = `${contentWidth}px`;
-    }, [technologies]);
+    const animate = useCallback(() => {
+        if (!scrollContainerRef.current || isDraggingRef.current) return;
 
-    useEffect(() => {
-        let animationFrameId = null;
-        let autoScrollPosition = 0;
-        let targetScrollPosition = 0;
-        let velocity = 0;
+        const scrollSpeed = 0.5;
+        const container = scrollContainerRef.current;
+        const maxScroll = container.scrollWidth / 2;
 
-        const autoScroll = () => {
-            targetScrollPosition += scrollSpeed;
-            if (targetScrollPosition >= containerRef.current.scrollWidth) {
-                targetScrollPosition = 0;
-                autoScrollPosition = 0;
-            } else if (targetScrollPosition < 0) {
-                targetScrollPosition = containerRef.current.scrollWidth;
-                autoScrollPosition = containerRef.current.scrollWidth;
+        scrollPositionRef.current += scrollSpeed;
+
+        if (scrollPositionRef.current >= maxScroll) {
+            scrollPositionRef.current = 0;
+        }
+
+        container.style.transform = `translateX(-${scrollPositionRef.current}px)`;
+        animationRef.current = requestAnimationFrame(animate);
+    }, []);
+
+    // Pause on hover
+    const handleMouseEnter = useCallback(() => {
+        if (animationRef.current) {
+            cancelAnimationFrame(animationRef.current);
+        }
+    }, []);
+
+    const handleMouseLeave = useCallback(() => {
+        if (!isDraggingRef.current) {
+            animationRef.current = requestAnimationFrame(animate);
+        }
+    }, [animate]);
+
+    // Touch/Swipe handlers
+    const handleTouchStart = useCallback((e) => {
+        isDraggingRef.current = true;
+        touchStartRef.current = e.touches[0].clientX;
+        if (animationRef.current) {
+            cancelAnimationFrame(animationRef.current);
+        }
+    }, []);
+
+    const handleTouchMove = useCallback((e) => {
+        if (!isDraggingRef.current || !scrollContainerRef.current) return;
+
+        touchCurrentRef.current = e.touches[0].clientX;
+        const diff = touchStartRef.current - touchCurrentRef.current;
+        
+        const container = scrollContainerRef.current;
+        const maxScroll = container.scrollWidth / 2;
+        
+        scrollPositionRef.current += diff * 0.8;
+
+        if (scrollPositionRef.current >= maxScroll) {
+            scrollPositionRef.current = 0;
+        } else if (scrollPositionRef.current < 0) {
+            scrollPositionRef.current = maxScroll - 1;
+        }
+
+        container.style.transform = `translateX(-${scrollPositionRef.current}px)`;
+        touchStartRef.current = touchCurrentRef.current;
+    }, []);
+
+    const handleTouchEnd = useCallback(() => {
+        isDraggingRef.current = false;
+        setTimeout(() => {
+            if (!isDraggingRef.current) {
+                animationRef.current = requestAnimationFrame(animate);
             }
+        }, 500);
+    }, [animate]);
 
-            velocity = (targetScrollPosition - autoScrollPosition) * damping;
-            autoScrollPosition += velocity;
+    // Mouse drag handlers for desktop
+    const handleMouseDown = useCallback((e) => {
+        isDraggingRef.current = true;
+        touchStartRef.current = e.clientX;
+        if (animationRef.current) {
+            cancelAnimationFrame(animationRef.current);
+        }
+        e.preventDefault();
+    }, []);
 
-            setScrollPosition(autoScrollPosition);
-            animationControls.start({
-                x: -autoScrollPosition,
-                transition: { duration: 0, ease: 'linear' },
-            });
+    const handleMouseMove = useCallback((e) => {
+        if (!isDraggingRef.current || !scrollContainerRef.current) return;
 
-            animationFrameId = requestAnimationFrame(autoScroll);
-        };
+        touchCurrentRef.current = e.clientX;
+        const diff = touchStartRef.current - touchCurrentRef.current;
+        
+        const container = scrollContainerRef.current;
+        const maxScroll = container.scrollWidth / 2;
+        
+        scrollPositionRef.current += diff * 0.8;
 
-        animationFrameId = requestAnimationFrame(autoScroll);
+        if (scrollPositionRef.current >= maxScroll) {
+            scrollPositionRef.current = 0;
+        } else if (scrollPositionRef.current < 0) {
+            scrollPositionRef.current = maxScroll - 1;
+        }
+
+        container.style.transform = `translateX(-${scrollPositionRef.current}px)`;
+        touchStartRef.current = touchCurrentRef.current;
+    }, []);
+
+    const handleMouseUp = useCallback(() => {
+        isDraggingRef.current = false;
+        setTimeout(() => {
+            if (!isDraggingRef.current) {
+                animationRef.current = requestAnimationFrame(animate);
+            }
+        }, 500);
+    }, [animate]);
+
+    useEffect(() => {
+        animationRef.current = requestAnimationFrame(animate);
 
         return () => {
-            cancelAnimationFrame(animationFrameId);
+            if (animationRef.current) {
+                cancelAnimationFrame(animationRef.current);
+            }
         };
-    }, [scrollSpeed, animationControls]);
+    }, [animate]);
+
+    // Handle mouse up globally when dragging
+    useEffect(() => {
+        const handleGlobalMouseUp = () => {
+            if (isDraggingRef.current) {
+                isDraggingRef.current = false;
+                setTimeout(() => {
+                    if (!isDraggingRef.current) {
+                        animationRef.current = requestAnimationFrame(animate);
+                    }
+                }, 500);
+            }
+        };
+
+        window.addEventListener('mouseup', handleGlobalMouseUp);
+        return () => window.removeEventListener('mouseup', handleGlobalMouseUp);
+    }, [animate]);
 
     return (
-        <div className="bg-gradient-to-b from-[var(--color-primary-800)] via-[var(--color-primary-600)] to-[var(--color-primary-900)] py-20 overflow-hidden">
-            <div className="w-full text-center mb-12 px-4">
-                <h2 className="text-4xl font-bold text-white drop-shadow-sm">Our Technology Stack</h2>
-                <p className="mt-4 text-lg text-gray-300 max-w-xl mx-auto">
+        <section 
+            className="bg-transparent py-12 sm:py-16 lg:py-20 overflow-hidden relative"
+            aria-label="Technology Stack"
+        >
+            {/* Header */}
+            <div className="w-full text-center mb-8 sm:mb-12 px-4">
+                <div className="inline-block">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary-500)] mb-4 relative px-2">
+                        Our Technology Stack
+                        <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
+                    </h2>
+                </div>
+                <p className="mt-6 text-base sm:text-lg text-[var(--color-primary-500)] dark:text-[var(--color-primary-400)] max-w-2xl mx-auto px-4">
                     Technologies we leverage to build robust and scalable solutions.
                 </p>
             </div>
 
-            <div className="w-full flex justify-center">
-                <motion.div
-                    ref={containerRef}
-                    className="flex items-center space-x-6 md:space-x-8 lg:space-x-10 whitespace-nowrap"
-                    style={{ x: 0 }}
-                    animate={animationControls}
+            {/* Scrolling Container */}
+            <div 
+                className="w-full relative overflow-hidden"
+                role="region"
+                aria-label="Scrolling technology icons - Swipe or drag to browse"
+            >
+                {/* Gradient Fade Edges */}
+                <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-[var(--color-background)] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-l from-[var(--color-background)] to-transparent z-10 pointer-events-none"></div>
+
+                {/* Scrolling Content */}
+                <div 
+                    className="py-4 select-none cursor-grab active:cursor-grabbing overflow-hidden"
+                    onMouseEnter={handleMouseEnter}
+                    onMouseLeave={handleMouseLeave}
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    style={{ WebkitOverflowScrolling: 'touch' }}
                 >
+                    <div
+                        ref={scrollContainerRef}
+                        className="flex items-center gap-4 sm:gap-6 lg:gap-8"
+                        style={{ 
+                            willChange: 'transform', 
+                            userSelect: 'none', 
+                            WebkitUserSelect: 'none', 
+                            msUserSelect: 'none',
+                            WebkitTouchCallout: 'none',
+                            touchAction: 'pan-y pinch-zoom'
+                        }}
+                    >
+                        {/* First set of technologies */}
                     {technologies.map((tech, index) => (
-                        <TechIcon key={index} icon={tech.icon} name={tech.name} />
+                            <TechIcon key={`first-${index}`} icon={tech.icon} name={tech.name} />
                     ))}
+                        {/* Duplicate set for infinite scroll */}
                     {technologies.map((tech, index) => (
-                        <TechIcon key={`dup-${index}`} icon={tech.icon} name={tech.name} />
+                            <TechIcon key={`second-${index}`} icon={tech.icon} name={tech.name} />
                     ))}
-                </motion.div>
+                    </div>
             </div>
         </div>
+        </section>
     );
 };
 

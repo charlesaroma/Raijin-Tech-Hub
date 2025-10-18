@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react"; // Lottie animation import
-import { motion, AnimatePresence } from "framer-motion"; // Framer Motion for text animations
-import { Link } from "react-router-dom"; // React Router Link import
+import { useState, useEffect, useMemo } from "react";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-  const services = [
+  const services = useMemo(() => [
     "Custom Software & Web Development",
     "IT Consultancy & Strategy",
     "Cloud Solutions & Migration",
     "UI/UX Design & Development",
     "Digital Transformation & Automation",
-  ];
+  ], []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -20,7 +20,7 @@ const HeroSection = () => {
     }, 2000);
 
     return () => clearInterval(interval);
-  }, [services.length]);
+  }, [services]);
 
   return (
     <section className="relative w-full h-[calc(100vh-10vh)] md:h-full px-4 md:px-6 lg:px-[5%] bg-[var(--color-accent-300)]">

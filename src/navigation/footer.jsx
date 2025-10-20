@@ -98,7 +98,7 @@ const Footer = () => {
                 <FaInstagram className="text-xl text-pink-400 group-hover:text-white transition-colors duration-300" />
               </a>
               <a
-                href="https://www.linkedin.com/in/charles-aroma-8955b62a2"
+                href="https://www.linkedin.com/company/raijin-technologies-ug/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-blue-600 flex items-center justify-center transition-all duration-300 cursor-pointer"

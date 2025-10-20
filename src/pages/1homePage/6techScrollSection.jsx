@@ -39,12 +39,8 @@ const TechScrollSection = () => {
         { name: 'JavaScript', icon: <FaJsSquare className="text-2xl sm:text-3xl text-yellow-400" /> },
         { name: 'HTML5', icon: <FaHtml5 className="text-2xl sm:text-3xl text-orange-400" /> },
         { name: 'CSS3', icon: <FaCss3Alt className="text-2xl sm:text-3xl text-blue-400" /> },
-        { name: 'Angular', icon: <FaAngular className="text-2xl sm:text-3xl text-red-400" /> },
-        { name: 'Python', icon: <FaPython className="text-2xl sm:text-3xl text-green-400" /> },
-        { name: 'Java', icon: <FaJava className="text-2xl sm:text-3xl text-orange-500" /> },
         { name: 'Next.js', icon: <SiNextdotjs className="text-2xl sm:text-3xl text-[var(--color-primary-500)]" /> },
-        { name: 'Flutter', icon: <SiFlutter className="text-2xl sm:text-3xl text-sky-400" /> },
-        { name: 'Kotlin', icon: <SiKotlin className="text-2xl sm:text-3xl text-violet-400" /> },
+        { name: 'Flutter', icon: <SiFlutter className="text-2xl sm:text-3xl text-sky-400" /> },        
     ], []);
 
     const animate = useCallback(() => {

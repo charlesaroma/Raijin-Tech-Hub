@@ -1,11 +1,11 @@
-import { FaLaptopCode, FaCloud, FaBrush, FaChartLine, FaCogs, FaUsers, FaCertificate } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
 
 const services = [
   {
     title: 'Website & Software Development',
     description:
       'Bring your ideas to life with custom websites and mobile applications tailored to your business needs and user expectations.',
-    icon: <FaLaptopCode className="text-4xl sm:text-5xl" />,
+    icon: <Icon icon="mdi:laptop-account" className="text-3xl sm:text-4xl" />,
     gridClass: 'col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-2',
     size: 'large',
   },
@@ -13,7 +13,7 @@ const services = [
     title: 'Backup & Recovery',
     description:
       'Ensure your data is safe and accessible with robust backup and recovery solutions.',
-    icon: <FaCloud className="text-3xl sm:text-4xl" />,
+    icon: <Icon icon="mdi:cloud-upload" className="text-2xl sm:text-3xl" />,
     gridClass: 'col-span-1',
     size: 'small',
   },
@@ -21,7 +21,7 @@ const services = [
     title: 'Graphics Design & Branding',
     description:
       'Elevate your brand with professional graphic design services and complete brand identities.',
-    icon: <FaBrush className="text-3xl sm:text-4xl" />,
+    icon: <Icon icon="mdi:palette" className="text-2xl sm:text-3xl" />,
     gridClass: 'col-span-1',
     size: 'small',
   },
@@ -29,7 +29,7 @@ const services = [
     title: 'SEO Optimization',
     description:
       'Improve your online visibility and drive traffic to your website with expert SEO strategies and optimization techniques.',
-    icon: <FaChartLine className="text-3xl sm:text-4xl" />,
+    icon: <Icon icon="mdi:chart-line" className="text-2xl sm:text-3xl" />,
     gridClass: 'col-span-1 sm:col-span-2 lg:col-span-1 lg:row-span-2',
     size: 'tall',
   },
@@ -37,7 +37,7 @@ const services = [
     title: 'IT Consultancy',
     description:
       'Get expert advice and guidance on leveraging technology to streamline operations, reduce costs, and achieve your goals.',
-    icon: <FaCogs className="text-3xl sm:text-4xl" />,
+    icon: <Icon icon="mdi:cog-outline" className="text-2xl sm:text-3xl" />,
     gridClass: 'col-span-1 sm:col-span-2 lg:col-span-2 lg:row-span-1',
     size: 'wide',
   },
@@ -45,7 +45,7 @@ const services = [
     title: 'Licensed Software Solutions',
     description:
       'Access premium software licenses and solutions tailored to your business needs with flexible pricing and expert implementation support.',
-    icon: <FaCertificate className="text-3xl sm:text-4xl" />,
+    icon: <Icon icon="mdi:certificate" className="text-2xl sm:text-3xl" />,
     gridClass: 'col-span-1',
     size: 'small',
   },
@@ -53,7 +53,7 @@ const services = [
     title: 'Dedicated Support',
     description:
       'Round-the-clock support to ensure your systems run smoothly and efficiently.',
-    icon: <FaUsers className="text-3xl sm:text-4xl" />,
+    icon: <Icon icon="mdi:account-group" className="text-2xl sm:text-3xl" />,
     gridClass: 'col-span-1',
     size: 'small',
   },
@@ -61,17 +61,17 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-transparent relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="py-8 sm:py-12 lg:py-16 bg-[var(--color-bg-secondary)] relative overflow-hidden">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6">
         {/* Header */}
-        <div className="text-center mb-10 sm:mb-12 lg:mb-16">
+        <div className="text-center mb-8 sm:mb-10 lg:mb-12">
           <div className="inline-block">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary-500)] mb-4 relative px-2">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-primary-600)] mb-3 relative px-2">
               Our Services
-              <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
+              <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
             </h2>
           </div>
-          <p className="mt-6 text-base sm:text-lg text-[var(--color-primary-500)] dark:text-[var(--color-primary-400)] max-w-2xl mx-auto px-4">
+          <p className="mt-4 text-xs sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
             Discover the range of services we offer to help your business grow and thrive in the digital age.
         </p>
       </div>
@@ -89,14 +89,15 @@ const ServicesSection = () => {
                 className={`
                   group relative
                   ${service.gridClass}
-                  border-2 border-[var(--color-primary-500)]/20
+                  bg-[var(--color-bg-card)]
                   rounded-2xl sm:rounded-3xl
                   p-5 sm:p-6 ${isLarge ? 'lg:p-10' : isWide ? 'lg:p-8' : ''}
                   transition-all duration-500 ease-out
-                  hover:border-[var(--color-primary-500)]
-                  hover:-translate-y-1 sm:hover:-translate-y-2
                   cursor-pointer
-                  backdrop-blur-sm
+                  shadow-[10px_10px_20px_var(--shadow-dark),-10px_-10px_20px_var(--shadow-light)]
+                  hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]
+                  hover:translate-y-1
+                  active:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]
                 `}
               >
                 {/* Animated border glow on hover */}
@@ -134,8 +135,8 @@ const ServicesSection = () => {
 
                   {/* Title */}
                   <h3 className={`
-                    text-base sm:text-lg ${isLarge ? 'lg:text-2xl lg:mb-3' : 'lg:text-xl'} 
-                    mb-2
+                    text-sm sm:text-base ${isLarge ? 'lg:text-xl lg:mb-2' : 'lg:text-lg'} 
+                    mb-1.5
                     font-bold text-[var(--color-primary-500)] 
                     transition-all duration-300 group-hover:translate-x-1
                     line-clamp-2
@@ -145,7 +146,7 @@ const ServicesSection = () => {
 
                   {/* Description */}
                   <p className={`
-                    text-xs sm:text-sm ${isLarge ? 'lg:text-base' : ''}
+                    text-[10px] sm:text-xs ${isLarge ? 'lg:text-sm' : ''}
                     ${isLarge ? 'line-clamp-4 sm:line-clamp-5' : isWide ? 'line-clamp-2 sm:line-clamp-3' : isTall ? 'line-clamp-4 sm:line-clamp-6' : 'line-clamp-2 sm:line-clamp-3'}
                     text-[var(--color-primary-500)]/80 dark:text-[var(--color-primary-400)]/80 
                     leading-relaxed

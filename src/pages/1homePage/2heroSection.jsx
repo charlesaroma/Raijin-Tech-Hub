@@ -52,24 +52,24 @@ const HeroSection = () => {
       <div className="relative flex flex-col-reverse lg:flex-row w-full min-h-screen pb-8 lg:pb-0 items-center justify-center lg:justify-between gap-8">
         
         {/* Left Section: Text Content, CTA */}
-        <div className="space-y-6 lg:space-y-8 max-w-2xl text-center lg:text-left z-10">
+        <div className="space-y-4 lg:space-y-5 max-w-2xl text-center lg:text-left z-10">
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border-2 border-[var(--color-primary-500)]/30 bg-[var(--color-primary-500)]/5 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 border-[var(--color-primary-500)]/30 bg-[var(--color-primary-500)]/5 backdrop-blur-sm"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-primary-500)] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[var(--color-primary-500)]"></span>
+              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[var(--color-primary-500)]"></span>
             </span>
-            <span className="text-sm font-medium text-[var(--color-primary-600)]">Transforming Ideas into Digital Reality</span>
+            <span className="text-xs font-medium text-[var(--color-primary-600)]">Transforming Ideas into Digital Reality</span>
           </motion.div>
 
           {/* Main Title with Gradient */}
           <motion.h1
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
@@ -83,7 +83,7 @@ const HeroSection = () => {
 
           {/* Description */}
           <motion.p
-            className="text-base sm:text-lg md:text-xl font-normal text-[var(--color-primary-500)]/80 leading-relaxed"
+            className="text-xs sm:text-sm md:text-base font-normal text-[var(--color-primary-500)]/80 leading-relaxed"
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.4 }}
@@ -98,9 +98,9 @@ const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
           >
-            <div className="flex items-center justify-center lg:justify-start gap-3 min-h-[60px]">
-              <div className="flex items-center justify-center w-10 h-10 rounded-full bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white shadow-lg">
-                <span className="text-lg">⚡</span>
+            <div className="flex items-center justify-center lg:justify-start gap-2 min-h-[50px]">
+              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white shadow-lg">
+                <span className="text-sm">⚡</span>
               </div>
               <div className="flex-1 max-w-md">
               <AnimatePresence mode="wait">
@@ -110,7 +110,7 @@ const HeroSection = () => {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
                   transition={{ duration: 0.5 }}
-                    className="text-lg lg:text-xl font-bold text-[var(--color-primary-600)]"
+                    className="text-sm lg:text-base font-bold text-[var(--color-primary-600)]"
                 >
                   {services[currentIndex]}
                 </motion.div>
@@ -121,53 +121,32 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 items-center lg:items-start justify-center lg:justify-start"
+            className="flex flex-col sm:flex-row gap-3 items-center lg:items-start justify-center lg:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 1.3 }}
           >
             <Link
               to="/discover"
-              className="group relative px-8 py-4 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.4)] hover:scale-105 inline-flex items-center gap-2 cursor-pointer"
+              className="group relative px-5 py-2.5 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-xs transition-all duration-300 inline-flex items-center gap-2 cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
             >
-              <span className="relative z-10">Discover Our Expertise</span>
-              <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span>Discover Our Expertise</span>
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
               </svg>
-              <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-600)] to-[var(--color-primary-700)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </Link>
 
             <Link
               to="/contact"
-              className="group relative px-8 py-4 bg-transparent border-2 border-[var(--color-primary-500)] text-[var(--color-primary-600)] rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 hover:bg-[var(--color-primary-500)] hover:text-white hover:shadow-lg inline-flex items-center gap-2 cursor-pointer"
+              className="group relative px-5 py-2.5 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-xs transition-all duration-300 inline-flex items-center gap-2 cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
             >
               <span className="relative z-10">Get in Touch</span>
-              <svg className="w-5 h-5 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </Link>
           </motion.div>
 
-          {/* Trust Indicators */}
-          <motion.div
-            className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4 border-t border-[var(--color-primary-500)]/10"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 1 }}
-          >
-            <div className="flex items-center gap-2">
-              <div className="flex -space-x-2">
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--color-primary-400)] to-[var(--color-primary-600)] border-2 border-white"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--color-primary-500)] to-[var(--color-primary-700)] border-2 border-white"></div>
-                <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[var(--color-primary-600)] to-[var(--color-primary-800)] border-2 border-white"></div>
-              </div>
-              <span className="text-sm font-medium text-[var(--color-primary-500)]">50+ Happy Clients</span>
-            </div>
-            <div className="flex items-center gap-1">
-              <span className="text-yellow-500">★★★★★</span>
-              <span className="text-sm font-medium text-[var(--color-primary-500)]">5.0 Rating</span>
-            </div>
-          </motion.div>
         </div>
 
         {/* Right Section: Lottie Animation with Enhanced Container */}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaWhatsapp, FaInstagram, FaLinkedin, FaFacebook, FaEnvelope, FaArrowRight, FaHeart } from "react-icons/fa";
+import { Icon } from '@iconify/react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,24 +21,24 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-2xl lg:text-3xl font-bold mb-4 bg-gradient-to-r from-[var(--color-accent-100)] to-[var(--color-primary-400)] bg-clip-text text-transparent">
+            <h3 className="text-lg lg:text-xl font-bold mb-3 bg-gradient-to-r from-[var(--color-accent-100)] to-[var(--color-primary-400)] bg-clip-text text-transparent">
               Raijin Tech Hub
             </h3>
-            <p className="text-[var(--color-accent-400)] leading-relaxed mb-6">
+            <p className="text-xs text-[var(--color-accent-400)] leading-relaxed mb-4">
               We are dedicated to providing innovative digital solutions for businesses. Our team specializes in custom software, IT consultancy, and cutting-edge technology implementations.
             </p>
             
             {/* Contact Info */}
-            <div className="space-y-3">
-              <div className="flex items-center gap-3 group">
-                <div className="w-10 h-10 rounded-lg bg-[var(--color-primary-800)] flex items-center justify-center group-hover:bg-[var(--color-primary-700)] transition-colors duration-300">
-                  <FaEnvelope className="text-[var(--color-primary-400)]" />
+            <div className="space-y-2">
+              <div className="flex items-center gap-2 group">
+                <div className="w-8 h-8 rounded-lg bg-[var(--color-primary-800)] flex items-center justify-center group-hover:bg-[var(--color-primary-700)] transition-colors duration-300">
+                  <Icon icon="mdi:email" className="text-xs text-[var(--color-primary-400)]" />
                 </div>
                 <div>
-                  <p className="text-xs text-[var(--color-accent-500)] mb-1">Email Us</p>
+                  <p className="text-[10px] text-[var(--color-accent-500)] mb-0.5">Email Us</p>
                   <a 
                     href="mailto:raijintechug@gmail.com" 
-                    className="text-[var(--color-accent-100)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 font-medium cursor-pointer"
+                    className="text-xs text-[var(--color-accent-100)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 font-medium cursor-pointer"
                   >
                     raijintechug@gmail.com
                   </a>
@@ -49,10 +49,10 @@ const Footer = () => {
 
           {/* Services Section */}
           <div>
-            <h4 className="text-lg font-bold mb-4 text-[var(--color-accent-100)]">
+            <h4 className="text-sm font-bold mb-3 text-[var(--color-accent-100)]">
               Our Services
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2">
               {[
                 "Custom Software & Web Development",
                 "IT Consultancy & Strategy",
@@ -63,9 +63,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to="/discover" 
-                    className="group flex items-center gap-2 text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-all duration-300 cursor-pointer"
+                    className="group flex items-center gap-2 text-xs text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-all duration-300 cursor-pointer"
                   >
-                    <FaArrowRight className="text-xs opacity-0 group-hover:opacity-100 transition-all duration-300 -ml-4 group-hover:ml-0" />
+                    <Icon icon="mdi:arrow-right" className="text-[10px] opacity-0 group-hover:opacity-100 transition-all duration-300 -ml-4 group-hover:ml-0" />
                     <span className="group-hover:translate-x-1 transition-transform duration-300">{service}</span>
                   </Link>
                 </li>
@@ -75,69 +75,75 @@ const Footer = () => {
 
           {/* Social Media Section */}
           <div>
-            <h4 className="text-lg font-bold mb-6 text-[var(--color-accent-100)]">
+            <h4 className="text-sm font-bold mb-3 text-[var(--color-accent-100)]">
               Follow Us
             </h4>
-            <div className="flex gap-4">
+            <div className="flex gap-3">
               <a
                 href="https://wa.me/256777982066"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-green-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="group w-9 h-9 rounded-lg bg-[var(--color-primary-800)] hover:bg-green-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="WhatsApp"
               >
-                <FaWhatsapp className="text-xl text-green-400 group-hover:text-white transition-colors duration-300" />
+                <Icon icon="mdi:whatsapp" className="text-base text-green-400 group-hover:text-white transition-colors duration-300" />
               </a>
               <a
                 href="https://www.instagram.com/raijin_tech_hub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="group w-9 h-9 rounded-lg bg-[var(--color-primary-800)] hover:bg-gradient-to-br hover:from-purple-600 hover:to-pink-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Instagram"
               >
-                <FaInstagram className="text-xl text-pink-400 group-hover:text-white transition-colors duration-300" />
+                <Icon icon="mdi:instagram" className="text-base text-pink-400 group-hover:text-white transition-colors duration-300" />
               </a>
               <a
                 href="https://www.linkedin.com/company/raijin-technologies-ug/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-blue-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="group w-9 h-9 rounded-lg bg-[var(--color-primary-800)] hover:bg-blue-600 flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="LinkedIn"
               >
-                <FaLinkedin className="text-xl text-blue-400 group-hover:text-white transition-colors duration-300" />
+                <Icon icon="mdi:linkedin" className="text-base text-blue-400 group-hover:text-white transition-colors duration-300" />
               </a>
               <a
                 href="https://www.facebook.com/GVNG8"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group w-12 h-12 rounded-lg bg-[var(--color-primary-800)] hover:bg-blue-700 flex items-center justify-center transition-all duration-300 cursor-pointer"
+                className="group w-9 h-9 rounded-lg bg-[var(--color-primary-800)] hover:bg-blue-700 flex items-center justify-center transition-all duration-300 cursor-pointer"
                 aria-label="Facebook"
               >
-                <FaFacebook className="text-xl text-blue-500 group-hover:text-white transition-colors duration-300" />
+                <Icon icon="mdi:facebook" className="text-base text-blue-500 group-hover:text-white transition-colors duration-300" />
               </a>
             </div>
           </div>
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-12 pt-8 border-t border-[var(--color-primary-800)]">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-[var(--color-accent-500)] text-sm flex items-center gap-2">
+        <div className="mt-8 pt-6 border-t border-[var(--color-primary-800)]">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3">
+            <p className="text-[var(--color-accent-500)] text-xs flex items-center gap-2">
               &copy; {currentYear} Raijin Tech Hub. All rights reserved. Made with{" "}
-              <FaHeart className="text-red-500 animate-pulse" /> by Raijin Team
+              <Icon icon="mdi:heart" className="text-red-500 text-[10px] animate-pulse" /> by Charles Aroma
             </p>
-            <div className="flex gap-6 text-sm">
+            <div className="flex gap-4 text-xs">
               <Link 
-                to="/company" 
+                to="/privacy-policy" 
                 className="text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 cursor-pointer"
               >
                 Privacy Policy
               </Link>
               <Link 
-                to="/company" 
+                to="/terms-of-service" 
                 className="text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 cursor-pointer"
               >
                 Terms of Service
+              </Link>
+              <Link 
+                to="/company" 
+                className="text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 cursor-pointer"
+              >
+                Legal
               </Link>
             </div>
           </div>

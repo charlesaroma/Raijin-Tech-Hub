@@ -1,30 +1,71 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, lazy, Suspense } from "react";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./navigation/navbar";
 import ScrollToTop from "./navigation/scrolltoTop";
-import Home from "./pages/1homePage/1homePage";
-import Company from "./pages/2companyPage/1companyPage";
-import Discover from "./pages/3DiscoverPage/1discoverpage";
-import Contact from "./pages/4contactPage/contactPage";
 import Footer from "./navigation/footer";
-import RequestQuote from "./navigation/requestQuote";
+import AIChatWidget from "./components/AIChatWidget";
+import { logPageView } from "./utils/analytics";
+
+// Lazy load pages for code splitting
+const Home = lazy(() => import("./pages/1homePage/1homePage"));
+const Company = lazy(() => import("./pages/2companyPage/1companyPage"));
+const Service = lazy(() => import("./pages/3servicePage/1servicePage"));
+const Contact = lazy(() => import("./pages/4contactPage/1contactPage"));
+const Portfolio = lazy(() => import("./pages/5portfolioPage/1portfolioPage"));
+const Gallery = lazy(() => import("./pages/6galleryPage/1galleryPage"));
+const About = lazy(() => import("./pages/7aboutPage/1aboutPage"));
+const FAQ = lazy(() => import("./pages/8faqPage/1faqPage"));
+const PrivacyPolicy = lazy(() => import("./pages/9privacyPage/1privacyPage"));
+const TermsOfService = lazy(() => import("./pages/10termsPage/1termsPage"));
+const RequestQuote = lazy(() => import("./navigation/requestQuote"));
+
+// Component to track page views
+function Analytics() {
+  const location = useLocation();
+
+  useEffect(() => {
+    logPageView(location.pathname + location.search);
+  }, [location]);
+
+  return null;
+}
+
+// Loading component
+const PageLoader = () => (
+  <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg-primary)]">
+    <div className="text-center">
+      <div className="w-16 h-16 border-4 border-[var(--color-primary-600)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-[var(--color-primary-600)] font-semibold text-xs">Loading...</p>
+    </div>
+  </div>
+);
 
 function App() {
   return (
     <BrowserRouter>
       <div className="w-full overflow-x-hidden">
+        <Analytics />
         <ScrollToTop />
         <Navbar />
-        <div className="w-full mt-[10vh] md:mt-[12vh] lg:mt-[13vh] bg-[var(--color-accent-300)] min-h-screen flex flex-col items-center">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/company" element={<Company />} />
-            <Route path="/discover" element={<Discover />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/request-quote" element={<RequestQuote />} />
-          </Routes>
+        <div className="w-full mt-[60px] bg-[var(--color-bg-primary)] min-h-screen flex flex-col items-center">
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/company" element={<Company />} />
+              <Route path="/service" element={<Service />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/faq" element={<FAQ />} />
+              <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route path="/terms-of-service" element={<TermsOfService />} />
+              <Route path="/request-quote" element={<RequestQuote />} />
+            </Routes>
+          </Suspense>
         </div>
         <Footer />
+        <AIChatWidget />
       </div>
     </BrowserRouter>
   );

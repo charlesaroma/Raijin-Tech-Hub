@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import emailjs from 'emailjs-com';
-import { FaUser, FaEnvelope, FaCommentDots, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
+import { Icon } from '@iconify/react';
 import SEO from '../../components/SEO';
 import { BreadcrumbStructuredData } from '../../components/StructuredData';
 
@@ -88,7 +88,7 @@ const Contact = () => {
         `}
       </style>
 
-      <div className="relative max-w-4xl mx-auto">
+      <div className="relative max-w-5xl mx-auto">
         {/* Header Section */}
         <motion.div 
           className="text-center mb-12 lg:mb-16"
@@ -96,11 +96,11 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--color-primary-600)] mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--color-primary-600)] mb-4">
             Get in Touch
           </h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent mx-auto mb-6"></div>
-          <p className="text-base sm:text-lg md:text-xl text-[var(--color-primary-500)]/80 max-w-2xl mx-auto leading-relaxed">
+          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent mx-auto mb-6"></div>
+          <p className="text-xs sm:text-sm text-[var(--color-primary)] max-w-2xl mx-auto leading-relaxed">
             We would love to hear from you. Drop us a message and we&apos;ll get back to you as soon as possible!
           </p>
         </motion.div>
@@ -112,23 +112,7 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="group relative"
         >
-          <div className="relative rounded-3xl p-8 lg:p-12 border-2 border-[var(--color-primary-500)]/20 hover:border-[var(--color-primary-500)]/40 transition-all duration-500 overflow-hidden bg-transparent">
-            {/* Animated border glow */}
-            <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <div className="absolute inset-0 rounded-3xl shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.2)]"></div>
-            </div>
-
-            {/* Grid pattern overlay */}
-            <div className="absolute inset-0 opacity-[0.02] group-hover:opacity-[0.05] transition-opacity duration-500 rounded-3xl" 
-                 style={{
-                   backgroundImage: `linear-gradient(var(--color-primary-500) 1px, transparent 1px), linear-gradient(90deg, var(--color-primary-500) 1px, transparent 1px)`,
-                   backgroundSize: '20px 20px'
-                 }}>
-            </div>
-
-            {/* Gradient orb effects */}
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-[var(--color-primary-500)]/0 group-hover:bg-[var(--color-primary-500)]/10 rounded-full blur-3xl transition-all duration-700"></div>
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[var(--color-primary-500)]/0 group-hover:bg-[var(--color-primary-500)]/10 rounded-full blur-3xl transition-all duration-700 delay-100"></div>
+          <div className="relative rounded-3xl p-8 lg:p-12 bg-[var(--color-bg-card)] transition-all duration-300 overflow-hidden shadow-[12px_12px_24px_var(--shadow-dark),-12px_-12px_24px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]">
 
             {/* Content */}
             <div className="relative z-10">
@@ -141,13 +125,13 @@ const Contact = () => {
                 >
                   <div className="flex justify-center mb-6">
                     <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-lg">
-                      <FaCheckCircle className="text-4xl text-white" />
+                      <Icon icon="mdi:check-circle" className="text-4xl text-white" />
                     </div>
                   </div>
-                  <h3 className="text-2xl lg:text-3xl font-bold text-[var(--color-primary-600)] mb-4">
+                  <h3 className="text-xl lg:text-2xl font-bold text-[var(--color-primary-600)] mb-4">
                     Thank You for Your Message!
                   </h3>
-                  <p className="text-base lg:text-lg text-[var(--color-primary-500)]/80">
+                  <p className="text-sm lg:text-base text-[var(--color-primary-600)]">
                     We&apos;ve received your message and will get back to you soon.
                   </p>
                 </motion.div>
@@ -155,8 +139,8 @@ const Contact = () => {
                 <form onSubmit={formik.handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-                      <FaUser className="text-[var(--color-primary-500)]" />
+                    <label htmlFor="name" className="flex items-center gap-2 text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+                      <Icon icon="mdi:account" className="text-sm text-[var(--color-primary-500)]" />
                       Your Name
                     </label>
                     <div className="relative">
@@ -167,7 +151,7 @@ const Contact = () => {
                         value={formik.values.name}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-4 bg-transparent border-2 border-[var(--color-primary-500)]/30 rounded-xl focus:outline-none focus:border-[var(--color-primary-500)] transition-all duration-300 text-[var(--color-primary-600)] placeholder:text-[var(--color-primary-500)]/40"
+                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-xs placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -184,8 +168,8 @@ const Contact = () => {
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-                      <FaEnvelope className="text-[var(--color-primary-500)]" />
+                    <label htmlFor="email" className="flex items-center gap-2 text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+                      <Icon icon="mdi:email" className="text-sm text-[var(--color-primary-500)]" />
                       Your Email
                     </label>
                     <div className="relative">
@@ -196,7 +180,7 @@ const Contact = () => {
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-4 bg-transparent border-2 border-[var(--color-primary-500)]/30 rounded-xl focus:outline-none focus:border-[var(--color-primary-500)] transition-all duration-300 text-[var(--color-primary-600)] placeholder:text-[var(--color-primary-500)]/40"
+                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-xs placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -213,8 +197,8 @@ const Contact = () => {
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-                      <FaCommentDots className="text-[var(--color-primary-500)]" />
+                    <label htmlFor="message" className="flex items-center gap-2 text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+                      <Icon icon="mdi:message-text" className="text-sm text-[var(--color-primary-500)]" />
                       Your Message
                     </label>
                     <div className="relative">
@@ -224,7 +208,7 @@ const Contact = () => {
                         value={formik.values.message}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-4 bg-transparent border-2 border-[var(--color-primary-500)]/30 rounded-xl focus:outline-none focus:border-[var(--color-primary-500)] transition-all duration-300 text-[var(--color-primary-600)] placeholder:text-[var(--color-primary-500)]/40 resize-none"
+                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-xs placeholder:text-[var(--color-primary-600)] resize-none shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         rows="6"
                         placeholder="Write your message here..."
                       ></textarea>
@@ -245,13 +229,12 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={formik.isSubmitting}
-                      className="group relative px-8 py-4 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white rounded-xl font-semibold text-base overflow-hidden transition-all duration-300 hover:shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.4)] hover:scale-105 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer"
+                      className="group relative px-6 py-3 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-xs overflow-hidden transition-all duration-300 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
                     >
                       <span className="relative z-10">
                         {formik.isSubmitting ? 'Sending...' : 'Send Message'}
                       </span>
-                      <FaPaperPlane className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-                      <div className="absolute inset-0 bg-gradient-to-r from-[var(--color-primary-600)] to-[var(--color-primary-700)] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <Icon icon="mdi:send" className="text-sm transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                     </button>
                   </div>
                 </form>
@@ -267,10 +250,10 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <p className="text-sm text-[var(--color-primary-500)]/60">
+          <p className="text-xs text-[var(--color-primary-600)]">
             You can also reach us via email at{' '}
-            <a href="mailto:contact@raijintechhub.com" className="text-[var(--color-primary-600)] font-semibold hover:text-[var(--color-primary-500)] transition-colors duration-300 cursor-pointer">
-              contact@raijintechhub.com
+            <a href="mailto:raijintechug@gmail.com" className="text-[var(--color-primary-500)] font-semibold hover:text-[var(--color-primary-600)] transition-colors duration-300 cursor-pointer">
+              raijintechug@gmail.com
             </a>
           </p>
         </motion.div>

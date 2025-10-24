@@ -1,0 +1,117 @@
+{
+  "phases": [
+    {
+      "id": 1,
+      "title": "Discovery & Research",
+      "description": "We start by understanding your business goals, target audience, and project requirements through detailed consultations and market research.",
+      "duration": "1-2 weeks",
+      "icon": "mdi:compass",
+      "deliverables": [
+        "Project brief & requirements document",
+        "Competitor analysis report",
+        "User personas & journey maps",
+        "Technical feasibility study"
+      ],
+      "tools": ["Notion", "Google Analytics", "Hotjar"]
+    },
+    {
+      "id": 2,
+      "title": "UI/UX Design",
+      "description": "Our designers create beautiful, intuitive interfaces with wireframes and high-fidelity prototypes in Figma, ensuring excellent user experience.",
+      "duration": "2-3 weeks",
+      "icon": "mdi:palette",
+      "deliverables": [
+        "Wireframes & user flows",
+        "High-fidelity Figma designs",
+        "Design system & style guide",
+        "Interactive prototypes"
+      ],
+      "tools": ["Figma", "Adobe XD", "InVision"]
+    },
+    {
+      "id": 3,
+      "title": "Frontend Development",
+      "description": "We bring designs to life with clean, responsive code using React, modern CSS frameworks, and smooth animations for an engaging user experience.",
+      "duration": "3-5 weeks",
+      "icon": "mdi:code-tags",
+      "deliverables": [
+        "Responsive web pages",
+        "Interactive components",
+        "Smooth animations",
+        "Cross-browser compatibility"
+      ],
+      "tools": ["React", "Tailwind CSS", "GSAP", "Framer Motion"]
+    },
+    {
+      "id": 4,
+      "title": "Backend Development",
+      "description": "We build robust server-side logic, APIs, and database structures to power your application with secure and scalable architecture.",
+      "duration": "3-6 weeks",
+      "icon": "mdi:server",
+      "deliverables": [
+        "RESTful APIs",
+        "Database design & setup",
+        "Authentication system",
+        "Server infrastructure"
+      ],
+      "tools": ["Node.js", "Express", "MongoDB", "PostgreSQL", "Firebase"]
+    },
+    {
+      "id": 5,
+      "title": "Testing & QA",
+      "description": "Rigorous testing ensures your application works flawlessly across all devices, browsers, and scenarios before launch.",
+      "duration": "1-2 weeks",
+      "icon": "mdi:test-tube",
+      "deliverables": [
+        "Functional testing reports",
+        "Performance optimization",
+        "Bug fixes & improvements",
+        "User acceptance testing"
+      ],
+      "tools": ["Jest", "Cypress", "Lighthouse", "BrowserStack"]
+    },
+    {
+      "id": 6,
+      "title": "SEO Optimization",
+      "description": "We optimize your website for search engines to improve visibility, ranking, and organic traffic through technical and on-page SEO.",
+      "duration": "1-2 weeks",
+      "icon": "mdi:magnify",
+      "deliverables": [
+        "Meta tags & structured data",
+        "Sitemap & robots.txt",
+        "Performance optimization",
+        "SEO audit report"
+      ],
+      "tools": ["Google Search Console", "SEMrush", "Lighthouse"]
+    },
+    {
+      "id": 7,
+      "title": "Security & Hosting",
+      "description": "We deploy your application on secure, reliable hosting with SSL certificates, monitoring, and backup systems in place.",
+      "duration": "3-5 days",
+      "icon": "mdi:shield-lock",
+      "deliverables": [
+        "SSL certificate setup",
+        "Cloud hosting deployment",
+        "Security hardening",
+        "Monitoring & alerts"
+      ],
+      "tools": ["AWS", "Vercel", "Netlify", "Cloudflare"]
+    },
+    {
+      "id": 8,
+      "title": "Handover & Support",
+      "description": "We provide comprehensive documentation, training, and ongoing support to ensure you can manage and maintain your platform successfully.",
+      "duration": "Ongoing",
+      "icon": "mdi:handshake",
+      "deliverables": [
+        "Complete documentation",
+        "Admin training sessions",
+        "Maintenance plan",
+        "24/7 support access"
+      ],
+      "tools": ["Documentation Portal", "Support Tickets", "Remote Training"]
+    }
+  ]
+}
+

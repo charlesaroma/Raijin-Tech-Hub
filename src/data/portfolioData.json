@@ -1,0 +1,113 @@
+{
+  "caseStudies": [
+    {
+      "id": 1,
+      "title": "Licensed Software Solutions for Gulu University",
+      "client": "Gulu University",
+      "industry": "Education & Technology",
+      "year": "2024",
+      "duration": "2 months",
+      "image": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&h=600&fit=crop",
+      "technologies": ["Atlas.ti", "NVIVO", "QuickBooks", "Canva", "Stata Labs", "SPSS", "Microsoft Office Suite"],
+      "challenge": "Gulu University needed to upgrade their computer labs with properly licensed software for over 200 workstations. They required enterprise-grade licenses for research software, data analysis tools, and productivity applications that complied with academic licensing requirements.",
+      "solution": "We provided comprehensive licensed software supply including Atlas.ti for qualitative research, NVIVO for data analysis, QuickBooks for financial management, Canva for design work, Stata Labs and SPSS for statistical analysis, along with Microsoft Office Suite. We handled procurement, licensing verification, deployment planning, and provided full documentation for compliance and audit purposes.",
+      "results": [
+        "Successfully licensed 200+ workstations across 4 computer labs",
+        "100% compliance with software licensing requirements",
+        "Cost savings of 40% through educational licensing programs",
+        "Comprehensive deployment documentation and support",
+        "Improved computer lab productivity and security"
+      ],
+      "testimonial": "Raijin Tech Hub provided professional service in supplying our licensed software needs. Their expertise in educational licensing helped us achieve full compliance while staying within budget.",
+      "testimonialAuthor": "IT Director, Gulu University"
+    },
+    {
+      "id": 2,
+      "title": "The Artistry360 Creative Portfolio Website",
+      "client": "The Artistry360",
+      "industry": "Creative Arts & Design",
+      "year": "2024",
+      "duration": "1.5 months",
+      "image": "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+      "technologies": ["React", "Tailwind CSS", "Framer Motion", "Firebase", "Netlify"],
+      "challenge": "The Artistry360, a creative arts studio, needed a modern, visually stunning portfolio website to showcase their diverse artwork, photography, and design services. They required a platform that reflected their creative brand while being easy to update with new projects.",
+      "solution": "We developed a dynamic portfolio website with an elegant gallery system, smooth animations, project categorization, client testimonials section, contact forms, and an admin dashboard for easy content management. The site features a mobile-responsive design with optimized image loading and SEO.",
+      "results": [
+        "300% increase in client inquiries within first month",
+        "Showcase 50+ portfolio pieces across multiple categories",
+        "90% faster page load times with optimized images",
+        "Mobile-responsive design reaching wider audience",
+        "Integrated booking system for consultation requests"
+      ],
+      "testimonial": "Raijin Tech Hub created a stunning website that perfectly captures our creative vision. The site has become our most effective marketing tool.",
+      "testimonialAuthor": "Creative Director, The Artistry360"
+    },
+    {
+      "id": 3,
+      "title": "Secure Online Voting Platform",
+      "client": "Student Guild Election - Multiple Institutions",
+      "industry": "Education & Civic Technology",
+      "year": "2024",
+      "duration": "2 months",
+      "image": "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?w=800&h=600&fit=crop",
+      "technologies": ["React", "Node.js", "PostgreSQL", "JWT Authentication", "Real-time Dashboard"],
+      "challenge": "Educational institutions needed a secure, transparent, and user-friendly online voting system for student guild elections. The platform had to handle hundreds of simultaneous voters, prevent fraud, ensure ballot secrecy, and provide real-time results while maintaining system integrity.",
+      "solution": "We developed a comprehensive voting platform with secure voter authentication, encrypted ballot casting, real-time result tallying, admin dashboard for election management, voter verification system, and detailed audit trails. The system includes anti-fraud measures and generates automated election reports.",
+      "results": [
+        "Successfully managed elections for 500+ voters",
+        "100% uptime during election period",
+        "Zero security breaches or fraudulent votes",
+        "Real-time results delivered within minutes of voting closure",
+        "95% voter satisfaction with the digital process",
+        "Reduced election costs by 70% compared to manual voting"
+      ],
+      "testimonial": "The voting platform transformed our election process. It was secure, transparent, and incredibly easy to use. Students loved the convenience of voting from anywhere.",
+      "testimonialAuthor": "Electoral Commission Chairman"
+    },
+    {
+      "id": 4,
+      "title": "Computer Hardware & Laptop Sales Solutions",
+      "client": "Various Corporate & Individual Clients",
+      "industry": "Technology Retail & Distribution",
+      "year": "2024",
+      "duration": "Ongoing",
+      "image": "https://images.unsplash.com/photo-1593642632823-8f785ba67e45?w=800&h=600&fit=crop",
+      "technologies": ["HP", "Dell", "Lenovo", "ASUS", "Acer", "Computer Accessories"],
+      "challenge": "Businesses and individuals in Uganda needed reliable access to quality computer hardware, laptops, and accessories at competitive prices with proper warranty support. Many struggled to find trustworthy suppliers who could provide genuine products, technical advice, and after-sales support.",
+      "solution": "We established partnerships with leading computer brands to supply genuine laptops, desktops, servers, and computer accessories. Our service includes needs assessment consultations, product recommendations based on use cases and budgets, competitive pricing with flexible payment options, warranty registration, delivery and setup services, and ongoing technical support.",
+      "results": [
+        "Supplied 100+ computers and laptops to businesses and individuals",
+        "Partnerships with major brands: HP, Dell, Lenovo, ASUS, Acer",
+        "100% genuine products with manufacturer warranties",
+        "97% customer satisfaction with product quality and service",
+        "Comprehensive after-sales support and maintenance services",
+        "Cost-effective solutions saving clients 20-30% compared to retail"
+      ],
+      "testimonial": "Raijin Tech Hub provided excellent service in helping us select and purchase the right computers for our office. The products are genuine, prices were competitive, and their technical advice was invaluable.",
+      "testimonialAuthor": "Business Operations Manager"
+    },
+    {
+      "id": 5,
+      "title": "Professional Website Development Services",
+      "client": "Multiple Small & Medium Businesses",
+      "industry": "Web Development & Digital Marketing",
+      "year": "2024",
+      "duration": "Ongoing",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      "technologies": ["React", "WordPress", "HTML/CSS", "JavaScript", "Tailwind CSS", "SEO Tools"],
+      "challenge": "Small and medium businesses across Uganda needed professional online presence but lacked the technical expertise and resources to build effective websites. Many had outdated sites or relied solely on social media, limiting their reach and credibility.",
+      "solution": "We provide comprehensive website development services including custom design, responsive layouts, SEO optimization, e-commerce integration, content management systems, hosting setup, and ongoing maintenance. Each project is tailored to the client's specific industry, target audience, and business goals with focus on user experience and conversion optimization.",
+      "results": [
+        "Developed 25+ professional websites for diverse industries",
+        "Average 200% increase in online inquiries for clients",
+        "Mobile-responsive designs reaching broader audiences",
+        "SEO-optimized sites ranking on first page of Google searches",
+        "E-commerce functionality enabling online sales",
+        "Ongoing maintenance and support for client success"
+      ],
+      "testimonial": "Raijin Tech Hub delivered a professional website that has transformed our business. We've seen a significant increase in customer inquiries and our online credibility has improved dramatically.",
+      "testimonialAuthor": "SME Business Owner"
+    }
+  ]
+}
+

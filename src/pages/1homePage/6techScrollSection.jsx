@@ -1,11 +1,11 @@
 import { useEffect, useRef, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import {
-    FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare,
-    FaAngular, FaPython, FaJava
+    FaReact, FaNodeJs, FaHtml5, FaCss3Alt, FaJsSquare
 } from 'react-icons/fa';
 import {
-    SiTailwindcss, SiMongodb, SiNextdotjs, SiFlutter, SiKotlin
+    SiTailwindcss, SiMongodb, SiNextdotjs, SiFlutter
 } from 'react-icons/si';
 
 const TechIcon = ({ icon, name }) => (
@@ -22,6 +22,11 @@ const TechIcon = ({ icon, name }) => (
         <p className="text-[var(--color-primary-500)] text-xs sm:text-sm font-semibold text-center leading-tight">{name}</p>
     </motion.div>
 );
+
+TechIcon.propTypes = {
+    icon: PropTypes.node.isRequired,
+    name: PropTypes.string.isRequired
+};
 
 const TechScrollSection = () => {
     const scrollContainerRef = useRef(null);
@@ -185,14 +190,14 @@ const TechScrollSection = () => {
             aria-label="Technology Stack"
         >
             {/* Header */}
-            <div className="w-full text-center mb-8 sm:mb-12 px-4">
+            <div className="w-full text-center mb-8 sm:mb-12 px-4 max-w-5xl mx-auto">
                 <div className="inline-block">
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary-500)] mb-4 relative px-2">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-primary-600)] mb-4 relative px-2">
                         Our Technology Stack
-                        <div className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
+                        <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
                     </h2>
                 </div>
-                <p className="mt-6 text-base sm:text-lg text-[var(--color-primary-500)] dark:text-[var(--color-primary-400)] max-w-2xl mx-auto px-4">
+                <p className="mt-6 text-xs sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
                     Technologies we leverage to build robust and scalable solutions.
                 </p>
             </div>

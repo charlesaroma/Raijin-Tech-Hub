@@ -1,0 +1,117 @@
+{
+  "categories": [
+    {
+      "id": "projects",
+      "name": "Our Projects",
+      "description": "Showcase of completed projects and solutions",
+      "images": [
+        {
+          "id": "proj1",
+          "url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+          "title": "E-Commerce Dashboard",
+          "description": "Real-time analytics dashboard for retail client",
+          "category": "Web Application"
+        },
+        {
+          "id": "proj2",
+          "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+          "title": "Financial Analytics Platform",
+          "description": "Data visualization and reporting system",
+          "category": "Enterprise Software"
+        },
+        {
+          "id": "proj3",
+          "url": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&h=600&fit=crop",
+          "title": "Mobile Banking App",
+          "description": "Secure mobile banking solution for fintech client",
+          "category": "Mobile App"
+        },
+        {
+          "id": "proj4",
+          "url": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&h=600&fit=crop",
+          "title": "Hospital Management System",
+          "description": "Comprehensive healthcare management platform",
+          "category": "Healthcare"
+        },
+        {
+          "id": "proj5",
+          "url": "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&h=600&fit=crop",
+          "title": "Learning Management System",
+          "description": "Online education platform for schools",
+          "category": "Education"
+        },
+        {
+          "id": "proj6",
+          "url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
+          "title": "Team Collaboration Tool",
+          "description": "Project management and communication platform",
+          "category": "SaaS Product"
+        },
+        {
+          "id": "proj7",
+          "url": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
+          "title": "Logistics Tracking System",
+          "description": "Real-time delivery tracking and route optimization",
+          "category": "Logistics"
+        },
+        {
+          "id": "proj8",
+          "url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
+          "title": "Restaurant POS System",
+          "description": "Point of sale and inventory management",
+          "category": "Retail"
+        }
+      ]
+    },
+    {
+      "id": "office",
+      "name": "Our Workspace",
+      "description": "Behind the scenes at Raijin Tech Hub",
+      "images": [
+        {
+          "id": "office1",
+          "url": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+          "title": "Modern Office Space",
+          "description": "Our collaborative work environment",
+          "category": "Office"
+        },
+        {
+          "id": "office2",
+          "url": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
+          "title": "Development Team at Work",
+          "description": "Our developers collaborating on solutions",
+          "category": "Team"
+        },
+        {
+          "id": "office3",
+          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
+          "title": "Team Brainstorming",
+          "description": "Creative problem-solving sessions",
+          "category": "Team"
+        },
+        {
+          "id": "office4",
+          "url": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=600&fit=crop",
+          "title": "Meeting Room",
+          "description": "Client consultation and team meetings",
+          "category": "Office"
+        },
+        {
+          "id": "office5",
+          "url": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop",
+          "title": "Tech Setup",
+          "description": "State-of-the-art development equipment",
+          "category": "Technology"
+        },
+        {
+          "id": "office6",
+          "url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
+          "title": "Team Celebration",
+          "description": "Celebrating project success together",
+          "category": "Culture"
+        }
+      ]
+    }
+  ]
+}
+

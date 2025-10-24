@@ -1,0 +1,140 @@
+{
+  "categories": [
+    {
+      "id": "general",
+      "name": "General Questions",
+      "icon": "FaQuestionCircle",
+      "questions": [
+        {
+          "id": "gen1",
+          "question": "What services does Raijin Tech Hub offer?",
+          "answer": "We offer a comprehensive range of IT services including custom software development, web and mobile app development, IT consultancy, cloud solutions, UI/UX design, digital transformation, cybersecurity, SEO optimization, and ongoing technical support."
+        },
+        {
+          "id": "gen2",
+          "question": "Where is Raijin Tech Hub located?",
+          "answer": "We are based in Kampala, Uganda, but we serve clients across East Africa and internationally. We offer both on-site and remote services to accommodate clients' needs."
+        },
+        {
+          "id": "gen3",
+          "question": "What industries do you work with?",
+          "answer": "We work with diverse industries including healthcare, education, retail, finance, agriculture, logistics, NGOs, hospitality, and more. Our solutions are tailored to meet the specific needs of each industry."
+        },
+        {
+          "id": "gen4",
+          "question": "Do you work with startups or only established businesses?",
+          "answer": "We work with both! We have experience helping startups build their first product as well as helping established enterprises modernize their systems. We offer flexible packages to suit different business sizes and budgets."
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "name": "Services & Technology",
+      "icon": "FaCogs",
+      "questions": [
+        {
+          "id": "srv1",
+          "question": "What technologies do you use?",
+          "answer": "We use modern, industry-standard technologies including HTML 5, CSS, Javascript, Tailwind CSS, React, Node.js, Express Js, React Native, Flutter, MongoDB, and many more. We select the best technology stack based on your project requirements."
+        },
+        {
+          "id": "srv2",
+          "question": "Do you provide mobile app development?",
+          "answer": "Yes! We develop native and cross-platform mobile applications for both iOS and Android using React Native and Flutter. Our mobile apps are fast, secure, and provide excellent user experiences."
+        },
+        {
+          "id": "srv3",
+          "question": "Can you help migrate our existing system to the cloud?",
+          "answer": "Absolutely! We specialize in cloud migration services. We'll assess your current infrastructure, plan the migration strategy, execute the migration with minimal downtime, and provide ongoing cloud management and optimization."
+        },
+        {
+          "id": "srv4",
+          "question": "Do you offer cybersecurity services?",
+          "answer": "Yes, we provide comprehensive cybersecurity services including penetration testing, security audits, vulnerability assessments, security architecture design, and implementation of security best practices to protect your digital assets."
+        }
+      ]
+    },
+    {
+      "id": "process",
+      "name": "Development Process",
+      "icon": "FaProjectDiagram",
+      "questions": [
+        {
+          "id": "pro1",
+          "question": "What is your development process?",
+          "answer": "We follow an agile methodology: 1) Discovery & Requirements gathering, 2) Design & Prototyping, 3) Development in iterative sprints, 4) Testing & Quality Assurance, 5) Deployment, and 6) Ongoing Support & Maintenance. You'll be involved throughout the process."
+        },
+        {
+          "id": "pro2",
+          "question": "How long does a typical project take?",
+          "answer": "Project timelines vary based on complexity. A simple website might take 2-4 weeks, a mobile app 2-3 months, and a complex enterprise system 4-6 months. We'll provide a detailed timeline after understanding your requirements."
+        },
+        {
+          "id": "pro3",
+          "question": "Will I own the source code?",
+          "answer": "Yes! Upon project completion and full payment, you own all the source code, designs, and documentation. We can also provide training to your team if needed."
+        },
+        {
+          "id": "pro4",
+          "question": "How do you handle project changes or new requirements?",
+          "answer": "We understand that requirements can evolve. We use agile methodology which accommodates changes. Minor adjustments are included, while significant changes are discussed and may affect timeline and cost. We maintain transparent communication throughout."
+        }
+      ]
+    },
+    {
+      "id": "pricing",
+      "name": "Pricing & Payment",
+      "icon": "FaMoneyBillWave",
+      "questions": [
+        {
+          "id": "pri1",
+          "question": "How much do your services cost?",
+          "answer": "Costs vary based on project scope, complexity, and timeline. We offer competitive pricing and can work within various budgets. Contact us for a free consultation and custom quote tailored to your specific needs."
+        },
+        {
+          "id": "pri2",
+          "question": "What payment methods do you accept?",
+          "answer": "We accept bank transfers, mobile money (MTN, Airtel), credit/debit cards, and international wire transfers. Payment terms are typically structured as milestones: initial deposit, progress payments, and final payment upon delivery."
+        },
+        {
+          "id": "pri3",
+          "question": "Do you offer payment plans?",
+          "answer": "Yes, we offer flexible payment plans for larger projects. Typically, we structure payments in milestones: 30% upfront, 40% at mid-point, and 30% upon completion. We can discuss custom payment arrangements based on your needs."
+        },
+        {
+          "id": "pri4",
+          "question": "Are there any hidden costs?",
+          "answer": "No hidden costs! We provide transparent, detailed quotes that include all development costs. Additional costs like hosting, third-party services, or SSL certificates are clearly outlined upfront. You'll know exactly what you're paying for."
+        }
+      ]
+    },
+    {
+      "id": "support",
+      "name": "Support & Maintenance",
+      "icon": "FaHeadset",
+      "questions": [
+        {
+          "id": "sup1",
+          "question": "Do you provide ongoing support after project completion?",
+          "answer": "Yes! We offer various support packages including bug fixes, updates, feature enhancements, and technical support. We also provide a warranty period for all projects to fix any issues that arise post-launch."
+        },
+        {
+          "id": "sup2",
+          "question": "What happens if something breaks after launch?",
+          "answer": "All projects come with a warranty period (typically 1-3 months) where we fix any bugs or issues at no additional cost. After that, you can choose from our maintenance packages or pay per incident for support."
+        },
+        {
+          "id": "sup3",
+          "question": "Can you provide training for our team?",
+          "answer": "Absolutely! We provide comprehensive training for your team on how to use and manage the system we build. This includes user manuals, video tutorials, and hands-on training sessions tailored to your team's needs."
+        },
+        {
+          "id": "sup4",
+          "question": "How quickly do you respond to support requests?",
+          "answer": "Response times depend on your support package. Critical issues are addressed within 2-4 hours, high-priority within 24 hours, and normal requests within 48 hours. We offer 24/7 emergency support for enterprise clients."
+        }
+      ]
+    }
+  ]
+}
+

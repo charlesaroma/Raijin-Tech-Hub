@@ -1,0 +1,37 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Charles Aroma",
+      "position": "Founder & CEO, Senior Frontend Developer",
+      "image": "https://randomuser.me/api/portraits/men/32.jpg",
+      "bio": "Charles is the visionary founder of Raijin Tech Hub, leading the company with over 8 years of experience in software development. As a Senior Frontend Developer and CEO, he combines technical expertise with strategic leadership to transform Uganda's digital landscape. His passion for cutting-edge technologies and client success drives the company's mission forward.",
+      "specialties": ["React & Next.js", "TypeScript", "UI/UX Implementation", "Strategic Planning", "Business Development", "Cloud Architecture"],
+      "education": "BSc Computer Science, Makerere University",
+      "linkedin": "https://www.linkedin.com/in/charles-aroma-8955b62a2",
+      "email": "charles@raijintechhub.com"
+    },
+    {
+      "id": 2,
+      "name": "Joshua Kimbareeba",
+      "position": "Co-founder, Alternate Director & Fullstack Developer",
+      "image": "https://randomuser.me/api/portraits/men/45.jpg",
+      "bio": "Joshua is the technical powerhouse behind Raijin Tech Hub's success. As Co-founder and Alternate Director, he brings comprehensive fullstack development expertise, architecting scalable solutions that power our client projects. His deep understanding of both frontend and backend technologies ensures seamless, robust applications.",
+      "specialties": ["Node.js & Express", "MongoDB & PostgreSQL", "React & Vue.js", "API Development", "System Architecture", "DevOps"],
+      "education": "BSc Software Engineering, Makerere University",
+      "linkedin": "https://www.linkedin.com",
+      "email": "joshua@raijintechhub.com"
+    },
+    {
+      "id": 3,
+      "name": "Stephanie Kirathe",
+      "position": "UI/UX Designer & SEO Specialist",
+      "image": "https://randomuser.me/api/portraits/women/44.jpg",
+      "bio": "Stephanie crafts beautiful, user-centered designs that drive engagement and conversions. As our UI/UX Designer and SEO Specialist, she ensures every project not only looks stunning but also performs exceptionally in search rankings. Her dual expertise in design and SEO optimization delivers measurable results for our clients.",
+      "specialties": ["UI/UX Design", "Figma & Adobe XD", "User Research", "SEO Optimization", "Content Strategy", "Analytics"],
+      "education": "BA Design & Digital Media, Kampala International University",
+      "linkedin": "https://www.linkedin.com",
+      "email": "stephanie@raijintechhub.com"
+    }
+  ]
+}

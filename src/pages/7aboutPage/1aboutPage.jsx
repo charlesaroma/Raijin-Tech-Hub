@@ -5,7 +5,7 @@ import StatsSection from './3statsSection';
 import MissionVisionSection from './4missionVisionSection';
 import ValuesSection from './5valuesSection';
 import TimelineSection from './6timelineSection';
-import TeamSection from './7teamSection';
+// import TeamSection from './7teamSection';
 
 const AboutPage = () => {
   return (
@@ -46,7 +46,7 @@ const AboutPage = () => {
           <TimelineSection />
 
           {/* Team Section */}
-          <TeamSection />
+          {/* <TeamSection /> */}
         </div>
       </section>
     </>

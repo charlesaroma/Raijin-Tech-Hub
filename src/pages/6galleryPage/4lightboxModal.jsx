@@ -15,7 +15,7 @@ const LightboxModal = ({ selectedImage, currentImages, currentImageIndex, closeL
           {/* Close Button */}
           <button
             onClick={closeLightbox}
-            className="absolute top-6 right-6 w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors z-10"
+            className="absolute top-6 right-6 cursor-pointer w-12 h-12 bg-white/10 hover:bg-white/20 text-white rounded-full flex items-center justify-center transition-colors z-10"
             aria-label="Close"
           >
             <Icon icon="mdi:close" className="text-2xl" />

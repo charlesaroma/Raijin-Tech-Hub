@@ -34,32 +34,11 @@
           "category": "Healthcare"
         },
         {
-          "id": "proj5",
-          "url": "https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?w=800&h=600&fit=crop",
-          "title": "Learning Management System",
-          "description": "Online education platform for schools",
-          "category": "Education"
-        },
-        {
           "id": "proj6",
-          "url": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop",
-          "title": "Team Collaboration Tool",
+          "url": "https://ik.imagekit.io/ldeismm29/IMG_1129.jpeg?updatedAt=1761671034637",
+          "title": "Team Collaboration",
           "description": "Project management and communication platform",
-          "category": "SaaS Product"
-        },
-        {
-          "id": "proj7",
-          "url": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800&h=600&fit=crop",
-          "title": "Logistics Tracking System",
-          "description": "Real-time delivery tracking and route optimization",
-          "category": "Logistics"
-        },
-        {
-          "id": "proj8",
-          "url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&h=600&fit=crop",
-          "title": "Restaurant POS System",
-          "description": "Point of sale and inventory management",
-          "category": "Retail"
+          "category": "SaaS Product Brainstorming"
         }
       ]
     },
@@ -70,45 +49,38 @@
       "images": [
         {
           "id": "office1",
-          "url": "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=600&fit=crop",
+          "url": "https://ik.imagekit.io/ldeismm29/IMG_1132.jpeg?updatedAt=1761670276413",
           "title": "Modern Office Space",
           "description": "Our collaborative work environment",
           "category": "Office"
         },
         {
           "id": "office2",
-          "url": "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&h=600&fit=crop",
-          "title": "Development Team at Work",
-          "description": "Our developers collaborating on solutions",
+          "url": "https://ik.imagekit.io/ldeismm29/IMG_1157.jpeg?updatedAt=1761670273360",
+          "title": "Development Team",
+          "description": "Our developers",
           "category": "Team"
         },
         {
           "id": "office3",
-          "url": "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&h=600&fit=crop",
-          "title": "Team Brainstorming",
-          "description": "Creative problem-solving sessions",
+          "url": "https://ik.imagekit.io/ldeismm29/IMG_1124.jpeg?updatedAt=1761670271061",
+          "title": "The Best Backend Developer Ever",
+          "description": "Joshua Zoned in his office",
           "category": "Team"
         },
         {
           "id": "office4",
-          "url": "https://images.unsplash.com/photo-1556761175-4b46a572b786?w=800&h=600&fit=crop",
-          "title": "Meeting Room",
-          "description": "Client consultation and team meetings",
+          "url": "https://ik.imagekit.io/ldeismm29/IMG_1329.jpeg?updatedAt=1761670263168",
+          "title": "Tech Setup",
+          "description": "React Native - Mobile Development",
           "category": "Office"
         },
         {
           "id": "office5",
-          "url": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop",
-          "title": "Tech Setup",
-          "description": "State-of-the-art development equipment",
+          "url": "https://ik.imagekit.io/ldeismm29/IMG_1129.jpeg?updatedAt=1761671034637",
+          "title": "Team Brainstorming",
+          "description": "Creative problem-solving sessions",
           "category": "Technology"
-        },
-        {
-          "id": "office6",
-          "url": "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
-          "title": "Team Celebration",
-          "description": "Celebrating project success together",
-          "category": "Culture"
         }
       ]
     }

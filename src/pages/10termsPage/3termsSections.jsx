@@ -34,7 +34,7 @@ If you do not agree with these terms, please do not use our services.`
 
 • Custom Software Development: Web applications, mobile apps, and enterprise software solutions.
 • IT Consultancy: Technology strategy, system architecture, and digital transformation advice.
-• Cloud Solutions: Cloud migration, infrastructure setup, and ongoing management.
+• AI Integration & Chatbot Solutions: Custom AI chatbots, intelligent automation, and conversational AI for business processes.
 • UI/UX Design: User interface and user experience design services.
 • Support and Maintenance: Ongoing technical support and system maintenance.
 

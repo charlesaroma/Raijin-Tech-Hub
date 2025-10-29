@@ -10,8 +10,8 @@ const ServicePage = () => {
     <>
       <SEO 
         title="Our Services | Raijin Tech Hub Uganda"
-        description="Explore our comprehensive IT services including custom software development, cybersecurity, mobile apps, cloud solutions, system integration, and UI/UX design. Expert tech solutions for Ugandan businesses."
-        keywords="IT services Uganda, software development services, cybersecurity Uganda, mobile app development, cloud solutions Kampala, system integration Uganda, UI/UX design services"
+        description="Explore our comprehensive IT services including custom software development, cybersecurity, mobile apps, AI chatbot integration, system integration, and UI/UX design. Expert tech solutions for Ugandan businesses."
+        keywords="IT services Uganda, software development services, cybersecurity Uganda, mobile app development, AI chatbot solutions Kampala, AI integration Uganda, system integration Uganda, UI/UX design services"
       />
       <BreadcrumbStructuredData 
         items={[

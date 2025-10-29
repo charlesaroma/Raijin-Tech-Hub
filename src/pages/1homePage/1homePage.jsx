@@ -10,8 +10,8 @@ const homePage = () => {
     <>
       <SEO 
         title="Raijin Tech Hub Uganda | Custom Software Development & IT Solutions"
-        description="Leading IT company in Uganda specializing in custom software development, web applications, mobile apps, IT consultancy, cloud solutions, UI/UX design, and digital transformation. Transform your business with cutting-edge technology solutions."
-        keywords="software development Uganda, IT consultancy Uganda, custom software development, web development Uganda, mobile app development Uganda, cloud solutions Uganda, UI/UX design Uganda, digital transformation Uganda, tech company Uganda, IT solutions Uganda, software company Kampala"
+        description="Leading IT company in Uganda specializing in custom software development, web applications, mobile apps, IT consultancy, AI chatbot integration, UI/UX design, and digital transformation. Transform your business with cutting-edge technology solutions."
+        keywords="software development Uganda, IT consultancy Uganda, custom software development, web development Uganda, mobile app development Uganda, AI chatbot solutions Uganda, AI integration Kampala, UI/UX design Uganda, digital transformation Uganda, tech company Uganda, IT solutions Uganda, software company Kampala"
       />
       <div className="relative w-screen h-full flex flex-col space-y-0 overflow-x-hidden">
         {/* Hero Section */}

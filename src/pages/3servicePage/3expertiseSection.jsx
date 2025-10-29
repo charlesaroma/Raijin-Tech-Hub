@@ -14,9 +14,9 @@ const ExpertiseSection = () => {
       icon: "mdi:laptop-account",
     },
     {
-      title: "Cloud Solutions & Migration",
-      description: "Seamlessly migrate your infrastructure to the cloud with our scalable and secure cloud solutions.",
-      icon: "mdi:cloud-upload",
+      title: "AI Integration & Chatbot Solutions",
+      description: "Transform customer interactions with intelligent AI chatbots and automation solutions powered by cutting-edge technology.",
+      icon: "mdi:robot",
     },
     {
       title: "UI/UX Design & Development",

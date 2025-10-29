@@ -25,7 +25,7 @@ const TimelineSection = () => {
     {
       year: '2025',
       title: 'Scaling Operations',
-      description: 'Focusing on regional expansion, team growth, and launching advanced services including cloud solutions, cybersecurity, and digital transformation consultancy.'
+      description: 'Focusing on regional expansion, team growth, and launching advanced services including AI integration, cybersecurity, and digital transformation consultancy.'
     }
   ];
 

@@ -7,7 +7,7 @@ const StatsSection = () => {
 
   useEffect(() => {
     // Counter animation for stats
-    const statValues = [30, 8, 95, 4]; // Values for each stat
+    const statValues = [10, 5, 95, 2]; // Values for each stat
     if (statsRef.current.length > 0) {
       statsRef.current.forEach((el, index) => {
         const countElement = el.querySelector('.count-number');
@@ -19,10 +19,10 @@ const StatsSection = () => {
   }, []);
 
   const stats = [
-    { label: 'Projects Delivered', suffix: '+', value: 30 },
-    { label: 'Industries Served', suffix: '+', value: 8 },
+    { label: 'Projects Delivered', suffix: '+', value: 10 },
+    { label: 'Industries Served', suffix: '+', value: 5 },
     { label: 'Client Retention', suffix: '%', value: 95 },
-    { label: 'Years Experience', suffix: '+', value: 4 }
+    { label: 'Years Experience', suffix: '+', value: 2 }
   ];
 
   return (

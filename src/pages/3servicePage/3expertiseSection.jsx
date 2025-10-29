@@ -33,6 +33,16 @@ const ExpertiseSection = () => {
       description: "Transform your business processes through cutting-edge digital technologies and automation.",
       icon: "mdi:cog-outline",
     },
+    {
+      title: "Computer Hardware & Accessories",
+      description: "Quality IT hardware including laptops, monitors, storage devices, and accessories from trusted suppliers at competitive prices.",
+      icon: "mdi:desktop-classic",
+    },
+    {
+      title: "Internship & Training Programs",
+      description: "Hands-on internship opportunities and professional IT training programs for aspiring developers and tech enthusiasts.",
+      icon: "mdi:school",
+    },
   ];
 
   return (

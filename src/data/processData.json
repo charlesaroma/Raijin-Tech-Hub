@@ -26,7 +26,7 @@
         "Design system & style guide",
         "Interactive prototypes"
       ],
-      "tools": ["Figma", "Adobe XD", "InVision"]
+      "tools": ["Figma"]
     },
     {
       "id": 3,
@@ -40,7 +40,7 @@
         "Smooth animations",
         "Cross-browser compatibility"
       ],
-      "tools": ["React", "Tailwind CSS", "GSAP", "Framer Motion"]
+      "tools": ["React", "Vite", "Next.js", "TypeScript", "JavaScript", "Tailwind CSS", "GSAP", "Framer Motion"]
     },
     {
       "id": 4,
@@ -54,7 +54,7 @@
         "Authentication system",
         "Server infrastructure"
       ],
-      "tools": ["Node.js", "Express", "MongoDB", "PostgreSQL", "Firebase"]
+      "tools": ["Node.js", "Express.js", "MongoDB", "Firebase"]
     },
     {
       "id": 5,
@@ -96,7 +96,7 @@
         "Security hardening",
         "Monitoring & alerts"
       ],
-      "tools": ["AWS", "Vercel", "Netlify", "Cloudflare"]
+      "tools": ["Firebase", "Vercel", "Netlify"]
     },
     {
       "id": 8,

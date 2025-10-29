@@ -24,6 +24,16 @@
           "id": "gen4",
           "question": "Do you work with startups or only established businesses?",
           "answer": "We work with both! We have experience helping startups build their first product as well as helping established enterprises modernize their systems. We offer flexible packages to suit different business sizes and budgets."
+        },
+        {
+          "id": "gen5",
+          "question": "Do you offer internship or training programs?",
+          "answer": "Yes, we do! Raijin Tech Hub offers internship opportunities and professional training programs for students, aspiring developers and IT professionals. We provide hands-on experience with real projects and mentorship from our experienced team. For more details about our internship programs, training schedules, and application process, please contact us at raijintechug@gmail.com or WhatsApp: +256 777 982066."
+        },
+        {
+          "id": "gen6",
+          "question": "Do you sell computer hardware and accessories?",
+          "answer": "Yes! In addition to our software services, we sell quality computer hardware and accessories including laptops, desktop computers, monitors, keyboards, mice, external hard drives, SSDs, RAM, printers, and other IT equipment. We source genuine products from trusted suppliers and offer competitive prices. Contact us for current availability and pricing."
         }
       ]
     },
@@ -35,7 +45,7 @@
         {
           "id": "srv1",
           "question": "What technologies do you use?",
-          "answer": "We use modern, industry-standard technologies including HTML 5, CSS, Javascript, Tailwind CSS, React, Node.js, Express Js, React Native, Flutter, MongoDB, and many more. We select the best technology stack based on your project requirements."
+          "answer": "We specialize in modern, industry-standard technologies including React, Vite, Next.js, JavaScript, TypeScript, Tailwind CSS, Node.js, Express.js, MongoDB, Firebase, React Native, Flutter, Figma for design, and GSAP & Framer Motion for animations. We select the best technology stack based on your project requirements to ensure optimal performance and scalability."
         },
         {
           "id": "srv2",
@@ -51,6 +61,11 @@
           "id": "srv4",
           "question": "Do you offer cybersecurity services?",
           "answer": "Yes, we provide comprehensive cybersecurity services including penetration testing, security audits, vulnerability assessments, security architecture design, and implementation of security best practices to protect your digital assets."
+        },
+        {
+          "id": "srv5",
+          "question": "What computer hardware and devices do you have available?",
+          "answer": "We stock a wide range of IT hardware including laptops (business and gaming), desktop computers, monitors (various sizes from 19\" to 32\"), wireless and wired keyboards and mice, external storage devices (HDDs and SSDs from 500GB to 2TB), RAM upgrades (4GB to 32GB), printers and scanners, USB accessories, networking equipment, and more. We can also source specific items upon request. Contact us for current inventory and pricing."
         }
       ]
     },

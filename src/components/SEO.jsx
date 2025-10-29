@@ -98,9 +98,9 @@ SEO.propTypes = {
 };
 
 SEO.defaultProps = {
-  title: "Raijin Tech Hub Uganda | Custom Software Development & IT Solutions",
-  description: "Leading IT company in Uganda specializing in custom software development, web applications, mobile apps, IT consultancy, AI chatbot integration, UI/UX design, and digital transformation. Transform your business with cutting-edge technology solutions.",
-  keywords: "software development Uganda, IT consultancy Uganda, custom software development, web development Uganda, mobile app development Uganda, AI chatbot integration Uganda, AI solutions Kampala, UI/UX design Uganda, digital transformation Uganda, tech company Uganda",
+  title: "Raijin Tech Hub | #1 IT Company Uganda | Best Software Development East Africa",
+  description: "Number One IT company in Uganda & East Africa specializing in AI integration (Raijin AI Chatbot), custom software development, mobile app development, web development, and digital transformation. Best IT solutions provider in Africa with cutting-edge technology and 24/7 AI-powered support. Transform your business with Africa's leading tech innovators.",
+  keywords: "best IT company Uganda, number one IT company Uganda, best IT company East Africa, best IT company Africa, top IT company Uganda, leading IT company East Africa, best software development company Uganda, best software development company East Africa, best software development company Africa, best web development company Uganda, best web development company East Africa, best web development company Africa, best mobile app development company Uganda, best mobile app development company East Africa, best mobile app development company Africa, AI integration Uganda, AI integration East Africa, Raijin AI chatbot, AI chatbot Uganda, AI-powered solutions Uganda, custom AI development Uganda, best AI company Uganda, best AI company East Africa, software development Uganda, IT consultancy Uganda, mobile app development Uganda, web development Uganda, digital transformation Uganda, tech company Uganda, IT solutions Uganda, number 1 tech company Uganda, top tech company East Africa, leading technology company Africa, professional IT services Uganda, professional IT services East Africa, software company Kampala, Raijin Tech Hub, 24/7 AI support Uganda",
   image: "https://raijintechhub.com/RaijinIcon.png",
   type: "website"
 };

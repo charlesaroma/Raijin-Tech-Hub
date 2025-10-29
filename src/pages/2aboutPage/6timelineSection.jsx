@@ -4,28 +4,23 @@ const TimelineSection = () => {
   const timeline = [
     {
       year: 'Q1 2024',
-      title: 'Company Founded & Registered',
-      description: 'Raijin Tech Hub was officially registered and launched with a vision to transform Uganda\'s digital landscape through innovative technology solutions.'
+      title: 'Foundation & Vision',
+      description: 'Raijin Tech Hub was officially registered in December 2024 with a bold vision to become East Africa\'s premier technology solutions provider, committed to delivering excellence in software development and IT services.'
     },
     {
-      year: 'Q2 2024',
-      title: 'First Major Projects',
-      description: 'Secured and delivered key projects including Gulu University licensed software supply, The Artistry360 website, and voting platform development.'
+      year: 'Q2 2025',
+      title: 'Strategic Partnerships',
+      description: 'Established key partnerships and delivered our first enterprise solutions, including licensed software supply to educational institutions and custom web applications for creative industries.'
     },
     {
-      year: 'Q3 2024',
-      title: 'Service Expansion',
-      description: 'Expanded service offerings to include computer hardware sales, comprehensive website development, and IT consultancy services across multiple industries.'
+      year: 'Q3 2025',
+      title: 'Service Innovation',
+      description: 'Expanded our portfolio to offer comprehensive IT solutions including custom software development, enterprise web applications, IT consultancy, and hardware solutions, serving diverse industry sectors.'
     },
     {
-      year: 'Q4 2024',
-      title: 'Rapid Growth',
-      description: 'Successfully delivered 30+ projects across 8 industries, built strong client relationships with 95% retention rate, and established reputation for quality and reliability.'
-    },
-    {
-      year: '2025',
-      title: 'Scaling Operations',
-      description: 'Focusing on regional expansion, team growth, and launching advanced services including AI integration, cybersecurity, and digital transformation consultancy.'
+      year: 'Q4 2025',
+      title: 'AI Integration Launch',
+      description: 'Launched Raijin AI, our innovative AI-powered chatbot assistant, marking our entry into cutting-edge AI integration services and establishing ourselves as Uganda\'s leading AI solutions provider.'
     }
   ];
 
@@ -34,14 +29,14 @@ const TimelineSection = () => {
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
-      className="mb-20"
+      className="mb-12 sm:mb-16 md:mb-20 px-3 sm:px-4"
     >
-      <h2 className="text-2xl lg:text-3xl font-bold text-[var(--color-primary-600)] text-center mb-12">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[var(--color-primary-600)] text-center mb-8 sm:mb-10 md:mb-12">
         Our Journey
       </h2>
-      <div className="relative">
-        {/* Timeline Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-[var(--color-primary-500)]/20"></div>
+      <div className="relative max-w-5xl mx-auto">
+        {/* Timeline Line - Adjusted for mobile */}
+        <div className="absolute left-4 sm:left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-0 h-full w-0.5 sm:w-1 bg-[var(--color-primary-500)]/20"></div>
 
         {timeline.map((item, index) => (
           <motion.div
@@ -50,26 +45,27 @@ const TimelineSection = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: index * 0.1 }}
-            className={`relative flex items-center mb-12 ${
-              index % 2 === 0 ? 'flex-row-reverse' : ''
+            className={`relative flex items-center mb-8 sm:mb-10 md:mb-12 ${
+              index % 2 === 0 ? 'md:flex-row-reverse' : ''
             }`}
           >
-            <div className={`w-full md:w-5/12 ${index % 2 === 0 ? 'text-right' : ''}`}>
-              <div className="p-5 rounded-2xl bg-[var(--color-bg-card)] transition-all duration-300 cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_12px_var(--shadow-dark),-4px_-4px_12px_var(--shadow-light)] hover:translate-y-1">
-                <div className="text-base font-bold text-[var(--color-primary-500)] mb-2">
+            {/* Content Card */}
+            <div className={`w-full md:w-5/12 pl-10 sm:pl-14 md:pl-0 ${index % 2 === 0 ? 'md:text-right md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
+              <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[var(--color-bg-card)] transition-all duration-300 cursor-pointer shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] sm:shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_12px_var(--shadow-dark),-4px_-4px_12px_var(--shadow-light)] hover:translate-y-1">
+                <div className="text-sm sm:text-base font-bold text-[var(--color-primary-500)] mb-1.5 sm:mb-2">
                   {item.year}
                 </div>
-                <h4 className="text-sm font-bold text-[var(--color-primary-600)] mb-2">
+                <h4 className="text-xs sm:text-sm font-bold text-[var(--color-primary-600)] mb-1.5 sm:mb-2">
                   {item.title}
                 </h4>
-                <p className="text-xs text-[var(--color-primary-600)]">
+                <p className="text-[11px] sm:text-xs leading-relaxed text-[var(--color-primary-600)]">
                   {item.description}
                 </p>
               </div>
             </div>
 
-            {/* Timeline Dot */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-[var(--color-primary-500)] rounded-full border-4 border-[var(--color-bg-primary)] shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"></div>
+            {/* Timeline Dot - Adjusted for mobile */}
+            <div className="absolute left-4 sm:left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-[var(--color-primary-500)] rounded-full border-2 sm:border-3 md:border-4 border-[var(--color-bg-primary)] shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"></div>
           </motion.div>
         ))}
       </div>

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./navigation/navbar";
 import ScrollToTop from "./navigation/scrolltoTop";
 import Footer from "./navigation/footer";
-import AIChatWidget from "./components/AIChatWidget";
+import AIChatWidget from "./components/AIChatWidget/index";
 import { logPageView } from "./utils/analytics";
 
 // Lazy load pages for code splitting - organized by navigation order

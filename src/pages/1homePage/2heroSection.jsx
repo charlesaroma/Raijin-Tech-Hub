@@ -156,11 +156,13 @@ const HeroSection = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.5 }}
         >
-          {/* Decorative Elements */}
+          {/* Decorative Elements - Rotating Rings */}
           <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            {/* Rotating Ring */}
-            <div className="absolute w-full h-full max-w-[500px] max-h-[500px] border-2 border-[var(--color-primary-500)]/10 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
-            <div className="absolute w-[90%] h-[90%] max-w-[450px] max-h-[450px] border-2 border-[var(--color-primary-500)]/5 rounded-full animate-spin" style={{ animationDuration: '30s', animationDirection: 'reverse' }}></div>
+            {/* Outer Rotating Ring */}
+            <div className="absolute w-full h-full max-w-[500px] max-h-[500px] md:max-w-[600px] md:max-h-[600px] lg:max-w-[700px] lg:max-h-[700px] border-2 border-[var(--color-primary-500)]/10 rounded-full animate-spin" style={{ animationDuration: '20s' }}></div>
+            
+            {/* Inner Rotating Ring */}
+            <div className="absolute w-[90%] h-[90%] max-w-[450px] max-h-[450px] md:max-w-[540px] md:max-h-[540px] lg:max-w-[630px] lg:max-h-[630px] border-2 border-[var(--color-primary-500)]/5 rounded-full animate-spin" style={{ animationDuration: '30s', animationDirection: 'reverse' }}></div>
             
             {/* Corner Accents */}
             <div className="absolute top-0 right-0 w-20 h-20 border-t-4 border-r-4 border-[var(--color-primary-500)]/30 rounded-tr-3xl"></div>

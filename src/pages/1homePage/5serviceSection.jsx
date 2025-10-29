@@ -50,6 +50,14 @@ const services = [
     size: 'small',
   },
   {
+    title: 'Computer Hardware & Accessories',
+    description:
+      'Quality laptops, monitors, storage devices, and IT equipment from trusted suppliers at competitive prices.',
+    icon: <Icon icon="mdi:desktop-classic" className="text-2xl sm:text-3xl" />,
+    gridClass: 'col-span-1',
+    size: 'small',
+  },
+  {
     title: 'Dedicated Support',
     description:
       'Round-the-clock support to ensure your systems run smoothly and efficiently.',

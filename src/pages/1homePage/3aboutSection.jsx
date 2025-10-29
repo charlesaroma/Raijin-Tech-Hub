@@ -48,7 +48,7 @@ const AboutSection = () => {
 
           {/* Description Paragraph */}
           <motion.p
-            className="text-xs sm:text-sm text-[var(--color-primary-600)] leading-relaxed mb-5"
+            className="text-sm sm:text-sm text-[var(--color-primary-600)] leading-relaxed mb-5"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -65,7 +65,7 @@ const AboutSection = () => {
           >
             <Link
               to="/about"
-              className="inline-block bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] py-2 px-5 rounded-full text-xs font-semibold transition-all duration-300 cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
+              className="inline-block bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] py-2 px-5 rounded-full text-sm font-semibold transition-all duration-300 cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
             >
               Learn More
             </Link>

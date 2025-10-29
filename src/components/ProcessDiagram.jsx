@@ -186,23 +186,23 @@ const ProcessCard = ({ phase, index }, ref) => {
       </h3>
 
       {/* Duration */}
-      <p className="text-xs text-[var(--color-primary-600)] mb-3 text-center">
+      <p className="text-sm text-[var(--color-primary-600)] mb-3 text-center">
         ⏱️ {phase.duration}
       </p>
 
       {/* Description */}
-      <p className="text-xs text-[var(--color-primary-600)] leading-relaxed mb-4">
+      <p className="text-sm text-[var(--color-primary-600)] leading-relaxed mb-4">
         {phase.description}
       </p>
 
       {/* Deliverables */}
       <div className="mb-4">
-        <h4 className="text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+        <h4 className="text-sm font-semibold text-[var(--color-primary-600)] mb-2">
           Deliverables:
         </h4>
         <ul className="space-y-1">
           {phase.deliverables.slice(0, 3).map((item, idx) => (
-            <li key={idx} className="text-xs text-[var(--color-primary-600)] flex items-start gap-2">
+            <li key={idx} className="text-sm text-[var(--color-primary-600)] flex items-start gap-2">
               <span className="text-[var(--color-primary-500)] mt-0.5">✓</span>
               <span>{item}</span>
             </li>
@@ -212,14 +212,14 @@ const ProcessCard = ({ phase, index }, ref) => {
 
       {/* Tools */}
       <div>
-        <h4 className="text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+        <h4 className="text-sm font-semibold text-[var(--color-primary-600)] mb-2">
           Tools:
         </h4>
         <div className="flex flex-wrap gap-2">
           {phase.tools.map((tool, idx) => (
             <span 
               key={idx}
-              className="px-2 py-1 text-[10px] bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"
+              className="px-2 py-1 text-sm bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"
             >
               {tool}
             </span>

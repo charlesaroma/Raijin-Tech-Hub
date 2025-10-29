@@ -54,7 +54,7 @@ const TabComponent = () => {
             <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
         </h2>
         </div>
-        <p className="mt-6 text-xs sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
+        <p className="mt-6 text-sm sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
           Discover what drives us forward and defines our commitment to excellence
         </p>
       </div>
@@ -97,7 +97,7 @@ const TabComponent = () => {
                 <Icon icon={value.icon} className="text-sm text-[var(--color-primary-500)] flex-shrink-0" />
                 
                 {/* Title */}
-                <span className="font-semibold text-xs">{value.title}</span>
+                <span className="font-semibold text-sm">{value.title}</span>
                 
                 {/* Active indicator dot */}
                 {activeTab === value.title && (
@@ -131,7 +131,7 @@ const TabComponent = () => {
                 
                 {/* Title */}
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-xs truncate">{value.title}</h3>
+                    <h3 className="font-semibold text-sm truncate">{value.title}</h3>
                 </div>
 
                 {/* Arrow Indicator */}
@@ -166,7 +166,7 @@ const TabComponent = () => {
                 <div className="w-10 h-0.5 bg-[var(--color-primary-500)]/30 rounded-full mb-2"></div>
 
                 {/* Description */}
-                <p className="text-xs leading-relaxed text-[var(--color-primary-600)]">
+                <p className="text-sm leading-relaxed text-[var(--color-primary-600)]">
                   {activeValue.description}
                 </p>
               </div>
@@ -195,7 +195,7 @@ const TabComponent = () => {
               <div className="w-10 h-0.5 bg-[var(--color-primary-500)]/30 rounded-full mb-2"></div>
 
               {/* Description */}
-              <p className="text-xs text-[var(--color-primary-600)] leading-relaxed">
+              <p className="text-sm text-[var(--color-primary-600)] leading-relaxed">
                 {activeValue.description}
               </p>
             </div>

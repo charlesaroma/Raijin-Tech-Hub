@@ -100,7 +100,7 @@ const Contact = () => {
             Get in Touch
           </h1>
           <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent mx-auto mb-6"></div>
-          <p className="text-xs sm:text-sm text-[var(--color-primary)] max-w-2xl mx-auto leading-relaxed">
+          <p className="text-sm sm:text-sm text-[var(--color-primary)] max-w-2xl mx-auto leading-relaxed">
             We would love to hear from you. Drop us a message and we&apos;ll get back to you as soon as possible!
           </p>
         </motion.div>
@@ -139,7 +139,7 @@ const Contact = () => {
                 <form onSubmit={formik.handleSubmit} className="space-y-6">
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="flex items-center gap-2 text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+                    <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
                       <Icon icon="mdi:account" className="text-sm text-[var(--color-primary-500)]" />
                       Your Name
                     </label>
@@ -151,7 +151,7 @@ const Contact = () => {
                         value={formik.values.name}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-xs placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
+                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-base placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -168,7 +168,7 @@ const Contact = () => {
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="flex items-center gap-2 text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+                    <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
                       <Icon icon="mdi:email" className="text-sm text-[var(--color-primary-500)]" />
                       Your Email
                     </label>
@@ -180,7 +180,7 @@ const Contact = () => {
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-xs placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
+                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-base placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -197,7 +197,7 @@ const Contact = () => {
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="flex items-center gap-2 text-xs font-semibold text-[var(--color-primary-600)] mb-2">
+                    <label htmlFor="message" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
                       <Icon icon="mdi:message-text" className="text-sm text-[var(--color-primary-500)]" />
                       Your Message
                     </label>
@@ -208,7 +208,7 @@ const Contact = () => {
                         value={formik.values.message}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-xs placeholder:text-[var(--color-primary-600)] resize-none shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
+                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-base placeholder:text-[var(--color-primary-600)] resize-none shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         rows="6"
                         placeholder="Write your message here..."
                       ></textarea>
@@ -229,7 +229,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={formik.isSubmitting}
-                      className="group relative px-6 py-3 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-xs overflow-hidden transition-all duration-300 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
+                      className="group relative px-6 py-3 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-sm overflow-hidden transition-all duration-300 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
                     >
                       <span className="relative z-10">
                         {formik.isSubmitting ? 'Sending...' : 'Send Message'}
@@ -250,7 +250,7 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <p className="text-xs text-[var(--color-primary-600)]">
+          <p className="text-sm text-[var(--color-primary-600)]">
             You can also reach us via email at{' '}
             <a href="mailto:raijintechug@gmail.com" className="text-[var(--color-primary-500)] font-semibold hover:text-[var(--color-primary-600)] transition-colors duration-300 cursor-pointer">
               raijintechug@gmail.com

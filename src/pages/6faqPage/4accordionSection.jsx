@@ -32,7 +32,7 @@ const AccordionSection = ({
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`group relative px-5 py-2.5 rounded-full font-semibold text-xs transition-all duration-300 flex items-center gap-2 cursor-pointer ${
+                className={`group relative px-5 py-2.5 rounded-full font-semibold text-sm transition-all duration-300 flex items-center gap-2 cursor-pointer ${
                   activeCategory === category.id
                     ? 'bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]'
                     : 'bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:shadow-[3px_3px_6px_var(--shadow-dark),-3px_-3px_6px_var(--shadow-light)]'
@@ -50,13 +50,13 @@ const AccordionSection = ({
       <div className="flex justify-end gap-3 mb-6">
         <button
           onClick={expandAll}
-          className="px-4 py-2 text-xs text-[var(--color-primary-600)] hover:text-[var(--color-primary-500)] transition-colors cursor-pointer"
+          className="px-4 py-2 text-sm text-[var(--color-primary-600)] hover:text-[var(--color-primary-500)] transition-colors cursor-pointer"
         >
           Expand All
         </button>
         <button
           onClick={collapseAll}
-          className="px-4 py-2 text-xs text-[var(--color-primary-600)] hover:text-[var(--color-primary-500)] transition-colors cursor-pointer"
+          className="px-4 py-2 text-sm text-[var(--color-primary-600)] hover:text-[var(--color-primary-500)] transition-colors cursor-pointer"
         >
           Collapse All
         </button>
@@ -92,7 +92,7 @@ const AccordionSection = ({
                     {question.question}
                   </h3>
                   {searchQuery && (
-                    <span className="inline-block mt-2 px-3 py-1 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full text-xs shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]">
+                    <span className="inline-block mt-2 px-3 py-1 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full text-sm shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]">
                       {question.categoryName}
                     </span>
                   )}
@@ -119,7 +119,7 @@ const AccordionSection = ({
                 >
                   <div className="px-6 pb-6 pl-20">
                     <div className="border-l-4 border-[var(--color-primary-500)] pl-6 py-4 bg-[var(--color-bg-primary)] rounded-r-lg">
-                      <p className="text-[var(--color-primary-600)] text-xs leading-relaxed">
+                      <p className="text-[var(--color-primary-600)] text-sm leading-relaxed">
                         {question.answer}
                       </p>
                     </div>

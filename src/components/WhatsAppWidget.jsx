@@ -56,7 +56,7 @@ const WhatsAppWidget = () => {
                     </div>
                     <div>
                       <h4 className="text-white font-bold text-sm">Raijin Tech Hub</h4>
-                      <p className="text-white/80 text-[10px]">Typically replies instantly</p>
+                      <p className="text-white/80 text-sm">Typically replies instantly</p>
                     </div>
                   </div>
                   <button
@@ -70,10 +70,10 @@ const WhatsAppWidget = () => {
                 {/* Message Body */}
                 <div className="p-3 bg-[#ECE5DD]">
                   <div className="bg-white rounded-lg rounded-tl-none p-2.5 shadow-sm mb-3">
-                    <p className="text-xs text-gray-700 mb-1">
+                    <p className="text-sm text-gray-700 mb-1">
                       👋 Hello! Welcome to Raijin Tech Hub.
                     </p>
-                    <p className="text-xs text-gray-700">
+                    <p className="text-sm text-gray-700">
                       How can we help you today? Click below to start a conversation on WhatsApp.
                     </p>
                   </div>
@@ -82,21 +82,21 @@ const WhatsAppWidget = () => {
                   <div className="space-y-1.5">
                     <button
                       onClick={handleWhatsAppClick}
-                      className="w-full bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-2 text-left text-xs text-gray-700 transition-colors flex items-center gap-2 cursor-pointer"
+                      className="w-full bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-2 text-left text-sm text-gray-700 transition-colors flex items-center gap-2 cursor-pointer"
                     >
                       <span>💼</span>
                       <span>Request a Quote</span>
                     </button>
                     <button
                       onClick={handleWhatsAppClick}
-                      className="w-full bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-2 text-left text-xs text-gray-700 transition-colors flex items-center gap-2 cursor-pointer"
+                      className="w-full bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-2 text-left text-sm text-gray-700 transition-colors flex items-center gap-2 cursor-pointer"
                     >
                       <span>💬</span>
                       <span>General Inquiry</span>
                     </button>
                     <button
                       onClick={handleWhatsAppClick}
-                      className="w-full bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-2 text-left text-xs text-gray-700 transition-colors flex items-center gap-2 cursor-pointer"
+                      className="w-full bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-2 text-left text-sm text-gray-700 transition-colors flex items-center gap-2 cursor-pointer"
                     >
                       <span>🛠️</span>
                       <span>Technical Support</span>
@@ -108,7 +108,7 @@ const WhatsAppWidget = () => {
                 <div className="bg-white p-2.5 border-t border-gray-200">
                   <button
                     onClick={handleWhatsAppClick}
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-3 rounded-lg text-xs font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer"
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer"
                   >
                     <Icon icon="mdi:whatsapp" className="text-base" />
                     <span>Start Chat on WhatsApp</span>
@@ -150,7 +150,7 @@ const WhatsAppWidget = () => {
 
             {/* Notification Badge */}
             {!isOpen && (
-              <span className="absolute -top-1 -right-1 w-4 h-4 bg-red-500 text-white text-[10px] rounded-full flex items-center justify-center font-bold animate-bounce">
+              <span className="absolute -top-1 -right-1 w-5 h-5 bg-red-500 text-white text-sm rounded-full flex items-center justify-center font-bold animate-bounce">
                 1
               </span>
             )}
@@ -162,7 +162,7 @@ const WhatsAppWidget = () => {
               initial={{ opacity: 0, x: 10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.5 }}
-              className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1.5 rounded-lg text-xs whitespace-nowrap shadow-lg hidden lg:block"
+              className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white px-3 py-1.5 rounded-lg text-sm whitespace-nowrap shadow-lg hidden lg:block"
             >
               Chat with us on WhatsApp!
               <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45 w-2 h-2 bg-gray-900"></div>

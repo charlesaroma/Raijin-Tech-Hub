@@ -39,7 +39,7 @@ const FloatingButton = ({ isOpen, onClick }) => (
       <motion.span
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-green-500 text-white text-[9px] sm:text-[10px] rounded-full flex items-center justify-center font-bold shadow-lg"
+        className="absolute -top-1 -right-1 w-5 h-5 sm:w-5 sm:h-5 bg-green-500 text-white text-sm sm:text-sm rounded-full flex items-center justify-center font-bold shadow-lg"
       >
         AI
       </motion.span>

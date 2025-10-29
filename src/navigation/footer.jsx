@@ -24,7 +24,7 @@ const Footer = () => {
             <h3 className="text-lg lg:text-xl font-bold mb-3 bg-gradient-to-r from-[var(--color-accent-100)] to-[var(--color-primary-400)] bg-clip-text text-transparent">
               Raijin Tech Hub
             </h3>
-            <p className="text-xs text-[var(--color-accent-400)] leading-relaxed mb-4">
+            <p className="text-sm text-[var(--color-accent-400)] leading-relaxed mb-4">
               We are dedicated to providing innovative digital solutions for businesses. Our team specializes in custom software, IT consultancy, and cutting-edge technology implementations.
             </p>
             
@@ -32,13 +32,13 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center gap-2 group">
                 <div className="w-8 h-8 rounded-lg bg-[var(--color-primary-800)] flex items-center justify-center group-hover:bg-[var(--color-primary-700)] transition-colors duration-300">
-                  <Icon icon="mdi:email" className="text-xs text-[var(--color-primary-400)]" />
+                  <Icon icon="mdi:email" className="text-sm text-[var(--color-primary-400)]" />
                 </div>
                 <div>
-                  <p className="text-[10px] text-[var(--color-accent-500)] mb-0.5">Email Us</p>
+                  <p className="text-sm text-[var(--color-accent-500)] mb-0.5">Email Us</p>
                   <a 
                     href="mailto:raijintechug@gmail.com" 
-                    className="text-xs text-[var(--color-accent-100)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 font-medium cursor-pointer"
+                    className="text-sm text-[var(--color-accent-100)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 font-medium cursor-pointer"
                   >
                     raijintechug@gmail.com
                   </a>
@@ -63,9 +63,9 @@ const Footer = () => {
                 <li key={index}>
                   <Link 
                     to="/discover" 
-                    className="group flex items-center gap-2 text-xs text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-all duration-300 cursor-pointer"
+                    className="group flex items-center gap-2 text-sm text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-all duration-300 cursor-pointer"
                   >
-                    <Icon icon="mdi:arrow-right" className="text-[10px] opacity-0 group-hover:opacity-100 transition-all duration-300 -ml-4 group-hover:ml-0" />
+                    <Icon icon="mdi:arrow-right" className="text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 -ml-4 group-hover:ml-0" />
                     <span className="group-hover:translate-x-1 transition-transform duration-300">{service}</span>
                   </Link>
                 </li>
@@ -122,11 +122,11 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-8 pt-6 border-t border-[var(--color-primary-800)]">
           <div className="flex flex-col md:flex-row justify-between items-center gap-3">
-            <p className="text-[var(--color-accent-500)] text-xs flex items-center gap-2">
+            <p className="text-[var(--color-accent-500)] text-sm flex items-center gap-2">
               &copy; {currentYear} Raijin Tech Hub. All rights reserved. Made with{" "}
-              <Icon icon="mdi:heart" className="text-red-500 text-[10px] animate-pulse" /> by Charles Aroma
+              <Icon icon="mdi:heart" className="text-red-500 text-sm animate-pulse" /> by Charles Aroma
             </p>
-            <div className="flex gap-4 text-xs">
+            <div className="flex gap-4 text-sm">
               <Link 
                 to="/privacy-policy" 
                 className="text-[var(--color-accent-400)] hover:text-[var(--color-secondary-400)] transition-colors duration-300 cursor-pointer"

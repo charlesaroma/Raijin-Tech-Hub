@@ -25,7 +25,7 @@ const MessageBubble = ({ message, onWhatsAppClick }) => {
               : 'bg-white text-gray-800 rounded-bl-none shadow-md border border-gray-100'
           }`}
         >
-          <div className="text-xs sm:text-sm prose prose-sm max-w-none">
+          <div className="text-sm sm:text-sm prose prose-sm max-w-none">
             {isUser ? (
               <p>{message.text}</p>
             ) : (
@@ -41,7 +41,7 @@ const MessageBubble = ({ message, onWhatsAppClick }) => {
             initial={{ opacity: 0, y: -5 }}
             animate={{ opacity: 1, y: 0 }}
             onClick={onWhatsAppClick}
-            className="mt-2 w-full bg-gradient-to-r from-green-500 to-green-600 text-white text-xs py-2 px-3 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer"
+            className="mt-2 w-full bg-gradient-to-r from-green-500 to-green-600 text-white text-sm py-2 px-3 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer"
           >
             <Icon icon="mdi:whatsapp" className="text-base" />
             <span>Connect on WhatsApp</span>

@@ -79,7 +79,7 @@ const ServicesSection = () => {
               <div className="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
             </h2>
           </div>
-          <p className="mt-4 text-xs sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
+          <p className="mt-4 text-sm sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
             Discover the range of services we offer to help your business grow and thrive in the digital age.
         </p>
       </div>
@@ -154,7 +154,7 @@ const ServicesSection = () => {
 
                   {/* Description */}
                   <p className={`
-                    text-[10px] sm:text-xs ${isLarge ? 'lg:text-sm' : ''}
+                    text-sm sm:text-sm ${isLarge ? 'lg:text-sm' : ''}
                     ${isLarge ? 'line-clamp-4 sm:line-clamp-5' : isWide ? 'line-clamp-2 sm:line-clamp-3' : isTall ? 'line-clamp-4 sm:line-clamp-6' : 'line-clamp-2 sm:line-clamp-3'}
                     text-[var(--color-primary-500)]/80 dark:text-[var(--color-primary-400)]/80 
                     leading-relaxed

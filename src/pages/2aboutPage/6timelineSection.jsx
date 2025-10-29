@@ -55,10 +55,10 @@ const TimelineSection = () => {
                 <div className="text-sm sm:text-base font-bold text-[var(--color-primary-500)] mb-1.5 sm:mb-2">
                   {item.year}
                 </div>
-                <h4 className="text-xs sm:text-sm font-bold text-[var(--color-primary-600)] mb-1.5 sm:mb-2">
+                <h4 className="text-sm sm:text-sm font-bold text-[var(--color-primary-600)] mb-1.5 sm:mb-2">
                   {item.title}
                 </h4>
-                <p className="text-[11px] sm:text-xs leading-relaxed text-[var(--color-primary-600)]">
+                <p className="text-sm sm:text-sm leading-relaxed text-[var(--color-primary-600)]">
                   {item.description}
                 </p>
               </div>

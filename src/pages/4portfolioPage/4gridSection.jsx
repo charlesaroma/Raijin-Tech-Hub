@@ -31,7 +31,7 @@ const GridSection = ({ filteredCases, cardsRef, openCaseStudy }) => {
               
               {/* Industry Badge */}
               <div className="absolute top-4 left-4">
-                <span className="px-3 py-1.5 bg-[var(--color-primary-500)] text-white rounded-full text-xs font-semibold flex items-center gap-2">
+                <span className="px-3 py-1.5 bg-[var(--color-primary-500)] text-white rounded-full text-sm font-semibold flex items-center gap-2">
                   <Icon icon="mdi:factory" className="text-sm" />
                   {caseStudy.industry}
                 </span>
@@ -39,7 +39,7 @@ const GridSection = ({ filteredCases, cardsRef, openCaseStudy }) => {
 
               {/* Year Badge */}
               <div className="absolute top-4 right-4">
-                <span className="px-3 py-1.5 bg-white/90 text-[var(--color-primary-600)] rounded-full text-xs font-semibold">
+                <span className="px-3 py-1.5 bg-white/90 text-[var(--color-primary-600)] rounded-full text-sm font-semibold">
                   {caseStudy.year}
                 </span>
               </div>
@@ -48,7 +48,7 @@ const GridSection = ({ filteredCases, cardsRef, openCaseStudy }) => {
             {/* Content */}
             <div className="p-6 lg:p-8">
               {/* Client & Duration */}
-              <div className="flex items-center gap-4 mb-4 text-xs text-[var(--color-primary-600)]">
+              <div className="flex items-center gap-4 mb-4 text-sm text-[var(--color-primary-600)]">
                 <span className="font-semibold">{caseStudy.client}</span>
                 <span className="flex items-center gap-1">
                   <Icon icon="mdi:clock" className="text-sm" />
@@ -62,7 +62,7 @@ const GridSection = ({ filteredCases, cardsRef, openCaseStudy }) => {
               </h3>
 
               {/* Challenge Preview */}
-              <p className="text-xs text-[var(--color-primary-600)] mb-4 line-clamp-3">
+              <p className="text-sm text-[var(--color-primary-600)] mb-4 line-clamp-3">
                 {caseStudy.challenge}
               </p>
 
@@ -71,14 +71,14 @@ const GridSection = ({ filteredCases, cardsRef, openCaseStudy }) => {
                 {caseStudy.technologies.slice(0, 4).map((tech, idx) => (
                   <span
                     key={idx}
-                    className="px-2 py-1 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full text-[10px] font-medium flex items-center gap-1 shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"
+                    className="px-2 py-1 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full text-sm font-medium flex items-center gap-1 shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"
                   >
-                    <Icon icon="mdi:laptop-account" className="text-xs" />
+                    <Icon icon="mdi:laptop-account" className="text-sm" />
                     {tech}
                   </span>
                 ))}
                 {caseStudy.technologies.length > 4 && (
-                  <span className="px-2 py-1 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full text-[10px] font-medium shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]">
+                  <span className="px-2 py-1 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full text-sm font-medium shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]">
                     +{caseStudy.technologies.length - 4} more
                   </span>
                 )}
@@ -87,7 +87,7 @@ const GridSection = ({ filteredCases, cardsRef, openCaseStudy }) => {
               {/* View Case Study Button */}
               <button
                 onClick={() => openCaseStudy(caseStudy)}
-                className="group/btn w-full px-5 py-2.5 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-xs transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:shadow-[3px_3px_6px_var(--shadow-dark),-3px_-3px_6px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_3px_3px_6px_var(--shadow-dark),inset_-3px_-3px_6px_var(--shadow-light)]"
+                className="group/btn w-full px-5 py-2.5 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-sm transition-all duration-300 flex items-center justify-center gap-2 cursor-pointer shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:shadow-[3px_3px_6px_var(--shadow-dark),-3px_-3px_6px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_3px_3px_6px_var(--shadow-dark),inset_-3px_-3px_6px_var(--shadow-light)]"
               >
                 <span>View Full Case Study</span>
                 <Icon icon="mdi:arrow-right" className="text-sm group-hover/btn:translate-x-1 transition-transform" />

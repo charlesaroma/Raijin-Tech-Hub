@@ -8,8 +8,8 @@ const ChatHeader = ({ onClose }) => (
         <Icon icon="mdi:robot" className="text-lg sm:text-xl text-[var(--color-primary-500)]" />
       </div>
       <div>
-        <h4 className="font-bold text-xs sm:text-sm">Raijin AI Assistant</h4>
-        <p className="text-[10px] sm:text-xs text-white/80 flex items-center gap-1">
+        <h4 className="font-bold text-sm sm:text-sm">Raijin AI Assistant</h4>
+        <p className="text-xs sm:text-xs text-white/80 flex items-center gap-1">
           <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></span>
           Online 24/7
         </p>

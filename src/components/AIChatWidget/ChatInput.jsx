@@ -23,7 +23,7 @@ const ChatInput = ({ value, onChange, onSend, onKeyPress, isLoading, inputRef })
         <Icon icon={isLoading ? 'mdi:loading' : 'mdi:send'} className={`text-lg sm:text-xl ${isLoading ? 'animate-spin' : ''}`} />
       </button>
     </div>
-    <p className="text-[9px] sm:text-[10px] text-gray-400 mt-1.5 sm:mt-2 text-center">
+    <p className="text-[10px] sm:text-[10px] text-gray-400 mt-1.5 sm:mt-2 text-center">
       Powered by Google Gemini AI 🤖
     </p>
   </div>

@@ -74,7 +74,7 @@ const ExpertiseSection = () => {
               <div className="w-12 h-0.5 bg-[var(--color-primary-500)]/30 rounded-full mb-4 mx-auto"></div>
 
               {/* Description */}
-              <p className="text-xs lg:text-sm text-[var(--color-primary-600)] leading-relaxed text-center">
+              <p className="text-sm lg:text-sm text-[var(--color-primary-600)] leading-relaxed text-center">
                 {item.description}
               </p>
             </div>

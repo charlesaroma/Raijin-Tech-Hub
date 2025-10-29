@@ -44,7 +44,7 @@
    yarn dev
    ```
 
-**📖 Full Documentation:** See `AI_CHATBOT_SETUP.md` for detailed setup and customization guide.
+**📖 Full Documentation:** See `DOCUMENTATION.md` for complete setup, deployment, and customization guide.
 
 ## 🛠️ Tech Stack
 
@@ -101,19 +101,20 @@ yarn preview
 src/
 ├── components/          # Reusable components
 │   ├── AIChatWidget.jsx      # AI chatbot interface
-│   ├── ServiceCard.jsx
+│   ├── WhatsAppWidget.jsx
+│   ├── SEO.jsx
 │   └── ...
-├── pages/              # Page components (numbered for order)
-│   ├── 1homePage/
-│   ├── 2companyPage/
-│   ├── 3servicePage/
-│   ├── 4contactPage/
-│   ├── 5portfolioPage/
-│   ├── 6galleryPage/
-│   ├── 7aboutPage/
-│   ├── 8faqPage/
-│   ├── 9privacyPage/
-│   └── 10termsPage/
+├── pages/              # Page components (organized by navigation)
+│   ├── 1homePage/           # Homepage
+│   ├── 2aboutPage/          # About Us
+│   ├── 3servicePage/        # Services
+│   ├── 4portfolioPage/      # Portfolio
+│   ├── 5galleryPage/        # Gallery
+│   ├── 6faqPage/            # FAQ
+│   ├── 7contactPage/        # Contact
+│   ├── 8companyPage/        # Company Info
+│   ├── 9privacyPage/        # Privacy Policy
+│   └── 10termsPage/         # Terms of Service
 ├── navigation/         # Navbar, footer, routing
 ├── utils/              # Utilities and helpers
 │   ├── geminiAI.js          # AI integration

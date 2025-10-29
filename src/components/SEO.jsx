@@ -99,8 +99,8 @@ SEO.propTypes = {
 
 SEO.defaultProps = {
   title: "Raijin Tech Hub Uganda | Custom Software Development & IT Solutions",
-  description: "Leading IT company in Uganda specializing in custom software development, web applications, mobile apps, IT consultancy, cloud solutions, UI/UX design, and digital transformation. Transform your business with cutting-edge technology solutions.",
-  keywords: "software development Uganda, IT consultancy Uganda, custom software development, web development Uganda, mobile app development Uganda, cloud solutions Uganda, UI/UX design Uganda, digital transformation Uganda, tech company Uganda",
+  description: "Leading IT company in Uganda specializing in custom software development, web applications, mobile apps, IT consultancy, AI chatbot integration, UI/UX design, and digital transformation. Transform your business with cutting-edge technology solutions.",
+  keywords: "software development Uganda, IT consultancy Uganda, custom software development, web development Uganda, mobile app development Uganda, AI chatbot integration Uganda, AI solutions Kampala, UI/UX design Uganda, digital transformation Uganda, tech company Uganda",
   image: "https://raijintechhub.com/RaijinIcon.png",
   type: "website"
 };

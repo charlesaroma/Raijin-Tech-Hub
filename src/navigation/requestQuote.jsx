@@ -14,7 +14,7 @@ const RequestQuote = () => {
   const services = [
     { label: 'Cybersecurity & Pen testing', value: 'cybersecurity' },
     { label: 'IT Consultancy & Strategy', value: 'it-consultancy' },
-    { label: 'Cloud Solutions & Migration', value: 'cloud-migration' },
+    { label: 'AI Integration & Chatbot Solutions', value: 'ai-chatbot-integration' },
     { label: 'UI/UX Design & Development', value: 'ui-ux' },
     { label: 'Digital Transformation & Automation', value: 'digital-transformation' },
     { label: 'Website Development', value: 'website-development' },

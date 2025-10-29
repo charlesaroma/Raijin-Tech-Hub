@@ -6,15 +6,15 @@ import Footer from "./navigation/footer";
 import AIChatWidget from "./components/AIChatWidget";
 import { logPageView } from "./utils/analytics";
 
-// Lazy load pages for code splitting
+// Lazy load pages for code splitting - organized by navigation order
 const Home = lazy(() => import("./pages/1homePage/1homePage"));
-const Company = lazy(() => import("./pages/2companyPage/1companyPage"));
+const About = lazy(() => import("./pages/2aboutPage/1aboutPage"));
 const Service = lazy(() => import("./pages/3servicePage/1servicePage"));
-const Contact = lazy(() => import("./pages/4contactPage/1contactPage"));
-const Portfolio = lazy(() => import("./pages/5portfolioPage/1portfolioPage"));
-const Gallery = lazy(() => import("./pages/6galleryPage/1galleryPage"));
-const About = lazy(() => import("./pages/7aboutPage/1aboutPage"));
-const FAQ = lazy(() => import("./pages/8faqPage/1faqPage"));
+const Portfolio = lazy(() => import("./pages/4portfolioPage/1portfolioPage"));
+const Gallery = lazy(() => import("./pages/5galleryPage/1galleryPage"));
+const FAQ = lazy(() => import("./pages/6faqPage/1faqPage"));
+const Contact = lazy(() => import("./pages/7contactPage/1contactPage"));
+const Company = lazy(() => import("./pages/8companyPage/1companyPage"));
 const PrivacyPolicy = lazy(() => import("./pages/9privacyPage/1privacyPage"));
 const TermsOfService = lazy(() => import("./pages/10termsPage/1termsPage"));
 const RequestQuote = lazy(() => import("./navigation/requestQuote"));

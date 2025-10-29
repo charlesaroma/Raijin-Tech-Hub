@@ -1,25 +1,37 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
+import { GoogleGenAI } from '@google/genai';
 
-// Initialize Gemini AI
+// Initialize Gemini AI with new SDK
 const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-const genAI = API_KEY ? new GoogleGenerativeAI(API_KEY) : null;
+
+console.log('🔍 Gemini AI Initialization');
+console.log('✓ API Key loaded:', !!API_KEY);
+
+const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;
 
 // System context about Raijin Tech Hub
 const COMPANY_CONTEXT = `You are Raijin AI, a friendly and professional AI assistant for Raijin Tech Hub, a leading IT solutions company in Uganda.
 
 COMPANY INFORMATION:
 - Name: Raijin Tech Hub
-- Founded: 2020
+- Founded: 2023
 - Location: Kampala, Uganda (serving East Africa and globally)
 - Website: raijintechhub.com
-- Contact: +256 777 982066
+- Phone/WhatsApp: +256 777 982066
+- Email: raijintechug@gmail.com
+
+SOCIAL MEDIA & CONTACT:
+- WhatsApp: https://wa.me/256777982066
+- Instagram: https://www.instagram.com/raijin_tech_hub
+- LinkedIn: https://www.linkedin.com/company/raijin-technologies-ug/
+- Facebook: https://www.facebook.com/GVNG8
+- Email: raijintechug@gmail.com
 
 SERVICES WE OFFER:
 1. Custom Software Development - Enterprise solutions, SaaS platforms, custom applications
 2. Web Development - Corporate websites, e-commerce platforms, web applications
 3. Mobile App Development - iOS and Android apps using React Native and Flutter
 4. IT Consultancy & Strategy - Technology planning, digital transformation, system architecture
-5. Cloud Solutions & Migration - AWS, Azure, cloud infrastructure setup and management
+5. AI Integration & Chatbot Solutions - Custom AI chatbots, intelligent automation, conversational AI for customer support and business processes
 6. UI/UX Design - User research, wireframing, prototyping, visual design
 7. Cybersecurity - Penetration testing, security audits, vulnerability assessments
 8. SEO Optimization - Technical SEO, content strategy, performance optimization
@@ -28,23 +40,23 @@ SERVICES WE OFFER:
 11. Technical Support & Maintenance - 24/7 support, ongoing maintenance, system updates
 
 PRICING APPROACH:
-- Basic website: Starting from UGX 2-5M
-- E-commerce platform: UGX 8-15M
-- Mobile app: UGX 10-20M
+- Basic website: Starting from UGX 1-5M
+- E-commerce platform: UGX 2-15M
+- Mobile app: UGX 5 -20M
 - Custom enterprise solution: UGX 15M+
 - Prices vary based on complexity, features, and timeline
 - We offer flexible payment plans (typically 30% upfront, 40% mid-project, 30% completion)
 
 PROJECT TIMELINE:
-- Simple website: 2-4 weeks
+- Simple website: 5-10 days
 - Mobile app: 2-3 months
 - Complex enterprise system: 4-6 months
 - We use agile methodology with regular client involvement
 
 OUR TEAM:
-- Charles Aroma: Founder & CEO, Senior Frontend Developer
-- Joshua Kimbareeba: Co-founder, Alternate Director & Fullstack Developer
-- Stephanie Kirathe: UI/UX Designer & SEO Specialist
+- Charles Aroma: Founder, Senior Frontend Developer
+- Joshua Kimbareeba: Co-founder, Alternate Director & Senior Fullstack Developer
+- Stephanie Kirathe: UI/UX Designer & SEO & Content Specialist
 - Experienced team of developers, designers, and consultants
 
 OUR STATS:
@@ -58,10 +70,11 @@ YOUR ROLE AS RAIJIN AI:
 2. Be helpful, friendly, and professional
 3. Ask clarifying questions to understand user needs better
 4. Qualify leads by gathering project information
-5. If user wants detailed quote or to speak with someone, offer WhatsApp connection
-6. Keep responses concise but informative (2-4 sentences ideal)
-7. Use emojis sparingly and professionally
-8. If you don't know something specific, be honest and offer to connect them with the team
+5. Share social media links when users ask how to connect or follow us
+6. If user wants detailed quote or to speak with someone, offer WhatsApp connection
+7. Keep responses concise but informative (2-4 sentences ideal)
+8. Use emojis sparingly and professionally
+9. If you don't know something specific, be honest and offer to connect them with the team
 
 CONVERSATION TIPS:
 - Start with a warm greeting
@@ -86,47 +99,76 @@ export const QUICK_REPLIES = [
   { text: '📞 Talk to Human', query: 'I want to speak with someone from your team' },
 ];
 
-// Initialize chat with Gemini
+// Initialize chat with Gemini (using new SDK)
 export const initializeChat = async () => {
-  if (!genAI) {
+  if (!ai) {
     throw new Error('Gemini API key not configured. Please add VITE_GEMINI_API_KEY to your .env.local file');
   }
 
-  const model = genAI.getGenerativeModel({ 
-    model: 'gemini-pro',
-    generationConfig: {
-      temperature: 0.7,
-      topK: 40,
-      topP: 0.95,
-      maxOutputTokens: 1024,
-    },
-  });
+  try {
+    console.log('🚀 Initializing Gemini AI...');
+    
+    // Return a chat object that maintains conversation history
+    const chatSession = {
+      history: [],
+      systemContext: COMPANY_CONTEXT
+    };
 
-  const chat = model.startChat({
-    history: [
-      {
-        role: 'user',
-        parts: [{ text: COMPANY_CONTEXT }],
-      },
-      {
-        role: 'model',
-        parts: [{ text: 'Understood! I am Raijin AI, ready to assist visitors to Raijin Tech Hub with information about your IT services, answer questions, and help connect them with your team. I will be professional, helpful, and focused on understanding their needs.' }],
-      },
-    ],
-  });
-
-  return chat;
+    console.log('✓ Chat session ready');
+    return chatSession;
+    
+  } catch (error) {
+    console.error('❌ Failed to initialize chat:', error);
+    throw error;
+  }
 };
 
-// Send message to Gemini AI
-export const sendMessage = async (chat, message) => {
+// Send message to Gemini AI (using new SDK)
+export const sendMessage = async (chatSession, message) => {
+  if (!chatSession || !ai) {
+    throw new Error('Chat session not initialized');
+  }
+
   try {
-    const result = await chat.sendMessage(message);
-    const response = await result.response;
-    const text = response.text();
+    console.log('📤 Sending message...');
+    
+    // Build conversation context
+    let conversationContext = chatSession.systemContext + '\n\n';
+    
+    // Add conversation history
+    if (chatSession.history.length > 0) {
+      conversationContext += 'Previous conversation:\n';
+      chatSession.history.forEach(entry => {
+        conversationContext += `${entry.role === 'user' ? 'User' : 'Assistant'}: ${entry.message}\n`;
+      });
+      conversationContext += '\n';
+    }
+    
+    // Add current message
+    conversationContext += `User: ${message}\n\nAssistant:`;
+    
+    // Call new API
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.0-flash-exp',
+      contents: conversationContext
+    });
+    
+    const text = response.text;
+    
+    // Add to history
+    chatSession.history.push({ role: 'user', message });
+    chatSession.history.push({ role: 'assistant', message: text });
+    
+    // Keep history manageable (last 10 exchanges)
+    if (chatSession.history.length > 20) {
+      chatSession.history = chatSession.history.slice(-20);
+    }
+    
+    console.log('✓ Received response');
     return text;
+    
   } catch (error) {
-    console.error('Error sending message to Gemini:', error);
+    console.error('❌ Send message error:', error.message);
     throw error;
   }
 };

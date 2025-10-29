@@ -106,7 +106,7 @@ const AIChatWidget = () => {
       setMessages(prev => [...prev, assistantMessage]);
       trackContact('AI Chat Message Sent');
     } catch (err) {
-      console.error('Error getting AI response:', err);
+      console.error('❌ AI Error:', err.message);
       setMessages(prev => [...prev, {
         role: 'assistant',
         text: '❌ Sorry, I encountered an error. Would you like to connect with our team on WhatsApp instead?',
@@ -141,7 +141,7 @@ const AIChatWidget = () => {
   return (
     <AnimatePresence>
       {isVisible && (
-        <div className="fixed bottom-6 right-6 z-50">
+        <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
           {/* Chat Window */}
           <AnimatePresence>
             {isOpen && (
@@ -150,13 +150,13 @@ const AIChatWidget = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="absolute bottom-20 right-0 w-[380px] sm:w-[400px] h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col"
+                className="absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-[340px] sm:max-w-[380px] md:w-[400px] h-[500px] sm:h-[550px] md:h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col"
               >
                 {/* Header */}
                 <ChatHeader onClose={toggleOpen} />
 
                 {/* Messages Area */}
-                <div className="flex-1 overflow-y-auto p-4 bg-gradient-to-b from-gray-50 to-white space-y-3">
+                <div className="flex-1 overflow-y-auto p-3 sm:p-4 bg-gradient-to-b from-gray-50 to-white space-y-3">
                   {messages.map((message, index) => (
                     <MessageBubble 
                       key={index} 
@@ -204,25 +204,25 @@ const AIChatWidget = () => {
 
 // Chat Header Component
 const ChatHeader = ({ onClose }) => (
-  <div className="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] p-4 flex items-center justify-between text-white">
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
-        <Icon icon="mdi:robot" className="text-xl text-[var(--color-primary-500)]" />
+  <div className="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] p-3 sm:p-4 flex items-center justify-between text-white">
+    <div className="flex items-center gap-2 sm:gap-3">
+      <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white flex items-center justify-center shadow-lg">
+        <Icon icon="mdi:robot" className="text-lg sm:text-xl text-[var(--color-primary-500)]" />
       </div>
       <div>
-        <h4 className="font-bold text-sm">Raijin AI Assistant</h4>
-        <p className="text-xs text-white/80 flex items-center gap-1">
-          <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        <h4 className="font-bold text-xs sm:text-sm">Raijin AI Assistant</h4>
+        <p className="text-[10px] sm:text-xs text-white/80 flex items-center gap-1">
+          <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></span>
           Online 24/7
         </p>
       </div>
     </div>
     <button
       onClick={onClose}
-      className="text-white hover:bg-white/20 p-2 rounded-full transition-colors cursor-pointer"
+      className="text-white hover:bg-white/20 p-1.5 sm:p-2 rounded-full transition-colors cursor-pointer"
       aria-label="Close chat"
     >
-      <Icon icon="mdi:close" className="text-lg" />
+      <Icon icon="mdi:close" className="text-base sm:text-lg" />
     </button>
   </div>
 );
@@ -243,9 +243,9 @@ const MessageBubble = ({ message, onWhatsAppClick }) => {
       transition={{ duration: 0.2 }}
       className={`flex ${isUser ? 'justify-end' : 'justify-start'}`}
     >
-      <div className={`max-w-[85%] ${isUser ? 'order-2' : 'order-1'}`}>
+      <div className={`max-w-[90%] sm:max-w-[85%] ${isUser ? 'order-2' : 'order-1'}`}>
         <div
-          className={`rounded-2xl p-3 ${
+          className={`rounded-2xl p-2.5 sm:p-3 ${
             isUser
               ? 'bg-[var(--color-primary-500)] text-white rounded-br-none'
               : isError
@@ -253,7 +253,7 @@ const MessageBubble = ({ message, onWhatsAppClick }) => {
               : 'bg-white text-gray-800 rounded-bl-none shadow-md border border-gray-100'
           }`}
         >
-          <div className="text-sm prose prose-sm max-w-none">
+          <div className="text-xs sm:text-sm prose prose-sm max-w-none">
             {isUser ? (
               <p>{message.text}</p>
             ) : (
@@ -316,9 +316,9 @@ const TypingIndicator = () => (
 
 // Quick Replies Component
 const QuickReplies = ({ onSelect }) => (
-  <div className="px-4 pb-3 space-y-2">
-    <p className="text-xs text-gray-500 mb-2">💡 Quick questions:</p>
-    <div className="grid grid-cols-2 gap-2">
+  <div className="px-3 sm:px-4 pb-2 sm:pb-3 space-y-2">
+    <p className="text-[10px] sm:text-xs text-gray-500 mb-1 sm:mb-2">💡 Quick questions:</p>
+    <div className="grid grid-cols-2 gap-1.5 sm:gap-2">
       {QUICK_REPLIES.map((reply, index) => (
         <motion.button
           key={index}
@@ -326,7 +326,7 @@ const QuickReplies = ({ onSelect }) => (
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: index * 0.05 }}
           onClick={() => onSelect(reply.query)}
-          className="text-xs bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-2 text-left transition-all hover:border-[var(--color-primary-500)] hover:shadow-sm cursor-pointer"
+          className="text-[10px] sm:text-xs bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-1.5 sm:p-2 text-left transition-all hover:border-[var(--color-primary-500)] hover:shadow-sm cursor-pointer"
         >
           {reply.text}
         </motion.button>
@@ -341,8 +341,8 @@ QuickReplies.propTypes = {
 
 // Chat Input Component
 const ChatInput = ({ value, onChange, onSend, onKeyPress, isLoading, inputRef }) => (
-  <div className="p-3 bg-white border-t border-gray-200">
-    <div className="flex gap-2">
+  <div className="p-2 sm:p-3 bg-white border-t border-gray-200">
+    <div className="flex gap-1.5 sm:gap-2">
       <input
         ref={inputRef}
         type="text"
@@ -351,7 +351,7 @@ const ChatInput = ({ value, onChange, onSend, onKeyPress, isLoading, inputRef })
         onKeyPress={onKeyPress}
         placeholder="Type your message..."
         disabled={isLoading}
-        className="flex-1 px-4 py-2 border border-gray-300 rounded-full text-sm focus:outline-none focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-500)]/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
+        className="flex-1 px-3 py-2 sm:px-4 border border-gray-300 rounded-full text-xs sm:text-sm focus:outline-none focus:border-[var(--color-primary-500)] focus:ring-2 focus:ring-[var(--color-primary-500)]/20 disabled:bg-gray-50 disabled:cursor-not-allowed"
       />
       <button
         onClick={() => onSend()}
@@ -359,10 +359,10 @@ const ChatInput = ({ value, onChange, onSend, onKeyPress, isLoading, inputRef })
         className="bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white p-2 rounded-full hover:from-[var(--color-primary-600)] hover:to-[var(--color-primary-700)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-lg hover:shadow-xl"
         aria-label="Send message"
       >
-        <Icon icon={isLoading ? 'mdi:loading' : 'mdi:send'} className={`text-xl ${isLoading ? 'animate-spin' : ''}`} />
+        <Icon icon={isLoading ? 'mdi:loading' : 'mdi:send'} className={`text-lg sm:text-xl ${isLoading ? 'animate-spin' : ''}`} />
       </button>
     </div>
-    <p className="text-[10px] text-gray-400 mt-2 text-center">
+    <p className="text-[9px] sm:text-[10px] text-gray-400 mt-1.5 sm:mt-2 text-center">
       Powered by Google Gemini AI 🤖
     </p>
   </div>
@@ -389,7 +389,7 @@ const FloatingButton = ({ isOpen, onClick }) => (
       damping: 20,
     }}
     onClick={onClick}
-    className="relative w-16 h-16 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white rounded-full shadow-2xl hover:shadow-[var(--color-primary-500)]/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group cursor-pointer"
+    className="relative w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white rounded-full shadow-2xl hover:shadow-[var(--color-primary-500)]/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group cursor-pointer"
     aria-label="Open AI chat"
   >
     {/* Pulse Animation */}
@@ -404,9 +404,9 @@ const FloatingButton = ({ isOpen, onClick }) => (
       className="relative z-10"
     >
       {isOpen ? (
-        <Icon icon="mdi:close" className="text-2xl" />
+        <Icon icon="mdi:close" className="text-xl sm:text-2xl" />
       ) : (
-        <Icon icon="mdi:robot" className="text-2xl" />
+        <Icon icon="mdi:robot" className="text-xl sm:text-2xl" />
       )}
     </motion.div>
 
@@ -415,7 +415,7 @@ const FloatingButton = ({ isOpen, onClick }) => (
       <motion.span
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        className="absolute -top-1 -right-1 w-5 h-5 bg-green-500 text-white text-[10px] rounded-full flex items-center justify-center font-bold shadow-lg"
+        className="absolute -top-1 -right-1 w-4 h-4 sm:w-5 sm:h-5 bg-green-500 text-white text-[9px] sm:text-[10px] rounded-full flex items-center justify-center font-bold shadow-lg"
       >
         AI
       </motion.span>

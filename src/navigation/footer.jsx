@@ -56,7 +56,7 @@ const Footer = () => {
               {[
                 "Custom Software & Web Development",
                 "IT Consultancy & Strategy",
-                "Cloud Solutions & Migration",
+                "AI Integration & Chatbot Solutions",
                 "UI/UX Design & Development",
                 "Digital Transformation & Automation"
               ].map((service, index) => (

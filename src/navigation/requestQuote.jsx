@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import emailjs from 'emailjs-com';
 import { FaUser, FaEnvelope, FaPhone, FaBuilding, FaGlobe, FaCommentDots, FaPaperPlane, FaCheckCircle } from 'react-icons/fa';
 import SEO from '../components/SEO';
 import { BreadcrumbStructuredData } from '../components/StructuredData';
@@ -45,31 +44,43 @@ const RequestQuote = () => {
   });
 
   const handleSubmit = async (values, actions) => {
+    setError('');
+    
     try {
       const selectedServices = values.service.join(', ') + (values.otherService ? `, Other Service: ${values.otherService}` : '');
-      const result = await emailjs.send(
-        'service_ndt5wdl',
-        'template_dgreisk',
-        {
-          to_name: 'Raijin Tech Hub',
-          from_name: values.name,
-          message: values.comments,
-          services: selectedServices,  // Send the selected services properly formatted
-          from_email: values.email,
-          from_phone: values.phone,
-          company_name: values.company || 'N/A',
-          website: values.website || 'N/A',
-        },
-        '8KTDGoFLmKVPlRQFZ'
-      );
-      console.log('Email successfully sent:', result.text);
-      setIsSubmitted(true);
-      actions.resetForm();
+      
+      const formData = new FormData();
+      formData.append('access_key', '61acac76-4335-4ae8-9aed-244567db8faa');
+      formData.append('subject', 'Quotation Request from Raijin Tech Hub Website');
+      formData.append('from_name', 'Raijin Tech Hub Request Quote Form');
+      formData.append('name', values.name);
+      formData.append('email', values.email);
+      formData.append('phone', values.phone);
+      formData.append('company', values.company || 'N/A');
+      formData.append('website', values.website || 'N/A');
+      formData.append('services', selectedServices);
+      formData.append('message', values.comments);
+      
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        console.log('✅ Email successfully sent:', data);
+        setIsSubmitted(true);
+        actions.resetForm();
+      } else {
+        throw new Error(data.message || 'Failed to send request');
+      }
     } catch (error) {
-      console.error('Failed to send email:', error);
-      setError('Something went wrong while sending your request. Please try again.');
+      console.error('❌ Failed to send email:', error);
+      setError(`Failed to send request: ${error.message || 'Unknown error'}`);
+    } finally {
+      actions.setSubmitting(false);
     }
-    actions.setSubmitting(false);
   };
 
   return (

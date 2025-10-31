@@ -2,13 +2,13 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import emailjs from 'emailjs-com';
 import { Icon } from '@iconify/react';
 import SEO from '../../components/SEO';
 import { BreadcrumbStructuredData } from '../../components/StructuredData';
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
+  const [sendError, setSendError] = useState('');
 
   const formik = useFormik({
     initialValues: {
@@ -21,31 +21,39 @@ const Contact = () => {
       email: Yup.string().email('Invalid email address').required('Email is required'),
       message: Yup.string().required('Message is required'),
     }),
-    onSubmit: (values, { setSubmitting, resetForm }) => {
-      emailjs
-        .send(
-          'service_ann8l9a',
-          'template_8ct7xxg',
-          {
-            from_name: values.name,
-            from_email: values.email,
-            message: values.message,
-          },
-          '8KTDGoFLmKVPlRQFZ'
-        )
-        .then(
-          (response) => {
-            console.log('Message sent successfully:', response);
-            setSubmitting(false);
-            setSubmitted(true);
-            resetForm();
-            setTimeout(() => setSubmitted(false), 5000);
-          },
-          (error) => {
-            console.log('Error sending message:', error);
-            setSubmitting(false);
-          }
-        );
+    onSubmit: async (values, { setSubmitting, resetForm }) => {
+      setSendError('');
+      
+      try {
+        const formData = new FormData();
+        formData.append('access_key', '61acac76-4335-4ae8-9aed-244567db8faa');
+        formData.append('name', values.name);
+        formData.append('email', values.email);
+        formData.append('message', values.message);
+        formData.append('subject', 'Contact Form Submission from Raijin Tech Hub Website');
+        formData.append('from_name', 'Raijin Tech Hub Contact Form');
+        
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.success) {
+          console.log('✅ Message sent successfully:', data);
+          setSubmitted(true);
+          resetForm();
+          setTimeout(() => setSubmitted(false), 5000);
+        } else {
+          throw new Error(data.message || 'Failed to send message');
+        }
+      } catch (error) {
+        console.error('❌ Error sending message:', error);
+        setSendError(`Failed to send message: ${error.message || 'Unknown error'}`);
+      } finally {
+        setSubmitting(false);
+      }
     },
   });
 
@@ -137,6 +145,23 @@ const Contact = () => {
                 </motion.div>
               ) : (
                 <form onSubmit={formik.handleSubmit} className="space-y-6">
+                  {/* Error Message */}
+                  {sendError && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 bg-red-50 border-l-4 border-red-500 text-red-700 rounded-r-lg"
+                    >
+                      <div className="flex items-center gap-2">
+                        <Icon icon="mdi:alert-circle" className="text-xl" />
+                        <div>
+                          <p className="font-semibold">Error Sending Message</p>
+                          <p className="text-sm">{sendError}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+
                   {/* Name Field */}
                   <div>
                     <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">

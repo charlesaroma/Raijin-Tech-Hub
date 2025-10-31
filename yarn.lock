@@ -223,13 +223,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@emailjs/browser@npm:^4.4.1":
-  version: 4.4.1
-  resolution: "@emailjs/browser@npm:4.4.1"
-  checksum: 10c0/91c3d1702818dc2db61f382f5295e469ce2e6acb4d683d65239e0a12dea8b635cd8cea60ef9a83f2aa8fce857b1f8f8663e02dcd7f529cbf902f1f0e6d0d1b44
-  languageName: node
-  linkType: hard
-
 "@emnapi/core@npm:^1.5.0":
   version: 1.6.0
   resolution: "@emnapi/core@npm:1.6.0"
@@ -2523,13 +2516,6 @@ __metadata:
   version: 1.5.243
   resolution: "electron-to-chromium@npm:1.5.243"
   checksum: 10c0/04a609027a63cb9527d9963fb230b5456d678f88278c919374c35e766be42d19b6b28c25c94ae366e31d154e611a670f3e0890f2526c69e215e51709565a3ecc
-  languageName: node
-  linkType: hard
-
-"emailjs-com@npm:^3.2.0":
-  version: 3.2.0
-  resolution: "emailjs-com@npm:3.2.0"
-  checksum: 10c0/3c6865ce89ebabeccd4f678fbd5f545f58482bb99fc23c17d9cebbf895705275df2da9c6fadaef8148397fe7fcc18cbbe49f9c720b5ad88b2dd6b82680ef169f
   languageName: node
   linkType: hard
 
@@ -5725,7 +5711,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "raijintech@workspace:."
   dependencies:
-    "@emailjs/browser": "npm:^4.4.1"
     "@eslint/js": "npm:^9.15.0"
     "@google/genai": "npm:^1.27.0"
     "@gsap/react": "npm:^2.1.2"
@@ -5739,7 +5724,6 @@ __metadata:
     "@types/react-dom": "npm:^18.3.0"
     "@vitejs/plugin-react": "npm:^4.3.1"
     autoprefixer: "npm:^10.4.20"
-    emailjs-com: "npm:^3.2.0"
     eslint: "npm:^8.57.0"
     eslint-plugin-react: "npm:^7.34.2"
     eslint-plugin-react-hooks: "npm:^4.6.2"

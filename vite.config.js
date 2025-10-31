@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   
   optimizeDeps: {
-    include: ['react-icons/fa', '@emailjs/browser'],
+    include: ['react-icons/fa'],
   },
   
   build: {
@@ -27,7 +27,7 @@ export default defineConfig({
           // Vendor chunks
           'react-vendor': ['react', 'react-dom', 'react-router-dom'],
           'animation-vendor': ['framer-motion', 'gsap'],
-          'form-vendor': ['formik', 'yup', '@emailjs/browser'],
+          'form-vendor': ['formik', 'yup'],
           'icons-vendor': ['react-icons'],
           'lottie-vendor': ['@lottiefiles/dotlottie-react', 'lottie-react'],
         },

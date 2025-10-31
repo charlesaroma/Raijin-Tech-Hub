@@ -149,7 +149,7 @@ Remember: You represent Raijin Tech Hub - be professional, helpful, and focused 
 // Quick reply suggestions based on common queries
 export const QUICK_REPLIES = [
   { text: '💼 Services & Pricing', query: 'What services do you offer and how much do they cost?' },
-  { text: '📱 Mobile App Development', query: 'Tell me about your mobile app development services' },
+  { text: '📱 Mobile App Dev', query: 'Tell me about your mobile app development services' },
   { text: '🌐 Website Development', query: 'How much does a website cost?' },
   { text: '⏱️ Project Timeline', query: 'How long does a typical project take?' },
   { text: '👥 About Your Team', query: 'Tell me about your team and experience' },

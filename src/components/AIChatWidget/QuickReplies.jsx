@@ -13,7 +13,7 @@ const QuickReplies = ({ onSelect }) => (
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: index * 0.05 }}
           onClick={() => onSelect(reply.query)}
-          className="text-[11.5px] sm:text-base bg-white hover:bg-gray-50 border border-gray-200 rounded-lg p-1.5 sm:p-2 text-left transition-all hover:border-[var(--color-primary-500)] hover:shadow-sm cursor-pointer"
+          className="text-[11.5px] sm:text-xs text-[var(--color-primary-500)] bg-white font-medium hover:bg-gray-50 border border-gray-200 rounded-lg p-1.5 sm:p-2 text-left transition-all hover:border-[var(--color-primary-500)] hover:shadow-sm cursor-pointer"
         >
           {reply.text}
         </motion.button>

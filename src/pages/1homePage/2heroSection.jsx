@@ -64,7 +64,7 @@ const HeroSection = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[var(--color-primary-500)] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-[var(--color-primary-500)]"></span>
             </span>
-            <span className="text-xs font-medium text-[var(--color-primary-600)]">Transforming Ideas into Digital Reality</span>
+            <span className="text-xs font-medium text-(--color-primary-600)">Transforming Ideas into Digital Reality</span>
           </motion.div>
 
           {/* Main Title with Gradient */}

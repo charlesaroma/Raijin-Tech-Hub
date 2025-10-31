@@ -19,13 +19,13 @@ const MessageBubble = ({ message, onWhatsAppClick }) => {
         <div
           className={`rounded-2xl p-2.5 sm:p-3 ${
             isUser
-              ? 'bg-[var(--color-primary-500)] text-white rounded-br-none'
+              ? 'bg-(--color-primary-500) text-white rounded-br-none'
               : isError
               ? 'bg-red-50 text-red-700 rounded-bl-none border border-red-200'
               : 'bg-white text-gray-800 rounded-bl-none shadow-md border border-gray-100'
           }`}
         >
-          <div className="text-sm sm:text-sm prose prose-sm max-w-none">
+          <div className="text-sm sm:text-sm font-medium prose prose-sm max-w-none">
             {isUser ? (
               <p>{message.text}</p>
             ) : (
@@ -43,7 +43,7 @@ const MessageBubble = ({ message, onWhatsAppClick }) => {
             onClick={onWhatsAppClick}
             className="mt-2 w-full bg-gradient-to-r from-green-500 to-green-600 text-white text-sm py-2 px-3 rounded-lg hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer"
           >
-            <Icon icon="mdi:whatsapp" className="text-base" />
+            <Icon icon="mdi:whatsapp" className="text-base font-medium" />
             <span>Connect on WhatsApp</span>
           </motion.button>
         )}

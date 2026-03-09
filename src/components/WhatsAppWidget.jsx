@@ -49,7 +49,7 @@ const WhatsAppWidget = () => {
                 className="absolute bottom-20 right-0 w-80 bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-green-500/20"
               >
                 {/* Header */}
-                <div className="bg-gradient-to-r from-green-500 to-green-600 p-3 flex items-center justify-between">
+                <div className="bg-linear-to-r from-green-500 to-green-600 p-3 flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center">
                       <Icon icon="mdi:whatsapp" className="text-xl text-green-500" />
@@ -108,7 +108,7 @@ const WhatsAppWidget = () => {
                 <div className="bg-white p-2.5 border-t border-gray-200">
                   <button
                     onClick={handleWhatsAppClick}
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer"
+                    className="w-full bg-linear-to-r from-green-500 to-green-600 text-white py-2 px-3 rounded-lg text-sm font-semibold hover:from-green-600 hover:to-green-700 transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl cursor-pointer"
                   >
                     <Icon icon="mdi:whatsapp" className="text-base" />
                     <span>Start Chat on WhatsApp</span>
@@ -129,7 +129,7 @@ const WhatsAppWidget = () => {
               damping: 20,
             }}
             onClick={toggleOpen}
-            className="relative w-14 h-14 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:shadow-green-500/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group cursor-pointer"
+            className="relative w-14 h-14 bg-linear-to-r from-green-500 to-green-600 text-white rounded-full shadow-2xl hover:shadow-green-500/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group cursor-pointer"
             aria-label="Open WhatsApp chat"
           >
             {/* Pulse Animation */}

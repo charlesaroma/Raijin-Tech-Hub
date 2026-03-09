@@ -11,13 +11,13 @@ const SearchSection = ({ searchQuery, setSearchQuery }) => {
       className="mb-8"
     >
       <div className="relative max-w-2xl mx-auto">
-        <Icon icon="mdi:magnify" className="absolute left-4 top-1/2 -translate-y-1/2 text-[var(--color-primary-500)]/50" />
+        <Icon icon="mdi:magnify" className="absolute left-4 top-1/2 -translate-y-1/2 text-(--color-primary-500)/50" />
         <input
           type="text"
           placeholder="Search for answers..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full pl-12 pr-4 py-3 rounded-xl focus:outline-none transition-all bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] text-xs placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
+          className="w-full pl-12 pr-4 py-3 rounded-xl focus:outline-none transition-all bg-(--color-bg-primary) text-(--color-primary-600) text-xs placeholder:text-(--color-primary-600) shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
         />
       </div>
     </motion.div>

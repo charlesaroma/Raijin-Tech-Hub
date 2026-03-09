@@ -1,234 +1,91 @@
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Icon } from '@iconify/react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import processData from '../data/processData.json';
-
-gsap.registerPlugin(ScrollTrigger);
+import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
+import processData from "../data/processData.json";
 
 const ProcessDiagram = () => {
-  const containerRef = useRef(null);
-  const cardsRef = useRef([]);
-  const linesRef = useRef([]);
   const { phases } = processData;
 
-  useEffect(() => {
-    const cards = cardsRef.current.filter(Boolean);
-    const lines = linesRef.current.filter(Boolean);
-
-    if (cards.length === 0) return;
-
-    // Create main timeline with ScrollTrigger
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: containerRef.current,
-        start: 'top 70%',
-        end: 'bottom 20%',
-        toggleActions: 'play none none none',
-      },
-    });
-
-    // Animate cards appearing with stagger
-    tl.fromTo(
-      cards,
-      {
-        opacity: 0,
-        y: 50,
-        scale: 0.8,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.6,
-        stagger: 0.15,
-        ease: 'power3.out',
-      }
-    );
-
-    // Animate connecting lines
-    if (lines.length > 0) {
-      tl.fromTo(
-        lines,
-        {
-          scaleX: 0,
-          transformOrigin: 'left center',
-        },
-        {
-          scaleX: 1,
-          duration: 0.5,
-          stagger: 0.15,
-          ease: 'power2.inOut',
-        },
-        '-=0.3'
-      );
-    }
-
-    return () => {
-      if (tl.scrollTrigger) {
-        tl.scrollTrigger.kill();
-      }
-      tl.kill();
-    };
-  }, []);
-
   return (
-    <div ref={containerRef} className="relative w-full py-16 px-4 md:px-6 lg:px-8">
-      {/* Desktop Flow - Horizontal */}
-      <div className="hidden lg:block">
-        <div className="relative max-w-7xl mx-auto">
-          {/* Top Row - 4 phases */}
-          <div className="grid grid-cols-4 gap-6 mb-12">
-            {phases.slice(0, 4).map((phase, index) => (
-              <div key={phase.id} className="relative">
-                <ProcessCard 
-                  phase={phase} 
-                  index={index}
-                  ref={(el) => (cardsRef.current[index] = el)}
-                />
-                {index < 3 && (
-                  <div 
-                    ref={(el) => (linesRef.current[index] = el)}
-                    className="absolute top-1/2 -right-3 w-6 h-0.5 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-400)]"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
+    <div className="w-full px-4 py-10">
+      <div className="max-w-5xl mx-auto grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {phases.map((phase, index) => {
+          const phaseColor =
+            index % 3 === 0
+              ? "var(--color-primary-500)"
+              : index % 3 === 1
+                ? "var(--color-secondary-500)"
+                : "var(--color-accent-500)";
 
-          {/* Connector Arrow Down */}
-          <div className="flex justify-end mb-6">
-            <div 
-              ref={(el) => (linesRef.current[3] = el)}
-              className="w-0.5 h-12 bg-gradient-to-b from-[var(--color-primary-500)] to-[var(--color-primary-400)]"
-            />
-          </div>
-
-          {/* Bottom Row - 4 phases (reversed) */}
-          <div className="grid grid-cols-4 gap-6">
-            {phases.slice(4, 8).reverse().map((phase, index) => {
-              const actualIndex = 7 - index;
-              return (
-                <div key={phase.id} className="relative">
-                  <ProcessCard 
-                    phase={phase} 
-                    index={actualIndex}
-                    ref={(el) => (cardsRef.current[actualIndex] = el)}
-                  />
-                  {index < 3 && (
-                    <div 
-                      ref={(el) => (linesRef.current[actualIndex] = el)}
-                      className="absolute top-1/2 -left-3 w-6 h-0.5 bg-gradient-to-l from-[var(--color-primary-500)] to-[var(--color-primary-400)]"
-                    />
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile/Tablet - Vertical Stack */}
-      <div className="lg:hidden">
-        <div className="max-w-2xl mx-auto space-y-8">
-          {phases.map((phase, index) => (
-            <div key={phase.id} className="relative">
-              <ProcessCard 
-                phase={phase} 
-                index={index}
-                ref={(el) => (cardsRef.current[index] = el)}
+          return (
+            <motion.div
+              key={phase.id}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.25, delay: index * 0.05 }}
+              className="group relative rounded-3xl p-6 bg-(--color-bg-card) transition-all duration-300 cursor-pointer shadow-[10px_10px_20px_var(--shadow-dark),-10px_-10px_20px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:translate-y-1 overflow-hidden"
+            >
+              {/* Accent blob */}
+              <div
+                className="pointer-events-none absolute -top-10 -right-10 w-24 h-24 rounded-full blur-3xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"
+                style={{ backgroundColor: phaseColor }}
               />
-              {index < phases.length - 1 && (
-                <div className="flex justify-center my-4">
-                  <div 
-                    ref={(el) => (linesRef.current[index] = el)}
-                    className="w-0.5 h-8 bg-gradient-to-b from-[var(--color-primary-500)] to-[var(--color-primary-400)]"
-                  />
+
+              {/* Icon + title */}
+              <div className="flex items-center gap-3">
+                <div className="w-16 h-16 bg-(--color-bg-primary) rounded-2xl flex items-center justify-center shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]">
+                  <Icon icon={phase.icon} className="text-xl" />
                 </div>
-              )}
-            </div>
-          ))}
-        </div>
+                <div className="flex flex-col">
+                  <span
+                    className="text-[11px] font-semibold uppercase tracking-wide opacity-80"
+                    style={{ color: phaseColor }}
+                  >
+                    Phase 0{phase.id}
+                  </span>
+                  <h3 className="text-sm sm:text-base font-extrabold text-(--color-primary-600)">
+                    {phase.title}
+                  </h3>
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-xs sm:text-sm text-(--color-primary-600) leading-relaxed line-clamp-3">
+                {phase.description}
+              </p>
+
+              {/* Deliverables */}
+              <div className="flex flex-wrap gap-1.5 mt-1">
+                {phase.deliverables.slice(0, 3).map((item, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2 py-1 rounded-full bg-(--color-bg-primary) text-(--color-primary-600) text-[11px] font-medium shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"
+                  >
+                    {item}
+                  </span>
+                ))}
+              </div>
+
+              {/* Meta: duration + tools */}
+              <div className="mt-3 flex items-center justify-between gap-2 text-[11px] text-(--color-off-black-400)">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-(--color-bg-primary) shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]">
+                  <Icon icon="mdi:clock-outline" className="text-xs" />
+                  <span className="font-semibold text-(--color-primary-600)">
+                    {phase.duration}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-1 justify-end">
+                  {phase.tools.slice(0, 3).map((tool, idx) => (
+                    <span key={idx}>#{tool}</span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
 };
 
-// Process Card Component
-const ProcessCard = ({ phase, index }, ref) => {
-  return (
-    <motion.div
-      ref={ref}
-      whileHover={{ y: -4 }}
-      className="group relative bg-[var(--color-bg-card)] rounded-2xl p-6 transition-all duration-300 cursor-pointer shadow-[8px_8px_20px_var(--shadow-dark),-8px_-8px_20px_var(--shadow-light)] hover:shadow-[4px_4px_12px_var(--shadow-dark),-4px_-4px_12px_var(--shadow-light)]"
-    >
-      {/* Phase Number Badge */}
-      <div className="absolute -top-3 -left-3 w-10 h-10 rounded-full bg-[var(--color-bg-primary)] shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] flex items-center justify-center">
-        <span className="text-[var(--color-primary-500)] font-bold text-sm">
-          {phase.id}
-        </span>
-      </div>
-
-      {/* Icon */}
-      <div className="flex justify-center mb-4">
-        <div className="w-16 h-16 rounded-2xl bg-[var(--color-bg-primary)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] flex items-center justify-center group-hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] transition-all duration-300">
-          <Icon 
-            icon={phase.icon} 
-            className="text-3xl text-[var(--color-primary-500)]" 
-          />
-        </div>
-      </div>
-
-      {/* Title */}
-      <h3 className="text-base font-bold text-[var(--color-primary)] mb-2 text-center">
-        {phase.title}
-      </h3>
-
-      {/* Duration */}
-      <p className="text-sm text-[var(--color-primary-600)] mb-3 text-center">
-        ⏱️ {phase.duration}
-      </p>
-
-      {/* Description */}
-      <p className="text-sm text-[var(--color-primary-600)] leading-relaxed mb-4">
-        {phase.description}
-      </p>
-
-      {/* Deliverables */}
-      <div className="mb-4">
-        <h4 className="text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-          Deliverables:
-        </h4>
-        <ul className="space-y-1">
-          {phase.deliverables.slice(0, 3).map((item, idx) => (
-            <li key={idx} className="text-sm text-[var(--color-primary-600)] flex items-start gap-2">
-              <span className="text-[var(--color-primary-500)] mt-0.5">✓</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Tools */}
-      <div>
-        <h4 className="text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-          Tools:
-        </h4>
-        <div className="flex flex-wrap gap-2">
-          {phase.tools.map((tool, idx) => (
-            <span 
-              key={idx}
-              className="px-2 py-1 text-sm bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"
-            >
-              {tool}
-            </span>
-          ))}
-        </div>
-      </div>
-    </motion.div>
-  );
-};
-
 export default ProcessDiagram;
-

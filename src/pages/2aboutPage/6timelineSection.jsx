@@ -31,12 +31,12 @@ const TimelineSection = () => {
       viewport={{ once: true }}
       className="mb-12 sm:mb-16 md:mb-20 px-3 sm:px-4"
     >
-      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[var(--color-primary-600)] text-center mb-8 sm:mb-10 md:mb-12">
+      <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-(--color-primary-600) text-center mb-8 sm:mb-10 md:mb-12">
         Our Journey
       </h2>
       <div className="relative max-w-5xl mx-auto">
         {/* Timeline Line - Adjusted for mobile */}
-        <div className="absolute left-4 sm:left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-0 h-full w-0.5 sm:w-1 bg-[var(--color-primary-500)]/20"></div>
+        <div className="absolute left-4 sm:left-6 md:left-1/2 md:transform md:-translate-x-1/2 top-0 h-full w-0.5 sm:w-1 bg-(--color-primary-500)/20"></div>
 
         {timeline.map((item, index) => (
           <motion.div
@@ -51,21 +51,21 @@ const TimelineSection = () => {
           >
             {/* Content Card */}
             <div className={`w-full md:w-5/12 pl-10 sm:pl-14 md:pl-0 ${index % 2 === 0 ? 'md:text-right md:pr-8 lg:pr-12' : 'md:pl-8 lg:pl-12'}`}>
-              <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-[var(--color-bg-card)] transition-all duration-300 cursor-pointer shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] sm:shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_12px_var(--shadow-dark),-4px_-4px_12px_var(--shadow-light)] hover:translate-y-1">
-                <div className="text-sm sm:text-base font-bold text-[var(--color-primary-500)] mb-1.5 sm:mb-2">
+              <div className="p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-(--color-bg-card) transition-all duration-300 cursor-pointer shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] sm:shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_12px_var(--shadow-dark),-4px_-4px_12px_var(--shadow-light)] hover:translate-y-1">
+                <div className="text-sm sm:text-base font-bold text-(--color-primary-500) mb-1.5 sm:mb-2">
                   {item.year}
                 </div>
-                <h4 className="text-sm sm:text-sm font-bold text-[var(--color-primary-600)] mb-1.5 sm:mb-2">
+                <h4 className="text-sm sm:text-sm font-bold text-(--color-primary-600) mb-1.5 sm:mb-2">
                   {item.title}
                 </h4>
-                <p className="text-sm sm:text-sm leading-relaxed text-[var(--color-primary-600)]">
+                <p className="text-sm sm:text-sm leading-relaxed text-(--color-primary-600)">
                   {item.description}
                 </p>
               </div>
             </div>
 
             {/* Timeline Dot - Adjusted for mobile */}
-            <div className="absolute left-4 sm:left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-[var(--color-primary-500)] rounded-full border-2 sm:border-3 md:border-4 border-[var(--color-bg-primary)] shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"></div>
+            <div className="absolute left-4 sm:left-6 md:left-1/2 md:transform md:-translate-x-1/2 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 bg-(--color-primary-500) rounded-full border-2 sm:border-3 md:border-4 border-(--color-bg-primary) shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"></div>
           </motion.div>
         ))}
       </div>

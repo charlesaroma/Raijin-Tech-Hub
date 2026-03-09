@@ -32,13 +32,13 @@ const MissionVisionSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: item.delay }}
-          className="group relative rounded-3xl p-8 bg-[var(--color-bg-card)] transition-all duration-300 cursor-pointer shadow-[10px_10px_20px_var(--shadow-dark),-10px_-10px_20px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:translate-y-1"
+          className="group relative rounded-3xl p-8 bg-(--color-bg-card) transition-all duration-300 cursor-pointer shadow-[10px_10px_20px_var(--shadow-dark),-10px_-10px_20px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:translate-y-1"
         >
-          <div className="w-16 h-16 bg-[var(--color-bg-primary)] rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]">
-            <Icon icon={item.icon} className="text-3xl text-[var(--color-primary-500)]" />
+          <div className="w-16 h-16 bg-(--color-bg-primary) rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]">
+            <Icon icon={item.icon} className="text-3xl text-(--color-primary-500)" />
           </div>
-          <h3 className="text-lg font-bold text-[var(--color-primary-600)] mb-4">{item.title}</h3>
-          <p className="text-[var(--color-primary-600)] text-xs leading-relaxed">
+          <h3 className="text-lg font-bold text-(--color-primary-600) mb-4">{item.title}</h3>
+          <p className="text-(--color-primary-600) text-xs leading-relaxed">
             {item.description}
           </p>
         </motion.div>

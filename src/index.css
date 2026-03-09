@@ -1,105 +1,129 @@
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
-/* apply the font globally */
+/* --- Global Base Styles --- */
 html, body {
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   scroll-behavior: smooth;
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
 }
 
-/* Custom Theme Extensions */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 700;
+  color: var(--color-primary-500);
+}
+
+/* --- Figma Brand System & Component Tokens --- */
 @layer base {
   :root {
-    /* Primary color (Deep Blue) */
-    --color-primary: #2b2c64;
-    --color-primary-50: #e2e3f0;
-    --color-primary-100: #c5c7e2;
-    --color-primary-200: #a8abd4;
-    --color-primary-300: #8a8ec6;
-    --color-primary-400: #6d72b8;
-    --color-primary-500: #2b2c64;
-    --color-primary-600: #27285a;
-    --color-primary-700: #1e1e48;
-    --color-primary-800: #151534;
-    --color-primary-900: #0c0c21;
-    --color-primary-950: #05050f;
+    /* PRIMARY: VIOLET (Anchor: #2C2C64) */
+    --color-primary-50: #eaeafd;
+    --color-primary-100: #bebecf;
+    --color-primary-200: #9e9eb8;
+    --color-primary-300: #727297;
+    --color-primary-400: #565683;
+    --color-primary-500: #2C2C64; /* FIGMA BRAND BASE */
+    --color-primary-600: #28285b;
+    --color-primary-700: #1f1f47;
+    --color-primary-800: #181837;
+    --color-primary-900: #121228;
 
-    /* Secondary Color (Vibrant Red) */
-    --color-secondary: #ec3f24;
-    --color-secondary-50: #fee7e3;
-    --color-secondary-100: #fdcdc8;
-    --color-secondary-200: #fcae9f;
-    --color-secondary-300: #fc8f77;
-    --color-secondary-400: #fb6f4f;
-    --color-secondary-500: #ec3f24;
-    --color-secondary-600: #c6361f;
-    --color-secondary-700: #9f2a19;
-    --color-secondary-800: #791f12;
-    --color-secondary-900: #52150c;
-    --color-secondary-950: #2b0a06;
+    /* SECONDARY: RED (Anchor: #DC4E34) */
+    --color-secondary-50: #fcedeb;
+    --color-secondary-100: #f4c8c0;
+    --color-secondary-200: #efaea2;
+    --color-secondary-300: #e88877;
+    --color-secondary-400: #e3715d;
+    --color-secondary-500: #DC4E34; /* FIGMA BRAND BASE */
+    --color-secondary-600: #c8472f;
+    --color-secondary-700: #9c3725;
+    --color-secondary-800: #792b1d;
+    --color-secondary-900: #5c2116;
 
-    /* Accent Color (Warm Yellow) */
-    --color-tertiary: #f6bf44;
-    --color-tertiary-50: #fef7e3;
-    --color-tertiary-100: #fdeec7;
-    --color-tertiary-200: #fce4ab;
-    --color-tertiary-300: #fbdb8e;
-    --color-tertiary-400: #fad272;
-    --color-tertiary-500: #f6bf44;
-    --color-tertiary-600: #d1a33a;
-    --color-tertiary-700: #ac8630;
-    --color-tertiary-800: #866925;
-    --color-tertiary-900: #604c1a;
-    --color-tertiary-950: #3a2f0e;
+    /* ACCENT: YELLOW (Anchor: #F6BF44) */
+    --color-accent-50: #fef9ec;
+    --color-accent-100: #fcebc5;
+    --color-accent-200: #fbe2a9;
+    --color-accent-300: #f9d482;
+    --color-accent-400: #f8cc69;
+    --color-accent-500: #F6BF44; /* FIGMA BRAND BASE */
+    --color-accent-600: #e0ae3e;
+    --color-accent-700: #af8830;
+    --color-accent-800: #876925;
+    --color-accent-900: #67501d;
 
-    /* Accent */
-    --color-accent: #e1e1dd;
-    --color-accent-0: #ffffff;
-    --color-accent-50: #fafaf9;
-    --color-accent-100: #f5f5f4;
-    --color-accent-200: #f0f0ee;
-    --color-accent-300: #ebebe8;
-    --color-accent-400: #e6e6e3;
-    --color-accent-500: #e1e1dd;
-    --color-accent-600: #bcbcb8;
-    --color-accent-700: #969693;
-    --color-accent-800: #71716f;
-    --color-accent-900: #4b4b4a;
-    --color-accent-950: #262625;
+    /* WHITE / SURFACE SCALE (Base: #F5F5F5) */
+    --color-white-50: #fefefe;
+    --color-white-100: #fcfcfc;
+    --color-white-200: #fafafa;
+    --color-white-300: #f8f8f8;
+    --color-white-400: #f7f7f7;
+    --color-white-500: #F5F5F5; /* FIGMA SURFACE */
+    --color-white-600: #dfdfdf;
+    --color-white-700: #aeaeae;
+    --color-white-800: #878787;
+    --color-white-900: #676767;
 
-    /* Orbai-Inspired Soft Gray Palette */
-    --color-bg-primary: #f5f5f7;
-    --color-bg-secondary: #fafafa;
-    --color-bg-card: #ffffff;
-    --color-text-primary: #1d1d1f;
-    --color-text-secondary: #6e6e73;
-    --color-border: #e5e5e7;
-    
-    /* Neomorphism Shadows */
+    /* OFF-BLACK / TYPOGRAPHY SCALE (Base: #313131) */
+    --color-off-black-50: #eaeaea;
+    --color-off-black-100: #bfbfbf;
+    --color-off-black-200: #a0a0a0;
+    --color-off-black-300: #757575;
+    --color-off-black-400: #5a5a5a;
+    --color-off-black-500: #313131; /* FIGMA TEXT BASE */
+    --color-off-black-600: #2d2d2d;
+    --color-off-black-700: #232323;
+    --color-off-black-800: #1b1b1b;
+    --color-off-black-900: #151515;
+
+    /* Semantic UI Mapping */
+    --color-bg-primary: var(--color-white-50);
+    --color-bg-secondary: var(--color-white-500);
+    --color-text-primary: var(--color-off-black-500);
+    --color-text-secondary: var(--color-off-black-300);
+    --color-border: var(--color-white-600);
+
+    /* Additional semantic aliases used in components */
+    --color-primary: var(--color-primary-500);
+    --color-secondary: var(--color-secondary-500);
+    --color-tertiary-500: var(--color-accent-500);
+    --color-bg-card: var(--color-white-100);
+    --color-primary-rgb: 44, 44, 100; /* rgb for #2C2C64 */
+
+    /* Neomorphism / Elevation Shadows */
     --shadow-light: #ffffff;
-    --shadow-dark: #d1d1d3;
+    --shadow-dark: var(--color-white-600);
   }
 }
 
-/* Background Images + Scroll Animation */
+/* --- Brand Utility Extensions --- */
 @layer utilities {
-  .bg-gradient-radial {
-    background-image: radial-gradient(var(--tw-gradient-stops));
+  /* Logo-Inspired Gradients */
+  .bg-gradient-brand {
+    background: linear-gradient(135deg, var(--color-primary-500) 0%, var(--color-primary-800) 100%);
+  }
+  
+  .bg-gradient-warm {
+    background: linear-gradient(135deg, var(--color-secondary-500) 0%, var(--color-accent-500) 100%);
   }
 
+  /* Logo Stroke Animation / Infinite Scroll */
   @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
   }
 
   .animate-scroll {
     animation: scroll 60s linear infinite;
+  }
+
+  /* Custom Elevation */
+  .elevation-soft {
+    box-shadow: 6px 6px 12px var(--shadow-dark), 
+               -6px -6px 12px var(--shadow-light);
   }
 }

@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
-import { motion } from 'framer-motion';
-import { Icon } from '@iconify/react';
+import PropTypes from "prop-types";
+import { motion } from "framer-motion";
+import { Icon } from "@iconify/react";
 
 const FloatingButton = ({ isOpen, onClick }) => (
   <motion.button
@@ -8,19 +8,19 @@ const FloatingButton = ({ isOpen, onClick }) => (
     animate={{ scale: 1 }}
     exit={{ scale: 0 }}
     transition={{
-      type: 'spring',
+      type: "spring",
       stiffness: 260,
       damping: 20,
     }}
     onClick={onClick}
-    className="relative w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white rounded-full shadow-2xl hover:shadow-[var(--color-primary-500)]/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group cursor-pointer"
+    className="relative w-14 h-14 sm:w-16 sm:h-16 bg-linear-to-r from-(--color-secondary-500) to-(--color-secondary-600) text-white rounded-full shadow-2xl hover:shadow-(--color-secondary-500)/50 hover:scale-110 transition-all duration-300 flex items-center justify-center group cursor-pointer"
     aria-label="Open AI chat"
   >
     {/* Pulse Animation */}
     {!isOpen && (
-      <span className="absolute inline-flex h-full w-full rounded-full bg-[var(--color-primary-400)] opacity-75 animate-ping"></span>
+      <span className="absolute inline-flex h-full w-full rounded-full bg-(--color-secondary-400) opacity-75 animate-ping"></span>
     )}
-    
+
     {/* Icon */}
     <motion.div
       animate={{ rotate: isOpen ? 180 : 0 }}
@@ -49,8 +49,7 @@ const FloatingButton = ({ isOpen, onClick }) => (
 
 FloatingButton.propTypes = {
   isOpen: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired
+  onClick: PropTypes.func.isRequired,
 };
 
 export default FloatingButton;
-

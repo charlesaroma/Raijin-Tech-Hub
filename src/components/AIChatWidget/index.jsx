@@ -1,40 +1,40 @@
-import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  initializeChat, 
-  sendMessage, 
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import {
+  initializeChat,
+  sendMessage,
   shouldOfferWhatsAppHandoff,
-  formatConversationSummary 
-} from '../../utils/geminiAI';
-import { trackContact } from '../../utils/analytics';
-import ChatHeader from './ChatHeader';
-import MessageBubble from './MessageBubble';
-import TypingIndicator from './TypingIndicator';
-import QuickReplies from './QuickReplies';
-import ChatInput from './ChatInput';
-import FloatingButton from './FloatingButton';
+  formatConversationSummary,
+} from "../../utils/geminiAI";
+import { trackContact } from "../../utils/analytics";
+import ChatHeader from "./ChatHeader";
+import MessageBubble from "./MessageBubble";
+import TypingIndicator from "./TypingIndicator";
+import QuickReplies from "./QuickReplies";
+import ChatInput from "./ChatInput";
+import FloatingButton from "./FloatingButton";
 
 const AIChatWidget = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [messages, setMessages] = useState([]);
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [chat, setChat] = useState(null);
   const [showQuickReplies, setShowQuickReplies] = useState(true);
   const [error, setError] = useState(null);
-  
+
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
-  const whatsappNumber = '256777982066';
+  const whatsappNumber = "256777982066";
 
   // Show widget after scrolling
   useEffect(() => {
     const handleScroll = () => {
       setIsVisible(window.scrollY > 300);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Initialize chat when opened
@@ -44,16 +44,20 @@ const AIChatWidget = () => {
         try {
           const newChat = await initializeChat();
           setChat(newChat);
-          
+
           // Welcome message
-          setMessages([{
-            role: 'assistant',
-            text: '👋 Hello! I\'m Raijin AI, your virtual assistant. How can I help you today?',
-            timestamp: new Date()
-          }]);
+          setMessages([
+            {
+              role: "assistant",
+              text: "👋 Hello! I'm Raijin AI, your virtual assistant. How can I help you today?",
+              timestamp: new Date(),
+            },
+          ]);
         } catch (err) {
-          console.error('Failed to initialize chat:', err);
-          setError('Failed to initialize AI. Please check your API key configuration.');
+          console.error("Failed to initialize chat:", err);
+          setError(
+            "Failed to initialize AI. Please check your API key configuration.",
+          );
         }
       }
     };
@@ -62,7 +66,7 @@ const AIChatWidget = () => {
 
   // Scroll to bottom when new messages arrive
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages]);
 
   // Focus input when chat opens
@@ -75,7 +79,7 @@ const AIChatWidget = () => {
   const toggleOpen = () => {
     setIsOpen(!isOpen);
     if (!isOpen) {
-      trackContact('AI Chat Widget Opened');
+      trackContact("AI Chat Widget Opened");
     }
   };
 
@@ -83,38 +87,43 @@ const AIChatWidget = () => {
     if (!messageText.trim() || isLoading) return;
 
     const userMessage = {
-      role: 'user',
+      role: "user",
       text: messageText.trim(),
-      timestamp: new Date()
+      timestamp: new Date(),
     };
 
-    setMessages(prev => [...prev, userMessage]);
-    setInputValue('');
+    setMessages((prev) => [...prev, userMessage]);
+    setInputValue("");
     setIsLoading(true);
     setShowQuickReplies(false);
     setError(null);
 
     try {
       const response = await sendMessage(chat, messageText);
-      
+
       const assistantMessage = {
-        role: 'assistant',
+        role: "assistant",
         text: response,
         timestamp: new Date(),
-        showWhatsAppButton: shouldOfferWhatsAppHandoff(messageText) || response.toLowerCase().includes('whatsapp')
+        showWhatsAppButton:
+          shouldOfferWhatsAppHandoff(messageText) ||
+          response.toLowerCase().includes("whatsapp"),
       };
 
-      setMessages(prev => [...prev, assistantMessage]);
-      trackContact('AI Chat Message Sent');
+      setMessages((prev) => [...prev, assistantMessage]);
+      trackContact("AI Chat Message Sent");
     } catch (err) {
-      console.error('❌ AI Error:', err.message);
-      setMessages(prev => [...prev, {
-        role: 'assistant',
-        text: '❌ Sorry, I encountered an error. Would you like to connect with our team on WhatsApp instead?',
-        timestamp: new Date(),
-        showWhatsAppButton: true,
-        isError: true
-      }]);
+      console.error("❌ AI Error:", err.message);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          text: "❌ Sorry, I encountered an error. Would you like to connect with our team on WhatsApp instead?",
+          timestamp: new Date(),
+          showWhatsAppButton: true,
+          isError: true,
+        },
+      ]);
     } finally {
       setIsLoading(false);
     }
@@ -126,14 +135,14 @@ const AIChatWidget = () => {
   };
 
   const handleWhatsAppHandoff = () => {
-    trackContact('WhatsApp Handoff from AI');
+    trackContact("WhatsApp Handoff from AI");
     const summary = formatConversationSummary(messages);
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(summary)}`;
-    window.open(url, '_blank', 'noopener,noreferrer');
+    window.open(url, "_blank", "noopener,noreferrer");
   };
 
   const handleKeyPress = (e) => {
-    if (e.key === 'Enter' && !e.shiftKey) {
+    if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
     }
@@ -151,29 +160,29 @@ const AIChatWidget = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-[340px] sm:max-w-[380px] md:w-[400px] h-[500px] sm:h-[550px] md:h-[600px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 flex flex-col"
+                className="absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-[340px] sm:max-w-[380px] md:w-[400px] h-[500px] sm:h-[550px] md:h-[600px] bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden border border-white/20 flex flex-col"
               >
                 {/* Header */}
                 <ChatHeader onClose={toggleOpen} />
 
                 {/* Messages Area */}
-                <div className="flex-1 overflow-y-auto p-3 sm:p-4 bg-gradient-to-b from-gray-50 to-white space-y-3">
+                <div className="flex-1 overflow-y-auto p-3 sm:p-4 bg-linear-to-b from-gray-50 to-white space-y-3">
                   {messages.map((message, index) => (
-                    <MessageBubble 
-                      key={index} 
-                      message={message} 
+                    <MessageBubble
+                      key={index}
+                      message={message}
                       onWhatsAppClick={handleWhatsAppHandoff}
                     />
                   ))}
-                  
+
                   {isLoading && <TypingIndicator />}
-                  
+
                   {error && (
                     <div className="text-center text-xs text-red-500 bg-red-50 p-2 rounded-lg">
                       {error}
                     </div>
                   )}
-                  
+
                   <div ref={messagesEndRef} />
                 </div>
 
@@ -204,4 +213,3 @@ const AIChatWidget = () => {
 };
 
 export default AIChatWidget;
-

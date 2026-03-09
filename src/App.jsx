@@ -1,5 +1,5 @@
 import React, { useEffect, lazy, Suspense } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./navigation/navbar";
 import ScrollToTop from "./navigation/scrolltoTop";
 import Footer from "./navigation/footer";
@@ -30,6 +30,44 @@ function Analytics() {
   return null;
 }
 
+// Simple error boundary to avoid blank screens on route errors
+class RouteErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidUpdate(prevProps) {
+    // Reset error state when location key changes (new navigation)
+    if (this.props.locationKey !== prevProps.locationKey && this.state.hasError) {
+      this.setState({ hasError: false });
+    }
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div className="w-full min-h-[60vh] flex items-center justify-center bg-(--color-bg-primary)">
+          <div className="max-w-md text-center space-y-3">
+            <h2 className="text-lg font-semibold text-(--color-primary-600)">
+              Something went wrong loading this page.
+            </h2>
+            <p className="text-sm text-(--color-text-secondary)">
+              Please refresh the page or try navigating to a different section.
+            </p>
+          </div>
+        </div>
+      );
+    }
+
+    return this.props.children;
+  }
+}
+
 // Loading component
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-(--color-bg-primary)">
@@ -41,13 +79,15 @@ const PageLoader = () => (
 );
 
 function App() {
+  const location = useLocation();
+
   return (
-    <BrowserRouter>
-      <div className="w-full overflow-x-hidden">
-        <Analytics />
-        <ScrollToTop />
-        <Navbar />
-        <div className="w-full mt-[60px] bg-(--color-bg-primary) min-h-screen flex flex-col items-center">
+    <div className="w-full overflow-x-hidden">
+      <Analytics />
+      <ScrollToTop />
+      <Navbar />
+      <div className="w-full mt-[60px] bg-(--color-bg-primary) min-h-screen flex flex-col items-center">
+        <RouteErrorBoundary locationKey={location.key}>
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -63,11 +103,11 @@ function App() {
               <Route path="/request-quote" element={<RequestQuote />} />
             </Routes>
           </Suspense>
-        </div>
-        <Footer />
-        <AIChatWidget />
+        </RouteErrorBoundary>
       </div>
-    </BrowserRouter>
+      <Footer />
+      <AIChatWidget />
+    </div>
   );
 }
 

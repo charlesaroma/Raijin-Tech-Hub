@@ -10,7 +10,7 @@ import {
 
 const TechIcon = ({ icon, name }) => (
     <motion.div
-        className="flex flex-col items-center justify-center p-3 sm:p-4 lg:p-6 min-w-[100px] sm:min-w-[120px] lg:min-w-[140px] h-24 sm:h-28 lg:h-32 rounded-2xl shadow-lg border-2 border-[var(--color-primary-500)]/20 hover:border-[var(--color-primary-500)] transition-all duration-300 backdrop-blur-sm bg-gradient-to-br from-[var(--color-primary-50)]/10 to-transparent"
+        className="flex flex-col items-center justify-center p-3 sm:p-4 lg:p-6 min-w-[100px] sm:min-w-[120px] lg:min-w-[140px] h-24 sm:h-28 lg:h-32 rounded-2xl shadow-lg border-2 border-(--color-primary-500)/20 hover:border-(--color-primary-500) transition-all duration-300 backdrop-blur-sm bg-linear-to-br from-(--color-primary-50)/10 to-transparent"
         whileHover={{ y: -8, scale: 1.05 }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -19,7 +19,7 @@ const TechIcon = ({ icon, name }) => (
         role="img"
     >
         <div className="flex items-center justify-center mb-2">{icon}</div>
-        <p className="text-[var(--color-primary-500)] text-xs sm:text-sm font-semibold text-center leading-tight">{name}</p>
+        <p className="text-(--color-primary-500) text-xs sm:text-sm font-semibold text-center leading-tight">{name}</p>
     </motion.div>
 );
 
@@ -44,7 +44,7 @@ const TechScrollSection = () => {
         { name: 'JavaScript', icon: <FaJsSquare className="text-2xl sm:text-3xl text-yellow-400" /> },
         { name: 'HTML5', icon: <FaHtml5 className="text-2xl sm:text-3xl text-orange-400" /> },
         { name: 'CSS3', icon: <FaCss3Alt className="text-2xl sm:text-3xl text-blue-400" /> },
-        { name: 'Next.js', icon: <SiNextdotjs className="text-2xl sm:text-3xl text-[var(--color-primary-500)]" /> },
+        { name: 'Next.js', icon: <SiNextdotjs className="text-2xl sm:text-3xl text-(--color-primary-500)" /> },
         { name: 'Flutter', icon: <SiFlutter className="text-2xl sm:text-3xl text-sky-400" /> },        
     ], []);
 
@@ -192,12 +192,12 @@ const TechScrollSection = () => {
             {/* Header */}
             <div className="w-full text-center mb-8 sm:mb-12 px-4 max-w-5xl mx-auto">
                 <div className="inline-block">
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-primary-600)] mb-4 relative px-2">
+                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--color-primary-600) mb-4 relative px-2">
                         Our Technology Stack
-                        <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
+                        <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-(--color-primary-500) to-transparent"></div>
                     </h2>
                 </div>
-                <p className="mt-6 text-xs sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
+                <p className="mt-6 text-xs sm:text-sm text-(--color-primary-600) max-w-2xl mx-auto px-4">
                     Technologies we leverage to build robust and scalable solutions.
                 </p>
             </div>
@@ -209,8 +209,8 @@ const TechScrollSection = () => {
                 aria-label="Scrolling technology icons - Swipe or drag to browse"
             >
                 {/* Gradient Fade Edges */}
-                <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-r from-[var(--color-background)] to-transparent z-10 pointer-events-none"></div>
-                <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-gradient-to-l from-[var(--color-background)] to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-linear-to-r from-(--color-background) to-transparent z-10 pointer-events-none"></div>
+                <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 lg:w-32 bg-linear-to-l from-(--color-background) to-transparent z-10 pointer-events-none"></div>
 
                 {/* Scrolling Content */}
                 <div 

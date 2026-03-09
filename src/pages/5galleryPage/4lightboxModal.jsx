@@ -64,11 +64,11 @@ const LightboxModal = ({ selectedImage, currentImages, currentImageIndex, closeL
             />
 
             {/* Image Info */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 rounded-b-lg">
+            <div className="absolute bottom-0 left-0 right-0 bg-linear-to-t from-black/80 to-transparent p-6 rounded-b-lg">
               <h3 className="text-white text-xl font-bold mb-2">{selectedImage.title}</h3>
               <p className="text-white/80 text-sm mb-3">{selectedImage.description}</p>
               <div className="flex items-center justify-between">
-                <span className="px-4 py-2 bg-[var(--color-primary-500)] text-white rounded-full text-sm font-semibold">
+                <span className="px-4 py-2 bg-(--color-primary-500) text-white rounded-full text-sm font-semibold">
                   {selectedImage.category}
                 </span>
                 <span className="text-white/60 text-sm">

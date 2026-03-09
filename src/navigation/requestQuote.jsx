@@ -101,13 +101,13 @@ const RequestQuote = () => {
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Gradient Orbs */}
-          <div className="absolute top-20 -left-20 w-72 h-72 bg-[var(--color-primary-500)]/10 rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-20 -right-20 w-96 h-96 bg-[var(--color-primary-600)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 -left-20 w-72 h-72 bg-(--color-primary-500)/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-20 -right-20 w-96 h-96 bg-(--color-primary-600)/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
           
           {/* Floating Particles */}
-          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[var(--color-primary-500)]/30 rounded-full animate-float"></div>
-          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-[var(--color-primary-500)]/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-[var(--color-primary-500)]/25 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-(--color-primary-500)/30 rounded-full animate-float"></div>
+          <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-(--color-primary-500)/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-(--color-primary-500)/25 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
@@ -118,11 +118,11 @@ const RequestQuote = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[var(--color-primary-600)] mb-4">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-(--color-primary-600) mb-4">
               Request a Quote
             </h1>
-            <div className="w-24 h-1 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] mx-auto mb-6 rounded-full"></div>
-            <p className="text-base sm:text-lg text-[var(--color-primary-500)]/80 max-w-2xl mx-auto">
+            <div className="w-24 h-1 bg-linear-to-r from-(--color-primary-500) to-(--color-primary-600) mx-auto mb-6 rounded-full"></div>
+            <p className="text-base sm:text-lg text-(--color-primary-500)/80 max-w-2xl mx-auto">
               Let us know your needs and we&apos;ll provide a custom quote tailored to your business requirements.
             </p>
           </motion.div>
@@ -135,7 +135,7 @@ const RequestQuote = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             {/* Futuristic Card Container */}
-            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-10 border-2 border-[var(--color-primary-500)]/20 overflow-hidden group hover:border-[var(--color-primary-500)]/40 transition-all duration-300">
+            <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 lg:p-10 border-2 border-(--color-primary-500)/20 overflow-hidden group hover:border-(--color-primary-500)/40 transition-all duration-300">
               {/* Grid Pattern Overlay */}
               <div className="absolute inset-0 opacity-[0.02] pointer-events-none"
                 style={{
@@ -146,8 +146,8 @@ const RequestQuote = () => {
               ></div>
 
               {/* Gradient Orbs */}
-              <div className="absolute top-0 right-0 w-32 h-32 bg-[var(--color-primary-500)]/5 rounded-full blur-2xl group-hover:bg-[var(--color-primary-500)]/10 transition-all duration-500"></div>
-              <div className="absolute bottom-0 left-0 w-32 h-32 bg-[var(--color-primary-600)]/5 rounded-full blur-2xl group-hover:bg-[var(--color-primary-600)]/10 transition-all duration-500"></div>
+              <div className="absolute top-0 right-0 w-32 h-32 bg-(--color-primary-500)/5 rounded-full blur-2xl group-hover:bg-(--color-primary-500)/10 transition-all duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-32 h-32 bg-(--color-primary-600)/5 rounded-full blur-2xl group-hover:bg-(--color-primary-600)/10 transition-all duration-500"></div>
 
               {isSubmitted ? (
                 <motion.div 
@@ -161,17 +161,17 @@ const RequestQuote = () => {
                     animate={{ scale: 1 }}
                     transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
                   >
-                    <FaCheckCircle className="text-6xl text-[var(--color-primary-500)] mx-auto mb-6" />
+                    <FaCheckCircle className="text-6xl text-(--color-primary-500) mx-auto mb-6" />
                   </motion.div>
-                  <h3 className="text-2xl sm:text-3xl font-bold text-[var(--color-primary-600)] mb-4">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-(--color-primary-600) mb-4">
                     Thank You for Your Request!
                   </h3>
-                  <p className="text-base sm:text-lg text-[var(--color-primary-500)]/80 mb-8">
+                  <p className="text-base sm:text-lg text-(--color-primary-500)/80 mb-8">
                     We&apos;ve received your quote request and will contact you with a custom proposal shortly.
                   </p>
                   <button
                     onClick={() => setIsSubmitted(false)}
-                    className="px-6 py-3 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
+                    className="px-6 py-3 bg-linear-to-r from-(--color-primary-500) to-(--color-primary-600) text-white font-semibold rounded-lg hover:shadow-lg hover:scale-105 transition-all duration-300 cursor-pointer"
                   >
                     Submit Another Request
                   </button>
@@ -197,15 +197,15 @@ const RequestQuote = () => {
 
                       {/* Name Field */}
                       <div className="space-y-2">
-                        <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
-                          <FaUser className="text-[var(--color-primary-500)]" />
+                        <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600)">
+                          <FaUser className="text-(--color-primary-500)" />
                           Your Name *
                         </label>
                         <Field
                           type="text"
                           id="name"
                           name="name"
-                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg focus:outline-none focus:border-(--color-primary-500) focus:bg-white transition-all duration-300 text-(--color-primary-600) placeholder-(--color-primary-500)/40"
                           placeholder="Enter your full name"
                         />
                         <ErrorMessage name="name" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
@@ -213,15 +213,15 @@ const RequestQuote = () => {
 
                       {/* Email Field */}
                       <div className="space-y-2">
-                        <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
-                          <FaEnvelope className="text-[var(--color-primary-500)]" />
+                        <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600)">
+                          <FaEnvelope className="text-(--color-primary-500)" />
                           Your Email *
                         </label>
                         <Field
                           type="email"
                           id="email"
                           name="email"
-                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg focus:outline-none focus:border-(--color-primary-500) focus:bg-white transition-all duration-300 text-(--color-primary-600) placeholder-(--color-primary-500)/40"
                           placeholder="your.email@example.com"
                         />
                         <ErrorMessage name="email" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
@@ -229,15 +229,15 @@ const RequestQuote = () => {
 
                       {/* Phone Field */}
                       <div className="space-y-2">
-                        <label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
-                          <FaPhone className="text-[var(--color-primary-500)]" />
+                        <label htmlFor="phone" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600)">
+                          <FaPhone className="text-(--color-primary-500)" />
                           Your Phone *
                         </label>
                         <Field
                           type="text"
                           id="phone"
                           name="phone"
-                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg focus:outline-none focus:border-(--color-primary-500) focus:bg-white transition-all duration-300 text-(--color-primary-600) placeholder-(--color-primary-500)/40"
                           placeholder="+256 XXX XXX XXX"
                         />
                         <ErrorMessage name="phone" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
@@ -247,30 +247,30 @@ const RequestQuote = () => {
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Company Name Field */}
                         <div className="space-y-2">
-                          <label htmlFor="company" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
-                            <FaBuilding className="text-[var(--color-primary-500)]" />
+                          <label htmlFor="company" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600)">
+                            <FaBuilding className="text-(--color-primary-500)" />
                             Company Name
                           </label>
                           <Field
                             type="text"
                             id="company"
                             name="company"
-                            className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                            className="w-full px-4 py-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg focus:outline-none focus:border-(--color-primary-500) focus:bg-white transition-all duration-300 text-(--color-primary-600) placeholder-(--color-primary-500)/40"
                             placeholder="Your company (optional)"
                           />
                         </div>
 
                         {/* Website Field */}
                         <div className="space-y-2">
-                          <label htmlFor="website" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
-                            <FaGlobe className="text-[var(--color-primary-500)]" />
+                          <label htmlFor="website" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600)">
+                            <FaGlobe className="text-(--color-primary-500)" />
                             Your Website
                           </label>
                           <Field
                             type="text"
                             id="website"
                             name="website"
-                            className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                            className="w-full px-4 py-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg focus:outline-none focus:border-(--color-primary-500) focus:bg-white transition-all duration-300 text-(--color-primary-600) placeholder-(--color-primary-500)/40"
                             placeholder="https://example.com"
                           />
                           <ErrorMessage name="website" component={motion.div} className="text-red-500 text-sm flex items-center gap-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} />
@@ -279,22 +279,22 @@ const RequestQuote = () => {
 
                       {/* Service Selection Section */}
                       <div className="space-y-3">
-                        <label className="block text-sm font-semibold text-[var(--color-primary-600)] mb-3">
+                        <label className="block text-sm font-semibold text-(--color-primary-600) mb-3">
                           Service(s) Needed *
                         </label>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                           {services.map((service) => (
                             <label 
                               key={service.value} 
-                              className="flex items-start p-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg hover:border-[var(--color-primary-500)]/40 hover:bg-white/80 transition-all duration-300 cursor-pointer group"
+                              className="flex items-start p-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg hover:border-(--color-primary-500)/40 hover:bg-white/80 transition-all duration-300 cursor-pointer group"
                             >
                               <Field
                                 type="checkbox"
                                 name="service"
                                 value={service.value}
-                                className="mt-1 mr-3 h-4 w-4 text-[var(--color-primary-500)] border-[var(--color-primary-500)]/30 rounded focus:ring-[var(--color-primary-500)] cursor-pointer"
+                                className="mt-1 mr-3 h-4 w-4 text-(--color-primary-500) border-(--color-primary-500)/30 rounded focus:ring-(--color-primary-500) cursor-pointer"
                               />
-                              <span className="text-sm text-[var(--color-primary-600)] group-hover:text-[var(--color-primary-500)] transition-colors">
+                              <span className="text-sm text-(--color-primary-600) group-hover:text-(--color-primary-500) transition-colors">
                                 {service.label}
                               </span>
                             </label>
@@ -305,29 +305,29 @@ const RequestQuote = () => {
 
                       {/* Other Services Section */}
                       <div className="space-y-2">
-                        <label htmlFor="otherService" className="block text-sm font-semibold text-[var(--color-primary-600)]">
-                          Other Services <span className="text-xs font-normal text-[var(--color-primary-500)]/60">(if not listed above)</span>
+                        <label htmlFor="otherService" className="block text-sm font-semibold text-(--color-primary-600)">
+                          Other Services <span className="text-xs font-normal text-(--color-primary-500)/60">(if not listed above)</span>
                         </label>
                         <Field
                           type="text"
                           id="otherService"
                           name="otherService"
-                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg focus:outline-none focus:border-(--color-primary-500) focus:bg-white transition-all duration-300 text-(--color-primary-600) placeholder-(--color-primary-500)/40"
                           placeholder="Describe any other services you need"
                         />
                       </div>
 
                       {/* Comments Section */}
                       <div className="space-y-2">
-                        <label htmlFor="comments" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)]">
-                          <FaCommentDots className="text-[var(--color-primary-500)]" />
+                        <label htmlFor="comments" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600)">
+                          <FaCommentDots className="text-(--color-primary-500)" />
                           Project Details *
                         </label>
                         <Field
                           as="textarea"
                           id="comments"
                           name="comments"
-                          className="w-full px-4 py-3 bg-white/50 border-2 border-[var(--color-primary-500)]/20 rounded-lg focus:outline-none focus:border-[var(--color-primary-500)] focus:bg-white transition-all duration-300 text-[var(--color-primary-600)] placeholder-[var(--color-primary-500)]/40 resize-none"
+                          className="w-full px-4 py-3 bg-white/50 border-2 border-(--color-primary-500)/20 rounded-lg focus:outline-none focus:border-(--color-primary-500) focus:bg-white transition-all duration-300 text-(--color-primary-600) placeholder-(--color-primary-500)/40 resize-none"
                           rows="5"
                           placeholder="Tell us more about your project requirements, timeline, budget range, and any specific features you need..."
                         />
@@ -343,7 +343,7 @@ const RequestQuote = () => {
                         <button
                           type="submit"
                           disabled={isSubmitting}
-                          className="w-full px-8 py-4 bg-gradient-to-r from-[var(--color-primary-500)] to-[var(--color-primary-600)] text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-[var(--color-primary-600)] hover:to-[var(--color-primary-500)] transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 cursor-pointer group"
+                          className="w-full px-8 py-4 bg-linear-to-r from-(--color-primary-500) to-(--color-primary-600) text-white font-bold rounded-lg shadow-lg hover:shadow-xl hover:from-(--color-primary-600) hover:to-(--color-primary-500) transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-3 cursor-pointer group"
                         >
                           {isSubmitting ? (
                             <>
@@ -360,7 +360,7 @@ const RequestQuote = () => {
                       </motion.div>
 
                       {/* Privacy Notice */}
-                      <p className="text-xs text-center text-[var(--color-primary-500)]/60 mt-4">
+                      <p className="text-xs text-center text-(--color-primary-500)/60 mt-4">
                         We respect your privacy. Your information will only be used to provide you with a quote.
                       </p>
                     </Form>

@@ -74,13 +74,13 @@ const Contact = () => {
         {/* Animated Background Elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           {/* Gradient Orbs */}
-          <div className="absolute top-20 -left-20 w-72 h-72 bg-[var(--color-primary-500)]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-[var(--color-primary-600)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute top-20 -left-20 w-72 h-72 bg-(--color-primary-500)/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-(--color-primary-600)/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
         
         {/* Floating Particles */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-[var(--color-primary-500)]/30 rounded-full animate-float"></div>
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-[var(--color-primary-500)]/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-[var(--color-primary-500)]/25 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-(--color-primary-500)/30 rounded-full animate-float"></div>
+        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-(--color-primary-500)/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+        <div className="absolute bottom-1/3 left-1/2 w-2 h-2 bg-(--color-primary-500)/25 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
       </div>
 
       {/* Add custom animations */}
@@ -104,11 +104,11 @@ const Contact = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--color-primary-600)] mb-4">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-(--color-primary-600) mb-4">
             Get in Touch
           </h1>
-          <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent mx-auto mb-6"></div>
-          <p className="text-sm sm:text-sm text-[var(--color-primary)] max-w-2xl mx-auto leading-relaxed">
+          <div className="w-24 h-0.5 bg-linear-to-r from-transparent via-(--color-primary-500) to-transparent mx-auto mb-6"></div>
+          <p className="text-sm sm:text-sm text-(--color-primary) max-w-2xl mx-auto leading-relaxed">
             We would love to hear from you. Drop us a message and we&apos;ll get back to you as soon as possible!
           </p>
         </motion.div>
@@ -120,7 +120,7 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="group relative"
         >
-          <div className="relative rounded-3xl p-8 lg:p-12 bg-[var(--color-bg-card)] transition-all duration-300 overflow-hidden shadow-[12px_12px_24px_var(--shadow-dark),-12px_-12px_24px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]">
+          <div className="relative rounded-3xl p-8 lg:p-12 bg-(--color-bg-card) transition-all duration-300 overflow-hidden shadow-[12px_12px_24px_var(--shadow-dark),-12px_-12px_24px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]">
 
             {/* Content */}
             <div className="relative z-10">
@@ -132,14 +132,14 @@ const Contact = () => {
                   transition={{ duration: 0.5 }}
                 >
                   <div className="flex justify-center mb-6">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 rounded-full bg-linear-to-br from-green-400 to-green-600 flex items-center justify-center shadow-lg">
                       <Icon icon="mdi:check-circle" className="text-4xl text-white" />
                     </div>
                   </div>
-                  <h3 className="text-xl lg:text-2xl font-bold text-[var(--color-primary-600)] mb-4">
+                  <h3 className="text-xl lg:text-2xl font-bold text-(--color-primary-600) mb-4">
                     Thank You for Your Message!
                   </h3>
-                  <p className="text-sm lg:text-base text-[var(--color-primary-600)]">
+                  <p className="text-sm lg:text-base text-(--color-primary-600)">
                     We&apos;ve received your message and will get back to you soon.
                   </p>
                 </motion.div>
@@ -164,8 +164,8 @@ const Contact = () => {
 
                   {/* Name Field */}
                   <div>
-                    <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-                      <Icon icon="mdi:account" className="text-sm text-[var(--color-primary-500)]" />
+                    <label htmlFor="name" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600) mb-2">
+                      <Icon icon="mdi:account" className="text-sm text-(--color-primary-500)" />
                       Your Name
                     </label>
                     <div className="relative">
@@ -176,7 +176,7 @@ const Contact = () => {
                         value={formik.values.name}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-base placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
+                        className="w-full p-3 bg-(--color-bg-primary) rounded-xl focus:outline-none transition-all duration-300 text-(--color-primary-600) text-base placeholder:text-(--color-primary-600) shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -193,8 +193,8 @@ const Contact = () => {
 
                   {/* Email Field */}
                   <div>
-                    <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-                      <Icon icon="mdi:email" className="text-sm text-[var(--color-primary-500)]" />
+                    <label htmlFor="email" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600) mb-2">
+                      <Icon icon="mdi:email" className="text-sm text-(--color-primary-500)" />
                       Your Email
                     </label>
                     <div className="relative">
@@ -205,7 +205,7 @@ const Contact = () => {
                         value={formik.values.email}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-base placeholder:text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
+                        className="w-full p-3 bg-(--color-bg-primary) rounded-xl focus:outline-none transition-all duration-300 text-(--color-primary-600) text-base placeholder:text-(--color-primary-600) shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         placeholder="Enter your email address"
                       />
                     </div>
@@ -222,8 +222,8 @@ const Contact = () => {
 
                   {/* Message Field */}
                   <div>
-                    <label htmlFor="message" className="flex items-center gap-2 text-sm font-semibold text-[var(--color-primary-600)] mb-2">
-                      <Icon icon="mdi:message-text" className="text-sm text-[var(--color-primary-500)]" />
+                    <label htmlFor="message" className="flex items-center gap-2 text-sm font-semibold text-(--color-primary-600) mb-2">
+                      <Icon icon="mdi:message-text" className="text-sm text-(--color-primary-500)" />
                       Your Message
                     </label>
                     <div className="relative">
@@ -233,7 +233,7 @@ const Contact = () => {
                         value={formik.values.message}
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
-                        className="w-full p-3 bg-[var(--color-bg-primary)] rounded-xl focus:outline-none transition-all duration-300 text-[var(--color-primary-600)] text-base placeholder:text-[var(--color-primary-600)] resize-none shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
+                        className="w-full p-3 bg-(--color-bg-primary) rounded-xl focus:outline-none transition-all duration-300 text-(--color-primary-600) text-base placeholder:text-(--color-primary-600) resize-none shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] focus:shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]"
                         rows="6"
                         placeholder="Write your message here..."
                       ></textarea>
@@ -254,7 +254,7 @@ const Contact = () => {
                     <button
                       type="submit"
                       disabled={formik.isSubmitting}
-                      className="group relative px-6 py-3 bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] rounded-full font-semibold text-sm overflow-hidden transition-all duration-300 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
+                      className="group relative px-6 py-3 bg-(--color-bg-primary) text-(--color-primary-600) rounded-full font-semibold text-sm overflow-hidden transition-all duration-300 inline-flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:translate-y-0.5 active:shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
                     >
                       <span className="relative z-10">
                         {formik.isSubmitting ? 'Sending...' : 'Send Message'}
@@ -275,9 +275,9 @@ const Contact = () => {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="mt-12 text-center"
         >
-          <p className="text-sm text-[var(--color-primary-600)]">
+          <p className="text-sm text-(--color-primary-600)">
             You can also reach us via email at{' '}
-            <a href="mailto:raijintechug@gmail.com" className="text-[var(--color-primary-500)] font-semibold hover:text-[var(--color-primary-600)] transition-colors duration-300 cursor-pointer">
+            <a href="mailto:raijintechug@gmail.com" className="text-(--color-primary-500) font-semibold hover:text-(--color-primary-600) transition-colors duration-300 cursor-pointer">
               raijintechug@gmail.com
             </a>
           </p>

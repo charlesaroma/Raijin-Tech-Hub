@@ -55,8 +55,8 @@ const CompanyUserAgreement = () => {
     <section className="relative min-h-screen bg-transparent">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 -left-20 w-72 h-72 bg-[var(--color-primary-500)]/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-[var(--color-primary-600)]/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-20 -left-20 w-72 h-72 bg-(--color-primary-500)/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 -right-20 w-96 h-96 bg-(--color-primary-600)/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
       {/* Header */}
@@ -68,11 +68,11 @@ const CompanyUserAgreement = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-12 lg:mb-16"
           >
-            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--color-primary)] mb-2">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-(--color-primary) mb-2">
               Raijin Tech Hub
             </h1>
-            <div className="w-50 h-1 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent mx-auto mb-6"></div>
-            <p className="text-base sm:text-lg md:text-xl text-[var(--color-secondary)] max-w-2xl mx-auto leading-relaxed">
+            <div className="w-50 h-1 bg-linear-to-r from-transparent via-(--color-primary-500) to-transparent mx-auto mb-6"></div>
+            <p className="text-base sm:text-lg md:text-xl text-(--color-secondary) max-w-2xl mx-auto leading-relaxed">
               Important legal information. Please read carefully.
             </p>
           </motion.div>
@@ -103,7 +103,7 @@ const CompanyUserAgreement = () => {
           {/* Mobile: Horizontal Scroll */}
           <div className="md:hidden px-4">
             <div 
-              className={`tab-scroll-container overflow-x-auto overflow-y-hidden ${isSticky ? 'bg-[var(--color-bg-primary)]/90 backdrop-blur-md rounded-2xl p-3 border border-[var(--color-border)] shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]' : ''}`}
+              className={`tab-scroll-container overflow-x-auto overflow-y-hidden ${isSticky ? 'bg-(--color-bg-primary)/90 backdrop-blur-md rounded-2xl p-3 border border-(--color-border) shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]' : ''}`}
               style={isSticky ? {
                 backdropFilter: 'blur(12px)',
                 WebkitBackdropFilter: 'blur(12px)',
@@ -115,14 +115,14 @@ const CompanyUserAgreement = () => {
                   <button
                     key={title}
                     onClick={() => setActiveTab(title)}
-                    className={`group relative flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-xs transition-all duration-300 overflow-hidden cursor-pointer whitespace-nowrap flex-shrink-0
+                    className={`group relative flex items-center gap-1.5 px-3 py-2 rounded-lg font-medium text-xs transition-all duration-300 overflow-hidden cursor-pointer whitespace-nowrap shrink-0
                     ${
                       activeTab === title
-                        ? 'bg-[var(--color-bg-primary)] text-[var(--color-primary)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]'
-                        : 'bg-[var(--color-bg-primary)] text-[var(--color-secondary)] shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:shadow-[3px_3px_6px_var(--shadow-dark),-3px_-3px_6px_var(--shadow-light)]'
+                        ? 'bg-(--color-bg-primary) text-(--color-primary) shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]'
+                        : 'bg-(--color-bg-primary) text-(--color-secondary) shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:shadow-[3px_3px_6px_var(--shadow-dark),-3px_-3px_6px_var(--shadow-light)]'
                     }`}
                   >
-                    <div className={`flex items-center justify-center text-[var(--color-primary-500)]`}>
+                    <div className={`flex items-center justify-center text-(--color-primary-500)`}>
                       {React.cloneElement(iconMap[title], { className: 'w-4 h-4' })}
                     </div>
                     <span className="relative z-10">{title}</span>
@@ -138,7 +138,7 @@ const CompanyUserAgreement = () => {
           {/* Desktop: Wrapped Grid */}
           <div className="hidden md:block px-4 md:px-6 lg:px-[5%]">
             <div className="max-w-4xl mx-auto">
-              <div className={`flex justify-center flex-wrap gap-3 ${isSticky ? 'bg-[var(--color-bg-primary)]/80 backdrop-blur-md rounded-2xl p-4 border border-[var(--color-border)] shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]' : ''}`}
+              <div className={`flex justify-center flex-wrap gap-3 ${isSticky ? 'bg-(--color-bg-primary)/80 backdrop-blur-md rounded-2xl p-4 border border-(--color-border) shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]' : ''}`}
                    style={isSticky ? {
                      backdropFilter: 'blur(12px)',
                      WebkitBackdropFilter: 'blur(12px)'
@@ -150,11 +150,11 @@ const CompanyUserAgreement = () => {
                     className={`group relative flex items-center gap-2 px-5 py-3 rounded-xl font-semibold text-base transition-all duration-300 overflow-hidden cursor-pointer
                     ${
                       activeTab === title
-                        ? 'bg-[var(--color-bg-primary)] text-[var(--color-primary)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] scale-100'
-                        : 'bg-[var(--color-bg-primary)] text-[var(--color-secondary)] shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)]'
+                        ? 'bg-(--color-bg-primary) text-(--color-primary) shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] scale-100'
+                        : 'bg-(--color-bg-primary) text-(--color-secondary) shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)]'
                     }`}
                   >
-                    <div className={`flex items-center justify-center text-[var(--color-primary-500)]`}>
+                    <div className={`flex items-center justify-center text-(--color-primary-500)`}>
                       {iconMap[title]}
                     </div>
                     <span className="relative z-10">{title}</span>
@@ -181,7 +181,7 @@ const CompanyUserAgreement = () => {
               {...fadeInUp}
               className="group relative"
             >
-              <div className="relative rounded-3xl p-8 lg:p-12 bg-[var(--color-bg-card)] transition-all duration-500 overflow-hidden shadow-[12px_12px_24px_var(--shadow-dark),-12px_-12px_24px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]">
+              <div className="relative rounded-3xl p-8 lg:p-12 bg-(--color-bg-card) transition-all duration-500 overflow-hidden shadow-[12px_12px_24px_var(--shadow-dark),-12px_-12px_24px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)]">
               {/* Animated border glow */}
               <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
                 <div className="absolute inset-0 rounded-3xl shadow-[0_0_30px_rgba(var(--color-primary-rgb),0.2)]"></div>
@@ -196,24 +196,24 @@ const CompanyUserAgreement = () => {
               </div>
 
               {/* Gradient orb effects */}
-              <div className="absolute -top-20 -right-20 w-40 h-40 bg-[var(--color-primary-500)]/0 group-hover:bg-[var(--color-primary-500)]/10 rounded-full blur-3xl transition-all duration-700"></div>
-              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-[var(--color-primary-500)]/0 group-hover:bg-[var(--color-primary-500)]/10 rounded-full blur-3xl transition-all duration-700 delay-100"></div>
+              <div className="absolute -top-20 -right-20 w-40 h-40 bg-(--color-primary-500)/0 group-hover:bg-(--color-primary-500)/10 rounded-full blur-3xl transition-all duration-700"></div>
+              <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-(--color-primary-500)/0 group-hover:bg-(--color-primary-500)/10 rounded-full blur-3xl transition-all duration-700 delay-100"></div>
 
               {/* Content */}
               <div className="relative z-10">
                 {/* Title Section */}
                 <div className="text-center mb-10">
                   <div className="flex justify-center mb-6">
-                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl bg-[var(--color-bg-primary)] text-[var(--color-primary-500)] flex items-center justify-center shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]">
+                    <div className="w-16 h-16 lg:w-20 lg:h-20 rounded-xl bg-(--color-bg-primary) text-(--color-primary-500) flex items-center justify-center shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]">
                       {React.cloneElement(iconMap[activeTab], { className: 'w-8 h-8 lg:w-10 lg:h-10' })}
                     </div>
                   </div>
-                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-primary)]">{activeTab}</h2>
-                  <div className="w-16 h-0.5 bg-[var(--color-primary-500)]/40 rounded-full mx-auto mt-4"></div>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--color-primary)">{activeTab}</h2>
+                  <div className="w-16 h-0.5 bg-(--color-primary-500)/40 rounded-full mx-auto mt-4"></div>
                 </div>
 
                 {/* Content Timeline */}
-                <div className="relative space-y-6 border-l-4 border-[var(--color-border)] pl-8">
+                <div className="relative space-y-6 border-l-4 border-(--color-border) pl-8">
                   {activeSection.paragraphs.map((para, idx) => (
                     <motion.div
                       key={idx}
@@ -223,11 +223,11 @@ const CompanyUserAgreement = () => {
                       className="relative group/item"
                     >
                       {/* Timeline dot */}
-                      <span className="absolute -left-[39px] top-2 w-6 h-6 rounded-full bg-[var(--color-bg-primary)] border-4 border-[var(--color-bg-card)] shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] transition-transform duration-300 group-hover/item:scale-110"></span>
+                      <span className="absolute -left-[39px] top-2 w-6 h-6 rounded-full bg-(--color-bg-primary) border-4 border-(--color-bg-card) shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] transition-transform duration-300 group-hover/item:scale-110"></span>
                       
                       {/* Content card */}
-                      <div className="relative rounded-xl p-5 lg:p-6 bg-[var(--color-bg-card)] transition-all duration-300 shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)]">
-                        <p className="text-[var(--color-primary-600)] text-sm sm:text-base lg:text-lg leading-relaxed">
+                      <div className="relative rounded-xl p-5 lg:p-6 bg-(--color-bg-card) transition-all duration-300 shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)]">
+                        <p className="text-(--color-primary-600) text-sm sm:text-base lg:text-lg leading-relaxed">
                           {para}
                         </p>
                       </div>
@@ -238,7 +238,7 @@ const CompanyUserAgreement = () => {
 
               {/* Scanning line effect */}
               <div className="absolute inset-0 overflow-hidden rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-                <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent -translate-y-full group-hover:animate-scan"></div>
+                <div className="absolute w-full h-[2px] bg-linear-to-r from-transparent via-(--color-primary-500) to-transparent -translate-y-full group-hover:animate-scan"></div>
               </div>
               </div>
             </motion.div>

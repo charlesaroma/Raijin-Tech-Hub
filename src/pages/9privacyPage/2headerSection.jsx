@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { FaShieldAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { FaShieldAlt } from "react-icons/fa";
 
 const HeaderSection = () => {
   return (
@@ -10,23 +10,24 @@ const HeaderSection = () => {
       className="text-center mb-12"
     >
       <div className="flex justify-center mb-6">
-        <div className="w-20 h-20 rounded-2xl bg-[var(--color-bg-primary)] flex items-center justify-center text-[var(--color-primary-500)] shadow-[inset_6px_6px_12px_var(--shadow-dark),inset_-6px_-6px_12px_var(--shadow-light)]">
+        <div className="w-20 h-20 rounded-2xl bg-white/80 backdrop-blur-md border border-gray-100 flex items-center justify-center text-(--color-primary-600) shadow-lg">
           <FaShieldAlt className="text-3xl" />
         </div>
       </div>
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--color-primary-600)] mb-4">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-(--color-primary-600) mb-4">
         Privacy Policy
       </h1>
-      <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent mx-auto mb-6"></div>
-      <p className="text-xs text-[var(--color-primary-600)] mb-4">
-        Last Updated: January 20, 2025
+      <div className="w-24 h-0.5 bg-linear-to-r from-transparent via-(--color-tertiary-500) to-transparent mx-auto mb-6"></div>
+      <p className="text-xs text-(--color-text-secondary) mb-4">
+        Last Updated: March 9, 2026
       </p>
-      <p className="text-xs sm:text-sm text-[var(--color-primary-600)] max-w-3xl mx-auto leading-relaxed">
-        At Raijin Tech Hub, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your data.
+      <p className="text-xs sm:text-sm text-(--color-text-secondary) max-w-3xl mx-auto leading-relaxed">
+        At Raijin Tech Hub, we are committed to protecting your privacy and
+        ensuring the security of your personal information. This Privacy Policy
+        explains how we collect, use, disclose, and safeguard your data.
       </p>
     </motion.div>
   );
 };
 
 export default HeaderSection;
-

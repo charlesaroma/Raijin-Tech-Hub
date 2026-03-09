@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Icon } from '@iconify/react';
+import { Icon } from "@iconify/react";
 
 const VALUES = [
   {
@@ -49,13 +49,14 @@ const TabComponent = () => {
       {/* Section Header */}
       <div className="text-center mb-8 sm:mb-10 lg:mb-12">
         <div className="inline-block">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[var(--color-primary-600)] mb-4 relative px-2">
-          Our Purpose & Values
-            <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-[var(--color-primary-500)] to-transparent"></div>
-        </h2>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-(--color-primary-500) mb-4 relative px-2">
+            Our Purpose & Values
+            <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-linear-to-r from-transparent via-(--color-primary-500) to-transparent"></div>
+          </h2>
         </div>
-        <p className="mt-6 text-sm sm:text-sm text-[var(--color-primary-600)] max-w-2xl mx-auto px-4">
-          Discover what drives us forward and defines our commitment to excellence
+        <p className="mt-6 text-sm sm:text-sm text-(--color-off-black-500) max-w-2xl mx-auto px-4">
+          Discover what drives us forward and defines our commitment to
+          excellence
         </p>
       </div>
 
@@ -74,99 +75,117 @@ const TabComponent = () => {
               }
             `}
           </style>
-          <div 
+          <div
             className="overflow-x-auto overflow-y-hidden scrollbar-hide"
             style={{
-              WebkitOverflowScrolling: 'touch'
+              WebkitOverflowScrolling: "touch",
             }}
           >
             <div className="flex gap-2 pb-2 min-w-max px-1">
-            {VALUES.map((value, index) => (
-              <button
-                key={value.title}
-                onClick={() => setActiveTab(value.title)}
-                className={`
+              {VALUES.map((value, index) => (
+                <button
+                  key={value.title}
+                  onClick={() => setActiveTab(value.title)}
+                  className={`
                 group relative flex items-center gap-2 px-4 py-2 rounded-full text-left transition-all duration-300 whitespace-nowrap cursor-pointer
-                  ${activeTab === value.title
-                    ? "bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] shadow-[inset_3px_3px_6px_var(--shadow-dark),inset_-3px_-3px_6px_var(--shadow-light)]"
-                    : "bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"}
+                  ${
+                    activeTab === value.title
+                      ? "bg-(--color-bg-primary) text-(--color-primary-600) shadow-[inset_3px_3px_6px_var(--shadow-dark),inset_-3px_-3px_6px_var(--shadow-light)]"
+                      : "bg-(--color-bg-primary) text-(--color-primary-600) shadow-[4px_4px_8px_var(--shadow-dark),-4px_-4px_8px_var(--shadow-light)] hover:shadow-[2px_2px_4px_var(--shadow-dark),-2px_-2px_4px_var(--shadow-light)]"
+                  }
                 `}
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {/* Icon */}
-                <Icon icon={value.icon} className="text-sm text-[var(--color-primary-500)] flex-shrink-0" />
-                
-                {/* Title */}
-                <span className="font-semibold text-sm">{value.title}</span>
-                
-                {/* Active indicator dot */}
-                {activeTab === value.title && (
-                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--color-primary-500)] ml-1"></div>
-                )}
-              </button>
-            ))}
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  {/* Icon */}
+                  <Icon
+                    icon={value.icon}
+                    className="text-sm text-(--color-primary-500) shrink-0"
+                  />
+
+                  {/* Title */}
+                  <span className="font-semibold text-sm">{value.title}</span>
+
+                  {/* Active indicator dot */}
+                  {activeTab === value.title && (
+                    <div className="w-1.5 h-1.5 rounded-full bg-(--color-primary-500) ml-1"></div>
+                  )}
+                </button>
+              ))}
             </div>
           </div>
         </div>
 
         {/* Desktop Layout: Side-by-Side */}
         <div className="hidden lg:grid lg:grid-cols-[240px_400px] lg:gap-5 justify-center mx-auto">
-        {/* Left Side - Vertical Tabs */}
-        <div className="flex flex-col space-y-2">
-          {VALUES.map((value, index) => (
-            <button
-              key={value.title}
-              onClick={() => setActiveTab(value.title)}
-              className={`
+          {/* Left Side - Vertical Tabs */}
+          <div className="flex flex-col space-y-2">
+            {VALUES.map((value, index) => (
+              <button
+                key={value.title}
+                onClick={() => setActiveTab(value.title)}
+                className={`
                 group relative px-4 py-2.5 rounded-full text-left transition-all duration-300 transform cursor-pointer
-                ${activeTab === value.title
-                  ? "bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
-                  : "bg-[var(--color-bg-primary)] text-[var(--color-primary-600)] shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:shadow-[3px_3px_6px_var(--shadow-dark),-3px_-3px_6px_var(--shadow-light)]"}
+                ${
+                  activeTab === value.title
+                    ? "bg-(--color-bg-primary) text-(--color-primary-600) shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)]"
+                    : "bg-(--color-bg-primary) text-(--color-primary-600) shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:shadow-[3px_3px_6px_var(--shadow-dark),-3px_-3px_6px_var(--shadow-light)]"
+                }
               `}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex items-center space-x-3">
-                {/* Icon */}
-                <Icon icon={value.icon} className="text-base text-[var(--color-primary-500)] flex-shrink-0" />
-                
-                {/* Title */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="font-semibold text-sm truncate">{value.title}</h3>
-                </div>
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <div className="flex items-center space-x-3">
+                  {/* Icon */}
+                  <Icon
+                    icon={value.icon}
+                    className="text-base text-(--color-primary-500) shrink-0"
+                  />
 
-                {/* Arrow Indicator */}
-                {activeTab === value.title && (
-                  <div className="transition-all duration-300 flex-shrink-0">
-                    <Icon icon="mdi:chevron-right" className="text-base text-[var(--color-primary-500)]" />
+                  {/* Title */}
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-semibold text-sm truncate">
+                      {value.title}
+                    </h3>
                   </div>
-                )}
-              </div>
-            </button>
-          ))}
-        </div>
+
+                  {/* Arrow Indicator */}
+                  {activeTab === value.title && (
+                    <div className="transition-all duration-300 shrink-0">
+                      <Icon
+                        icon="mdi:chevron-right"
+                        className="text-base text-(--color-primary-500)"
+                      />
+                    </div>
+                  )}
+                </div>
+              </button>
+            ))}
+          </div>
 
           {/* Right Side - Content Display (Desktop) */}
           <div className="relative group">
-            <div className="relative rounded-2xl p-6 h-full flex flex-col justify-center bg-[var(--color-bg-card)] transition-all duration-300 overflow-hidden cursor-pointer shadow-[10px_10px_20px_var(--shadow-dark),-10px_-10px_20px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:translate-y-1">
+            <div className="relative rounded-2xl p-6 h-full flex flex-col justify-center bg-(--color-bg-card) transition-all duration-300 overflow-hidden cursor-pointer shadow-[10px_10px_20px_var(--shadow-dark),-10px_-10px_20px_var(--shadow-light)] hover:shadow-[6px_6px_12px_var(--shadow-dark),-6px_-6px_12px_var(--shadow-light)] hover:translate-y-1">
               {/* Content */}
               <div className="relative z-10">
                 {/* Icon Display */}
                 <div className="relative mb-3 w-fit">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[var(--color-bg-primary)] shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] transform transition-all duration-300 group-hover:scale-105">
-                    <Icon icon={activeValue.icon} className="text-xl text-[var(--color-primary-500)]" />
+                  <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-(--color-bg-primary) shadow-[inset_4px_4px_8px_var(--shadow-dark),inset_-4px_-4px_8px_var(--shadow-light)] transform transition-all duration-300 group-hover:scale-105">
+                    <Icon
+                      icon={activeValue.icon}
+                      className="text-xl text-(--color-primary-500)"
+                    />
                   </div>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-sm font-bold text-[var(--color-primary-600)] mb-2 transition-all duration-300">
+                <h3 className="text-sm font-bold text-(--color-primary-600) mb-2 transition-all duration-300">
                   {activeValue.title}
                 </h3>
 
                 {/* Divider */}
-                <div className="w-10 h-0.5 bg-[var(--color-primary-500)]/30 rounded-full mb-2"></div>
+                <div className="w-10 h-0.5 bg-(--color-primary-500)/30 rounded-full mb-2"></div>
 
                 {/* Description */}
-                <p className="text-sm leading-relaxed text-[var(--color-primary-600)]">
+                <p className="text-sm leading-relaxed text-(--color-primary-600)">
                   {activeValue.description}
                 </p>
               </div>
@@ -176,26 +195,29 @@ const TabComponent = () => {
 
         {/* Mobile/Tablet - Content Display (Below Tabs) */}
         <div className="relative group lg:hidden max-w-md mx-auto">
-          <div className="relative rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-col justify-center bg-[var(--color-bg-card)] transition-all duration-300 overflow-hidden cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_12px_var(--shadow-dark),-4px_-4px_12px_var(--shadow-light)] hover:translate-y-1">
+          <div className="relative rounded-xl sm:rounded-2xl p-5 sm:p-6 flex flex-col justify-center bg-(--color-bg-card) transition-all duration-300 overflow-hidden cursor-pointer shadow-[8px_8px_16px_var(--shadow-dark),-8px_-8px_16px_var(--shadow-light)] hover:shadow-[4px_4px_12px_var(--shadow-dark),-4px_-4px_12px_var(--shadow-light)] hover:translate-y-1">
             {/* Content */}
             <div className="relative z-10">
               {/* Icon Display */}
               <div className="relative mb-3 w-fit">
-                <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-[var(--color-bg-primary)] shadow-[inset_3px_3px_6px_var(--shadow-dark),inset_-3px_-3px_6px_var(--shadow-light)] transform transition-all duration-300 group-hover:scale-105">
-                  <Icon icon={activeValue.icon} className="text-lg text-[var(--color-primary-500)]" />
+                <div className="flex items-center justify-center w-11 h-11 rounded-xl bg-(--color-bg-primary) shadow-[inset_3px_3px_6px_var(--shadow-dark),inset_-3px_-3px_6px_var(--shadow-light)] transform transition-all duration-300 group-hover:scale-105">
+                  <Icon
+                    icon={activeValue.icon}
+                    className="text-lg text-(--color-primary-500)"
+                  />
                 </div>
               </div>
 
               {/* Title */}
-              <h3 className="text-sm font-bold text-[var(--color-primary-600)] mb-2 transition-all duration-300">
+              <h3 className="text-sm font-bold text-(--color-primary-600) mb-2 transition-all duration-300">
                 {activeValue.title}
               </h3>
 
               {/* Divider */}
-              <div className="w-10 h-0.5 bg-[var(--color-primary-500)]/30 rounded-full mb-2"></div>
+              <div className="w-10 h-0.5 bg-(--color-primary-500)/30 rounded-full mb-2"></div>
 
               {/* Description */}
-              <p className="text-sm text-[var(--color-primary-600)] leading-relaxed">
+              <p className="text-sm text-(--color-primary-600) leading-relaxed">
                 {activeValue.description}
               </p>
             </div>

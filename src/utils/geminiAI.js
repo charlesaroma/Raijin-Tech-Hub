@@ -39,6 +39,7 @@ COMPANY INFORMATION:
 
 SOCIAL MEDIA & CONTACT:
 - WhatsApp: https://wa.me/256777982066
+- Phone: +256 777 982 066
 - Instagram: https://www.instagram.com/raijin_tech_hub
 - LinkedIn: https://www.linkedin.com/company/raijin-technologies-ug/
 - Facebook: https://www.facebook.com/GVNG8
@@ -84,7 +85,7 @@ OUR STATS:
 - 10+ Projects Delivered
 - 5+ Industries Served
 - 95% Client Retention Rate
-- 2+ Years Experience (Founded December 2024)
+- 4+ Years Experience (Founded December 2024)
 
 TECHNOLOGY STACK:
 We specialize exclusively in modern, proven technologies:
@@ -205,35 +206,42 @@ export const sendMessage = async (chatSession, message) => {
   try {
     console.log('📤 Sending message...');
     
-    // Build conversation context
-    let conversationContext = chatSession.systemContext + '\n\n';
+    // Build conversation history in the format required by the new SDK
+    const contents = [];
     
-    // Add conversation history
-    if (chatSession.history.length > 0) {
-      conversationContext += 'Previous conversation:\n';
-      chatSession.history.forEach(entry => {
-        conversationContext += `${entry.role === 'user' ? 'User' : 'Assistant'}: ${entry.message}\n`;
+    // Add history
+    chatSession.history.forEach(entry => {
+      contents.push({
+        role: entry.role,
+        parts: [{ text: entry.message }]
       });
-      conversationContext += '\n';
-    }
-    
-    // Add current message
-    conversationContext += `User: ${message}\n\nAssistant:`;
-    
-    // Call new API
-    const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash-latest',
-      contents: conversationContext
     });
     
-    console.log('📥 Raw API response:', response);
+    // Add current message
+    contents.push({
+      role: 'user',
+      parts: [{ text: message }]
+    });
+
+    console.log('📤 Sending content to Gemini:', JSON.stringify(contents, null, 2));
+    
+    // Call new SDK method (generateContent)
+    const result = await ai.models.generateContent({
+      model: 'gemini-1.5-flash',
+      contents: contents,
+      systemInstruction: chatSession.systemContext
+    });
+    
+    console.log('📥 Raw API result:', result);
     
     // Safe text extraction
-    const text = response?.text || response?.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not process that request.';
+    const responseText = result?.response?.text?.() || 
+                        result?.response?.candidates?.[0]?.content?.parts?.[0]?.text || 
+                        'Sorry, I could not process that request.';
     
-    // Add to history
+    // Add current interaction to history
     chatSession.history.push({ role: 'user', message });
-    chatSession.history.push({ role: 'assistant', message: text });
+    chatSession.history.push({ role: 'model', message: responseText });
     
     // Keep history manageable (last 10 exchanges)
     if (chatSession.history.length > 20) {
@@ -241,7 +249,7 @@ export const sendMessage = async (chatSession, message) => {
     }
     
     console.log('✓ Received response');
-    return text;
+    return responseText;
     
   } catch (error) {
     console.error('❌ Send message error:', error.message);
@@ -282,10 +290,10 @@ export const testApiKey = async () => {
     console.log('🧪 Testing API key...');
     const response = await ai.models.generateContent({
       model: 'gemini-1.5-flash',
-      contents: 'Hello, this is a test. Please respond with "API working".'
+      contents: [{ role: 'user', parts: [{ text: 'Hello, this is a test. Please respond with "API working".' }] }]
     });
     
-    const text = response?.text || JSON.stringify(response);
+    const text = response?.response?.text?.() || response?.response?.candidates?.[0]?.content?.parts?.[0]?.text || JSON.stringify(response);
     console.log('✓ API test successful:', text.substring(0, 50));
     return { success: true, response: text };
   } catch (error) {

@@ -8,11 +8,18 @@ console.log('✓ API Key loaded:', !!API_KEY);
 console.log('✓ API Key length:', API_KEY ? API_KEY.length : 0);
 console.log('✓ API Key starts with AIza:', API_KEY ? API_KEY.startsWith('AIza') : false);
 
-// Validate API key format
-if (!API_KEY) {
-  console.error('❌ ERROR: VITE_GEMINI_API_KEY is not set in .env.local');
-} else if (!API_KEY.startsWith('AIza')) {
-  console.error('❌ ERROR: API key format is invalid. Google API keys should start with "AIza"');
+// Debug: Show API key status visibly if missing
+if (typeof window !== 'undefined') {
+  window.GEMINI_DEBUG = {
+    apiKeyPresent: !!API_KEY,
+    apiKeyStartsWithAIza: API_KEY ? API_KEY.startsWith('AIza') : false,
+    apiKeyLength: API_KEY ? API_KEY.length : 0
+  };
+  if (!API_KEY) {
+    console.error('❌ CRITICAL: VITE_GEMINI_API_KEY is not set! Chatbot will not work.');
+  } else if (!API_KEY.startsWith('AIza')) {
+    console.error('❌ CRITICAL: API key format invalid. Must start with "AIza"');
+  }
 }
 
 const ai = API_KEY && API_KEY.startsWith('AIza') ? new GoogleGenAI({ apiKey: API_KEY }) : null;

@@ -16,12 +16,12 @@ const Footer = () => {
       {/* Main Content */}
       <div className="relative z-10 container mx-auto px-4 md:px-6 lg:px-[5%] py-12 lg:py-16">
         {/* Top Border Accent */}
-        <div className="w-full h-1 bg-linear-to-r from-transparent via-(--color-primary-500) to-transparent mb-12"></div>
+        <div className="w-full h-1 bg-linear-to-r from-transparent via-(--color-primary-200) to-transparent mb-12"></div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Company Info Section */}
           <div className="lg:col-span-2">
-            <h3 className="text-lg lg:text-xl font-bold mb-3 text-(--color-white-200)">
+            <h3 className="text-lg lg:text-xl font-bold mb-3 text-(--color-accent-400)">
               Raijin Tech Hub
             </h3>
             <p className="text-sm text-(--color-white-600) leading-relaxed mb-4">
@@ -66,7 +66,7 @@ const Footer = () => {
 
           {/* Services Section */}
           <div>
-            <h4 className="text-sm font-bold mb-3 text-(--color-white-200)">Our Services</h4>
+            <h4 className="text-sm font-bold mb-3 text-(--color-accent-400)">Our Services</h4>
             <ul className="space-y-2">
               {[
                 "Custom Software & Web Development",
@@ -96,8 +96,8 @@ const Footer = () => {
           </div>
 
           {/* Social Media Section */}
-          <div className="lg:min-w-[150px]">
-            <h4 className="text-sm font-bold mb-3 text-(--color-white-50)">Follow Us</h4>
+          <div className="lg:min-w-37.5">
+            <h4 className="text-sm font-bold mb-3 text-(--color-accent-400)">Follow Us</h4>
             <div className="flex gap-3">
               <a
                 href="https://wa.me/256777982066"

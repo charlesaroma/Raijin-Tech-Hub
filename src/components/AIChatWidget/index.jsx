@@ -160,7 +160,7 @@ const AIChatWidget = () => {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 exit={{ opacity: 0, y: 20, scale: 0.95 }}
                 transition={{ duration: 0.2 }}
-                className="absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-[340px] sm:max-w-[380px] md:w-[400px] h-[500px] sm:h-[550px] md:h-[600px] bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden border border-white/20 flex flex-col"
+                className="absolute bottom-16 right-0 w-[calc(100vw-2rem)] max-w-85 sm:max-w-95 md:w-100 h-125 sm:h-130 md:h-130 bg-white/90 backdrop-blur-xl rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.1)] overflow-hidden border border-white/20 flex flex-col"
               >
                 {/* Header */}
                 <ChatHeader onClose={toggleOpen} />

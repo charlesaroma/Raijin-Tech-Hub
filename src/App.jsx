@@ -32,10 +32,10 @@ function Analytics() {
 
 // Loading component
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-[var(--color-bg-primary)]">
+  <div className="min-h-screen flex items-center justify-center bg-(--color-bg-primary)">
     <div className="text-center">
-      <div className="w-16 h-16 border-4 border-[var(--color-primary-600)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-      <p className="text-[var(--color-primary-600)] font-semibold text-xs">Loading...</p>
+      <div className="w-16 h-16 border-4 border-(--color-primary-600) border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <p className="text-(--color-primary-600) font-semibold text-xs">Loading...</p>
     </div>
   </div>
 );
@@ -47,7 +47,7 @@ function App() {
         <Analytics />
         <ScrollToTop />
         <Navbar />
-        <div className="w-full mt-[60px] bg-[var(--color-bg-primary)] min-h-screen flex flex-col items-center">
+        <div className="w-full mt-[60px] bg-(--color-bg-primary) min-h-screen flex flex-col items-center">
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<Home />} />

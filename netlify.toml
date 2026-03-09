@@ -1,6 +1,6 @@
 [build]
   publish = "dist" # This is the folder where your app is built
-  command = "yarn build" # Build command to create the production version of your site
+  prerender = false # Disable deprecated legacy prerendering
 
 [build.environment]
   NODE_VERSION = "20"

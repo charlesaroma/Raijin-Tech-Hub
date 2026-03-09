@@ -5,8 +5,17 @@ const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
 
 console.log('🔍 Gemini AI Initialization');
 console.log('✓ API Key loaded:', !!API_KEY);
+console.log('✓ API Key length:', API_KEY ? API_KEY.length : 0);
+console.log('✓ API Key starts with AIza:', API_KEY ? API_KEY.startsWith('AIza') : false);
 
-const ai = API_KEY ? new GoogleGenAI({ apiKey: API_KEY }) : null;
+// Validate API key format
+if (!API_KEY) {
+  console.error('❌ ERROR: VITE_GEMINI_API_KEY is not set in .env.local');
+} else if (!API_KEY.startsWith('AIza')) {
+  console.error('❌ ERROR: API key format is invalid. Google API keys should start with "AIza"');
+}
+
+const ai = API_KEY && API_KEY.startsWith('AIza') ? new GoogleGenAI({ apiKey: API_KEY }) : null;
 
 // System context about Raijin Tech Hub
 const COMPANY_CONTEXT = `You are Raijin AI, a friendly and professional AI assistant for Raijin Tech Hub, a leading IT solutions company in Uganda.
@@ -206,11 +215,14 @@ export const sendMessage = async (chatSession, message) => {
     
     // Call new API
     const response = await ai.models.generateContent({
-      model: 'gemini-2.0-flash-exp',
+      model: 'gemini-1.5-flash',
       contents: conversationContext
     });
     
-    const text = response.text;
+    console.log('📥 Raw API response:', response);
+    
+    // Safe text extraction
+    const text = response?.text || response?.candidates?.[0]?.content?.parts?.[0]?.text || 'Sorry, I could not process that request.';
     
     // Add to history
     chatSession.history.push({ role: 'user', message });
@@ -226,6 +238,7 @@ export const sendMessage = async (chatSession, message) => {
     
   } catch (error) {
     console.error('❌ Send message error:', error.message);
+    console.error('Full error details:', error);
     throw error;
   }
 };
@@ -252,11 +265,38 @@ export const formatConversationSummary = (messages) => {
   return `Hello! I've been chatting with your AI assistant. Here's a summary of my inquiry:\n\n- ${userMessages}\n\nLooking forward to discussing further!`;
 };
 
+// Test API key with simple request
+export const testApiKey = async () => {
+  if (!ai) {
+    return { success: false, error: 'API not initialized - check API key' };
+  }
+  
+  try {
+    console.log('🧪 Testing API key...');
+    const response = await ai.models.generateContent({
+      model: 'gemini-1.5-flash',
+      contents: 'Hello, this is a test. Please respond with "API working".'
+    });
+    
+    const text = response?.text || JSON.stringify(response);
+    console.log('✓ API test successful:', text.substring(0, 50));
+    return { success: true, response: text };
+  } catch (error) {
+    console.error('❌ API test failed:', error);
+    return { 
+      success: false, 
+      error: error.message,
+      details: error
+    };
+  }
+};
+
 export default {
   initializeChat,
   sendMessage,
   QUICK_REPLIES,
   shouldOfferWhatsAppHandoff,
   formatConversationSummary,
+  testApiKey,
 };
 

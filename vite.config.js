@@ -29,7 +29,7 @@ export default defineConfig({
           'animation-vendor': ['framer-motion', 'gsap'],
           'form-vendor': ['formik', 'yup'],
           'icons-vendor': ['react-icons'],
-          'lottie-vendor': ['@lottiefiles/dotlottie-react', 'lottie-react'],
+          'lottie-vendor': ['@lottiefiles/dotlottie-react'],
         },
         // Optimize chunk file names
         chunkFileNames: 'assets/js/[name]-[hash].js',

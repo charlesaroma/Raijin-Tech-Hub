@@ -113,7 +113,11 @@ const AIChatWidget = () => {
       setMessages((prev) => [...prev, assistantMessage]);
       trackContact("AI Chat Message Sent");
     } catch (err) {
-      console.error("❌ AI Error:", err.message);
+      console.error("❌ AI Error:", err);
+      setError(
+        err?.message ||
+          "AI is temporarily unavailable. Please check your API key or try again later.",
+      );
       setMessages((prev) => [
         ...prev,
         {

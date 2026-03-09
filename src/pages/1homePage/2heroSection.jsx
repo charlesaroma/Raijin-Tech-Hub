@@ -67,15 +67,11 @@ const HeroSection = () => {
         <div className="space-y-4 lg:space-y-5 max-w-2xl text-center lg:text-left z-10">
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 border-(--color-primary-500)/30 bg-(--color-primary-500)/5 backdrop-blur-sm"
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border-2 border-y-(--color-primary-500)/30 bg-(--color-primary-500)/5 backdrop-blur-sm"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="relative flex h-1.5 w-1.5">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-(--color-secondary-500) opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-(--color-secondary-500)"></span>
-            </span>
             <span className="text-xs font-medium text-(--color-off-black-500)">
               Transforming Ideas into Digital Reality
             </span>
@@ -115,9 +111,7 @@ const HeroSection = () => {
             transition={{ duration: 1, delay: 0.6 }}
           >
             <div className="flex items-center justify-center lg:justify-start gap-2 min-h-[50px]">
-              <div className="flex items-center justify-center w-8 h-8 rounded-full bg-linear-to-br from-(--color-primary-500) to-(--color-primary-600) text-(--color-white-50) shadow-lg">
-                <span className="text-sm">⚡</span>
-              </div>
+
               <div className="flex-1 max-w-md">
                 <AnimatePresence mode="wait">
                   <motion.div

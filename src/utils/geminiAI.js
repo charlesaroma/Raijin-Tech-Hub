@@ -200,60 +200,56 @@ export const initializeChat = async () => {
 // Send message to Gemini AI (using new SDK)
 export const sendMessage = async (chatSession, message) => {
   if (!chatSession || !ai) {
-    throw new Error('Chat session not initialized');
+    throw new Error('Chat session not initialized or API key missing');
   }
 
   try {
-    console.log('📤 Sending message...');
-    
-    // Build conversation history in the format required by the new SDK
-    const contents = [];
-    
-    // Add history
-    chatSession.history.forEach(entry => {
-      contents.push({
-        role: entry.role,
-        parts: [{ text: entry.message }]
-      });
-    });
-    
-    // Add current message
-    contents.push({
-      role: 'user',
-      parts: [{ text: message }]
+    console.log('📤 Sending message to Gemini...');
+
+    // Minimal contents format aligned with @google/genai examples
+    const contents = [
+      {
+        role: 'user',
+        parts: [{ text: message }],
+      },
+    ];
+
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents,
+      systemInstruction: chatSession.systemContext,
     });
 
-    console.log('📤 Sending content to Gemini:', JSON.stringify(contents, null, 2));
-    
-    // Call new SDK method (generateContent)
-    const result = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
-      contents: contents,
-      systemInstruction: chatSession.systemContext
-    });
-    
-    console.log('📥 Raw API result:', result);
-    
-    // Safe text extraction
-    const responseText = result?.response?.text?.() || 
-                        result?.response?.candidates?.[0]?.content?.parts?.[0]?.text || 
-                        'Sorry, I could not process that request.';
-    
+    // Support both older `.response.text()` and newer `.text` shapes
+    let responseText;
+    if (typeof response.text === 'function') {
+      responseText = response.text();
+    } else if (typeof response.text === 'string') {
+      responseText = response.text;
+    } else if (response?.response?.text) {
+      responseText =
+        typeof response.response.text === 'function'
+          ? response.response.text()
+          : response.response.text;
+    } else {
+      responseText =
+        response?.response?.candidates?.[0]?.content?.parts?.[0]?.text ||
+        'Sorry, I could not process that request.';
+    }
+
     // Add current interaction to history
     chatSession.history.push({ role: 'user', message });
     chatSession.history.push({ role: 'model', message: responseText });
-    
+
     // Keep history manageable (last 10 exchanges)
     if (chatSession.history.length > 20) {
       chatSession.history = chatSession.history.slice(-20);
     }
-    
-    console.log('✓ Received response');
+
+    console.log('✓ Gemini response:', responseText);
     return responseText;
-    
   } catch (error) {
-    console.error('❌ Send message error:', error.message);
-    console.error('Full error details:', error);
+    console.error('❌ Send message error:', error);
     throw error;
   }
 };
@@ -289,12 +285,27 @@ export const testApiKey = async () => {
   try {
     console.log('🧪 Testing API key...');
     const response = await ai.models.generateContent({
-      model: 'gemini-1.5-flash',
-      contents: [{ role: 'user', parts: [{ text: 'Hello, this is a test. Please respond with "API working".' }] }]
+      model: 'gemini-2.5-flash',
+      contents: 'Hello, this is a test. Please respond with "API working".',
     });
-    
-    const text = response?.response?.text?.() || response?.response?.candidates?.[0]?.content?.parts?.[0]?.text || JSON.stringify(response);
-    console.log('✓ API test successful:', text.substring(0, 50));
+
+    let text;
+    if (typeof response.text === 'function') {
+      text = response.text();
+    } else if (typeof response.text === 'string') {
+      text = response.text;
+    } else if (response?.response?.text) {
+      text =
+        typeof response.response.text === 'function'
+          ? response.response.text()
+          : response.response.text;
+    } else {
+      text =
+        response?.response?.candidates?.[0]?.content?.parts?.[0]?.text ||
+        JSON.stringify(response);
+    }
+
+    console.log('✓ API test successful:', text.substring(0, 80));
     return { success: true, response: text };
   } catch (error) {
     console.error('❌ API test failed:', error);

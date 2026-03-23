@@ -183,7 +183,15 @@ export const initializeChat = async () => {
     console.log('🚀 Initializing Gemini AI...');
     
     // Return a chat object that maintains conversation history
+    const chat = ai.chats.create({
+      model: 'gemini-2.5-flash',
+      config: {
+        systemInstruction: COMPANY_CONTEXT,
+      }
+    });
+
     const chatSession = {
+      chat,
       history: [],
       systemContext: COMPANY_CONTEXT
     };
@@ -206,19 +214,7 @@ export const sendMessage = async (chatSession, message) => {
   try {
     console.log('📤 Sending message to Gemini...');
 
-    // Minimal contents format aligned with @google/genai examples
-    const contents = [
-      {
-        role: 'user',
-        parts: [{ text: message }],
-      },
-    ];
-
-    const response = await ai.models.generateContent({
-      model: 'gemini-2.5-flash',
-      contents,
-      systemInstruction: chatSession.systemContext,
-    });
+    const response = await chatSession.chat.sendMessage({ message });
 
     // Support both older `.response.text()` and newer `.text` shapes
     let responseText;
@@ -287,6 +283,9 @@ export const testApiKey = async () => {
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: 'Hello, this is a test. Please respond with "API working".',
+      config: {
+        systemInstruction: 'You are Raijin AI, a friendly assistant for Raijin Tech Hub.'
+      }
     });
 
     let text;

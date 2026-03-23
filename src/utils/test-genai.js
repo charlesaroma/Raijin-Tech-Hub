@@ -24,7 +24,9 @@ async function testChat() {
     const result = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: contents,
-      systemInstruction: 'You are Raijin AI, a friendly assistant for Raijin Tech Hub.'
+      config: {
+        systemInstruction: 'You are Raijin AI, a friendly assistant for Raijin Tech Hub.'
+      }
     });
     
     const responseText = result?.response?.text?.() || 

@@ -5,6 +5,7 @@ import ScrollToTop from "./navigation/scrolltoTop";
 import Footer from "./navigation/footer";
 import AIChatWidget from "./components/AIChatWidget/index";
 import { logPageView } from "./utils/analytics";
+import PropTypes from "prop-types";
 
 // Lazy load pages for code splitting - organized by navigation order
 const Home = lazy(() => import("./pages/1homePage/1homePage"));
@@ -68,6 +69,17 @@ class RouteErrorBoundary extends React.Component {
   }
 }
 
+// Add PropTypes validation for RouteErrorBoundary
+RouteErrorBoundary.propTypes = {
+  locationKey: PropTypes.string,
+  children: PropTypes.node
+};
+
+RouteErrorBoundary.defaultProps = {
+  locationKey: null,
+  children: null
+};
+
 // Loading component - faster animation for quicker perceived load
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-(--color-bg-primary)">
@@ -86,7 +98,7 @@ function App() {
       <Analytics />
       <ScrollToTop />
       <Navbar />
-      <div className="w-full mt-[60px] bg-(--color-bg-primary) min-h-screen flex flex-col items-center">
+      <div className="w-full mt-15 bg-(--color-bg-primary) min-h-screen flex flex-col items-center">
         <RouteErrorBoundary locationKey={location.key}>
           <Suspense fallback={<PageLoader />}>
             <Routes>

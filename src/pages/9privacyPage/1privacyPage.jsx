@@ -423,9 +423,10 @@ If you have concerns about our privacy practices, contact us first. If unresolve
                       </div>
                     ) : (
                       <div className="prose prose-gray max-w-none">
-                        <p className="text-(--color-text-secondary) leading-relaxed whitespace-pre-line">
-                          {section.content}
-                        </p>
+                        <p 
+                          className="text-(--color-text-secondary) leading-relaxed"
+                          dangerouslySetInnerHTML={{ __html: section.content.replace(/\n/g, '<br>') }}
+                        />
                       </div>
                     )}
                   </div>

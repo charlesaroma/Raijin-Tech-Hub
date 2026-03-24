@@ -161,7 +161,7 @@ const Footer = () => {
                 href="https://charles-aroma.netlify.app/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 text-(--color-white-600) hover:text-(--color-secondary-400) transition-colors duration-300 group/dev"
+                className="flex items-center gap-1.5 text-(--color-white-600) hover:text-(--color-secondary-400) transition-colors duration-300 group/dev cursor-pointer"
               >
                 <Icon
                   icon="mdi:code-braces"

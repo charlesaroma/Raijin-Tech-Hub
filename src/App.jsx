@@ -68,11 +68,11 @@ class RouteErrorBoundary extends React.Component {
   }
 }
 
-// Loading component
+// Loading component - faster animation for quicker perceived load
 const PageLoader = () => (
   <div className="min-h-screen flex items-center justify-center bg-(--color-bg-primary)">
     <div className="text-center">
-      <div className="w-16 h-16 border-4 border-(--color-primary-600) border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+      <div className="w-16 h-16 border-4 border-(--color-primary-600) border-t-transparent rounded-full animate-[spin_0.6s_linear_infinite] mx-auto mb-4"></div>
       <p className="text-(--color-primary-600) font-semibold text-xs">Loading...</p>
     </div>
   </div>

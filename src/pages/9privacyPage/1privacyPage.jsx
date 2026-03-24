@@ -5,7 +5,6 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 
 const PrivacyPolicyPage = () => {
-  const [activeSection, setActiveSection] = useState(null);
   const [expandedFaq, setExpandedFaq] = useState(null);
 
   const lastUpdated = "March 24, 2026";
@@ -32,310 +31,151 @@ This policy applies to all data processing activities conducted by Raijin Tech H
       title: "Definitions",
       content: `For the purposes of this Privacy Policy:
 
-• **"Personal Data"** means any information relating to an identified or identifiable natural person ("Data Subject").
-• **"Processing"** means any operation performed on Personal Data, including collection, storage, use, disclosure, or deletion.
-• **"Data Controller"** means Raijin Tech Hub, which determines the purposes and means of processing Personal Data.
-• **"Data Processor"** means any entity that processes Personal Data on behalf of the Data Controller.
-• **"Data Subject"** means the individual whose Personal Data is being processed.
-• **"Consent"** means any freely given, specific, informed, and unambiguous indication of the Data Subject's wishes.`
+• <b>"Personal Data"</b> means any information relating to an identified or identifiable natural person ("Data Subject").
+• <b>"Processing"</b> means any operation performed on Personal Data, including collection, storage, use, disclosure, or deletion.
+• <b>"Data Controller"</b> means Raijin Tech Hub, which determines the purposes and means of processing Personal Data.
+• <b>"Data Processor"</b> means any entity that processes Personal Data on behalf of the Data Controller.
+• <b>"Data Subject"</b> means the individual whose Personal Data is being processed.
+• <b>"Consent"</b> means any freely given, specific, informed, and unambiguous indication of the Data Subject's wishes.`
     },
     {
       id: "collection",
-      icon: "mdi:database",
+      icon: "mdi:database-import",
       title: "Information We Collect",
-      subsections: [
-        {
-          subtitle: "Personal Information You Provide",
-          items: [
-            "Identity Data: Full name, company name, job title, and professional details",
-            "Contact Data: Email address, phone number, postal address, and WhatsApp number",
-            "Financial Data: Bank account details, payment card information, and billing addresses",
-            "Technical Requirements: Project specifications, system requirements, and business needs",
-            "Communications: Records of correspondence, meeting notes, and support tickets",
-            "Marketing Preferences: Your preferences for receiving marketing communications"
-          ]
-        },
-        {
-          subtitle: "Information Automatically Collected",
-          items: [
-            "Technical Data: IP address, browser type and version, operating system, device information",
-            "Usage Data: Pages visited, time spent on pages, navigation paths, click patterns",
-            "Location Data: Approximate geographic location based on IP address",
-            "Cookie Data: Information stored in cookies and similar tracking technologies",
-            "Error Data: Crash reports, error logs, and performance metrics"
-          ]
-        },
-        {
-          subtitle: "Information from Third Parties",
-          items: [
-            "Analytics Providers: Google Analytics, visitor behavior and website usage statistics",
-            "Payment Processors: Transaction confirmation and payment status from mobile money/banks",
-            "Business Partners: Referrals and professional networking information",
-            "Public Sources: Publicly available business information and professional profiles"
-          ]
-        }
-      ]
-    },
-    {
-      id: "legal-basis",
-      icon: "mdi:scale-balance",
-      title: "Legal Basis for Processing",
-      content: `We process your Personal Data based on the following legal grounds under the Ugandan Data Protection and Privacy Act, 2019, and applicable international standards:
+      content: `<b>Direct Information</b>
+• Name, email, phone number, company details
+• Project specifications and requirements
+• Business correspondence and communications
+• Payment information and billing addresses
 
-**1. Contractual Necessity**
-Processing is necessary for the performance of a contract with you or to take steps at your request before entering into a contract. This includes:
-• Providing IT services and software development as agreed
-• Processing payments and managing billing
-• Delivering project deliverables and documentation
-• Providing ongoing support and maintenance
+<b>Technical Information</b>
+• IP address and device information
+• Browser type and operating system
+• Service usage patterns and analytics
+• Error logs and performance data
 
-**2. Legitimate Interests**
-Processing is necessary for our legitimate business interests, provided your rights do not override these interests:
-• Improving our services and website functionality
-• Network and information security
-• Fraud prevention and detection
-• Business analytics and reporting
-• Marketing to existing clients about related services
-
-**3. Legal Compliance**
-Processing is necessary to comply with legal obligations:
-• Tax and accounting record-keeping requirements
-• Regulatory compliance under Ugandan law
-• Law enforcement requests and court orders
-• Data retention obligations
-
-**4. Consent**
-Where required by law, we obtain your explicit consent for:
-• Marketing communications and promotional materials
-• Use of non-essential cookies and tracking technologies
-• Processing sensitive personal data (if applicable)
-• Sharing data with third parties beyond service provision
-
-**5. Vital Interests**
-Processing may be necessary to protect your vital interests or those of another person in emergency situations.`
+<b>Why We Collect This</b>
+• To provide and improve our services
+• For billing and administrative purposes
+• To ensure security and prevent fraud
+• To communicate with you effectively`
     },
     {
       id: "usage",
       icon: "mdi:cog-transfer",
       title: "How We Use Your Information",
-      subsections: [
-        {
-          subtitle: "Service Provision",
-          items: [
-            "Deliver software development and IT consultancy services as contracted",
-            "Communicate project updates, milestones, and deliverables",
-            "Provide technical support and troubleshooting assistance",
-            "Manage project timelines, resources, and deliverables",
-            "Process payments, invoices, and financial transactions"
-          ]
-        },
-        {
-          subtitle: "Business Operations",
-          items: [
-            "Analyze service usage to improve functionality and user experience",
-            "Conduct internal research and statistical analysis",
-            "Train staff and improve service quality",
-            "Manage our IT infrastructure and security systems",
-            "Develop new products, services, and features"
-          ]
-        },
-        {
-          subtitle: "Communications",
-          items: [
-            "Send administrative information about our services",
-            "Respond to inquiries, requests, and feedback",
-            "Provide information about service changes or updates",
-            "Send marketing communications with your consent (which you can opt-out of at any time)"
-          ]
-        },
-        {
-          subtitle: "Legal and Security",
-          items: [
-            "Comply with legal obligations and regulatory requirements",
-            "Protect against fraud, unauthorized transactions, and security threats",
-            "Enforce our terms of service and legal agreements",
-            "Establish, exercise, or defend legal claims",
-            "Monitor and ensure network and information security"
-          ]
-        }
-      ]
+      content: `<b>Service Delivery</b>
+• Develop and deliver software solutions
+• Provide IT consultancy and technical support
+• Manage project timelines and deliverables
+• Process payments and handle billing
+
+<b>Communication</b>
+• Send project updates and progress reports
+• Respond to your inquiries and requests
+• Provide technical support and troubleshooting
+• Share service announcements (with consent)
+
+<b>Improvement & Security</b>
+• Analyze usage to improve our services
+• Train our team to serve you better
+• Protect against fraud and security threats
+• Comply with legal requirements`
     },
     {
       id: "sharing",
       icon: "mdi:share-variant",
-      title: "Data Sharing & Third Parties",
-      content: `We do not sell your Personal Data. We may share your information in the following circumstances:
+      title: "Data Sharing",
+      content: `<b>We Never Sell Your Data</b>
 
-**Service Providers & Processors**
-We engage trusted third-party service providers who assist in our operations:
-• Cloud hosting providers (AWS, Google Cloud, Microsoft Azure) for data storage
-• Payment processors (MTN Mobile Money, Airtel Money, banks) for transaction processing
-• Email service providers (Google Workspace, SendGrid) for communications
-• Analytics providers (Google Analytics) for website usage analysis
-• Software development tools and version control systems
+<b>Service Providers</b>
+• Cloud hosting (AWS, Google Cloud) for secure storage
+• Payment processors (Mobile Money, banks) for transactions
+• Email services for professional communications
 
-All service providers are contractually bound to process data only for specified purposes, maintain confidentiality, and implement appropriate security measures.
+<b>Legal Requirements</b>
+• When required by law or court order
+• To protect our rights and prevent fraud
+• In connection with business transfers (with proper safeguards)
 
-**Professional Advisers**
-We may share data with:
-• Legal advisers for contract review and dispute resolution
-• Accountants and auditors for financial compliance
-• Insurance providers for professional liability coverage
-
-**Legal and Regulatory Disclosures**
-We may disclose your information:
-• To comply with legal obligations, court orders, or regulatory requirements
-• To respond to lawful requests from public authorities
-• To protect our rights, property, or safety, and that of our clients or others
-• In connection with business transfers, mergers, acquisitions, or asset sales
-
-**With Your Consent**
-We may share your information with third parties when you have given explicit consent for specific purposes.
-
-**International Transfers**
-Your data may be transferred to and processed in countries outside Uganda. We ensure such transfers comply with applicable data protection laws through:
-• Standard Contractual Clauses approved by relevant authorities
-• Adequacy decisions where applicable countries provide adequate protection
-• Binding Corporate Rules for intra-group transfers`
+<b>Your Consent</b>
+• Only when you explicitly agree to specific sharing`
     },
     {
       id: "security",
-      icon: "mdi:lock",
+      icon: "mdi:shield-lock",
       title: "Data Security Measures",
-      content: `We implement comprehensive technical and organizational measures to protect your Personal Data:
+      content: `<b>Technical Protection</b>
+• End-to-end encryption for sensitive data
+• Secure servers with regular backups
+• Firewall protection and intrusion detection
+• Regular security updates and patches
 
-**Technical Safeguards**
-• **Encryption**: All data transmission uses TLS 1.3 encryption. Sensitive data at rest is encrypted using AES-256.
-• **Access Controls**: Role-based access control (RBAC) limiting data access to authorized personnel only.
-• **Authentication**: Multi-factor authentication (MFA) for all systems containing client data.
-• **Firewalls & Network Security**: Enterprise-grade firewalls, intrusion detection systems, and network monitoring.
-• **Regular Security Updates**: Automated security patching and vulnerability management.
-• **Secure Development**: Code reviews, security testing, and secure coding practices.
+<b>Access Control</b>
+• Limited access to authorized personnel only
+• Strong password policies and 2FA
+• Regular security training for our team
+• Audit logs for all data access
 
-**Organizational Measures**
-• **Staff Training**: Regular data protection and security awareness training for all employees.
-• **Confidentiality Agreements**: All staff sign confidentiality and data protection agreements.
-• **Incident Response Plan**: Documented procedures for detecting, reporting, and responding to data breaches.
-• **Data Minimization**: We collect and retain only data necessary for specified purposes.
-• **Regular Audits**: Security assessments, penetration testing, and compliance audits.
-
-**Breach Notification**
-In the unlikely event of a personal data breach, we will:
-• Notify the Personal Data Protection Office of Uganda within 72 hours where required
-• Inform affected Data Subjects without undue delay when high risk
-• Document all breaches, their effects, and remedial actions taken
-
-While we strive to protect your data using industry-standard measures, no internet transmission or electronic storage is 100% secure. We cannot guarantee absolute security.`
+<b>Compliance</b>
+• Ugandan Data Protection Act, 2019
+• International security standards (ISO 27001)
+• Regular security audits and assessments`
     },
     {
       id: "retention",
       icon: "mdi:clock-outline",
       title: "Data Retention & Deletion",
-      content: `We retain your Personal Data only for as long as necessary to fulfill the purposes for which it was collected, including:
+      content: `<b>How Long We Keep Data</b>
+• Project data: 7 years after completion
+• Financial records: 7 years (legal requirement)
+• Marketing data: Until you opt out
+• Website analytics: 26 months
 
-**Retention Periods**
-• **Client Project Data**: Retained for 7 years after project completion (for legal, tax, and accounting purposes)
-• **Financial Records**: Retained for 7 years as required by Ugandan tax law
-• **Marketing Data**: Retained until you opt-out or withdraw consent
-• **Website Usage Data**: Retained for 26 months (Google Analytics standard)
-• **Communication Records**: Retained for 3 years for quality assurance and legal purposes
-• **Cookie Data**: Retained per browser settings, typically up to 13 months
-
-**Deletion Criteria**
-We will delete or anonymize your data when:
-• The retention period expires
-• You withdraw consent and no other legal basis applies
-• You successfully exercise your right to erasure
-• The data is no longer necessary for the original purpose
-• Legal obligations no longer require retention
-
-**Data Destruction**
-When data is deleted, we ensure:
-• Electronic data is permanently erased using secure deletion methods
-• Physical records are shredded or destroyed securely
-• Backup data is deleted in accordance with backup retention schedules
-• Third-party processors are instructed to delete shared data`
+<b>When We Delete Data</b>
+• When retention period expires
+• When you withdraw consent
+• When data is no longer needed
+• When legally required`
     },
     {
       id: "cookies",
       icon: "mdi:cookie",
-      title: "Cookies & Tracking Technologies",
-      content: `Our website uses cookies and similar technologies to enhance user experience and analyze usage:
+      title: "Cookies & Tracking",
+      content: `<b>Essential Cookies</b>
+• Required for website functionality
+• Maintain login sessions
+• Enable security features
 
-**Types of Cookies We Use**
+<b>Analytics Cookies</b>
+• Help us understand website usage
+• Improve user experience
+• Anonymous usage statistics
 
-**Essential Cookies (Required)**
-These cookies are necessary for the website to function and cannot be disabled:
-• Session management and authentication
-• Security features and fraud prevention
-• Load balancing and performance optimization
-• User preferences (language, region)
-
-**Analytics Cookies**
-Help us understand how visitors interact with our website:
-• Google Analytics: Page views, session duration, traffic sources
-• Hotjar: User behavior, heatmaps, and feedback
-• Page performance and error tracking
-
-**Marketing Cookies**
-Used to deliver relevant advertisements and track campaign effectiveness:
-• Social media pixels (Facebook, LinkedIn, Twitter)
-• Remarketing and retargeting cookies
-• Conversion tracking
-
-**Managing Cookies**
-You can control cookies through:
-• **Browser Settings**: Most browsers allow you to refuse or delete cookies
-• **Cookie Consent Banner**: Adjust preferences when first visiting our site
-• **Third-Party Tools**: Use opt-out tools provided by analytics and advertising networks
-
-Please note that disabling cookies may affect website functionality and user experience.
-
-**Do Not Track**
-We respect "Do Not Track" browser signals and will not track users who have enabled this feature for non-essential purposes.`
+<b>Your Choices</b>
+• Accept or reject non-essential cookies
+• Clear cookies from your browser settings
+• Continue using our site with essential cookies only`
     },
     {
       id: "rights",
-      icon: "mdi:account-check",
-      title: "Your Data Protection Rights",
-      content: `Under the Ugandan Data Protection and Privacy Act, 2019, and applicable international standards, you have the following rights regarding your Personal Data:
+      icon: "mdi:account-key",
+      title: "Your Privacy Rights",
+      content: `<b>Access & Correction</b>
+• Request access to your personal data
+• Correct inaccurate or incomplete information
+• Update your contact preferences
 
-**1. Right to Access**
-You have the right to request confirmation of whether we process your Personal Data and, if so, access to that data including:
-• The purposes of processing
-• Categories of Personal Data processed
-• Recipients or categories of recipients
-• Retention period criteria
-• Your other rights and how to exercise them
+<b>Control & Choices</b>
+• Opt out of marketing communications
+• Request data deletion when legally permitted
+• Restrict processing of sensitive information
+• Withdraw consent where applicable
 
-**2. Right to Rectification**
-You may request correction of inaccurate or incomplete Personal Data. We will rectify errors within 30 days of verification.
-
-**3. Right to Erasure ("Right to be Forgotten")**
-You may request deletion of your Personal Data when:
-• The data is no longer necessary for the original purpose
-• You withdraw consent and no other legal basis applies
-• You object to processing and there are no overriding legitimate grounds
-• The data was unlawfully processed
-• Deletion is required for legal compliance
-
-**4. Right to Restrict Processing**
-You may request limitation of processing in specific circumstances, such as when contesting accuracy of data or objecting to processing.
-
-**5. Right to Data Portability**
-You have the right to receive your Personal Data in a structured, commonly used, machine-readable format and transmit it to another controller.
-
-**6. Right to Object**
-You may object to processing based on legitimate interests or for direct marketing purposes at any time.
-
-**7. Right to Withdraw Consent**
-Where processing is based on consent, you may withdraw consent at any time without affecting the lawfulness of processing before withdrawal.
-
-**8. Right to Lodge a Complaint**
-You have the right to complain to the Personal Data Protection Office of Uganda if you believe your data protection rights have been violated.
-
-**Exercising Your Rights**
-To exercise any of these rights, contact us at raijintechug@gmail.com. We will respond within 30 days and may request verification of your identity.`
+<b>How to Exercise Rights</b>
+Email: raijintechug@gmail.com
+Phone: +256 777 982 066
+We respond within 30 days as required by law.`
     },
     {
       id: "children",
@@ -358,26 +198,26 @@ We encourage parents and guardians to monitor their children's online activities
       title: "Automated Decision-Making & AI",
       content: `We use automated technologies including AI chatbots and machine learning systems:
 
-**AI Chatbot**
+<b>AI Chatbot</b>
 Our website features an AI-powered chatbot that:
 • Provides automated responses to common inquiries
 • Collects conversation data for quality improvement
 • Offers WhatsApp handoff for complex queries
 • Does not make decisions affecting your legal rights
 
-**Data Processing in AI Systems**
+<b>Data Processing in AI Systems</b>
 • Conversations may be logged and analyzed for training purposes
 • Personal Data shared in chat conversations is subject to this Privacy Policy
 • You may request deletion of chat history at any time
 • Conversations with our chatbot do not constitute legal advice or binding commitments
 
-**Automated Decision-Making**
+<b>Automated Decision-Making</b>
 We do not use automated decision-making processes that produce legal effects or similarly significant effects on you, except:
 • Fraud detection and prevention systems
 • Spam filtering and security monitoring
 • Creditworthiness checks for payment plans (with human review)
 
-**Your Rights Regarding Automated Processing**
+<b>Your Rights Regarding Automated Processing</b>
 You have the right to:
 • Be informed about automated processing
 • Obtain human intervention in automated decisions
@@ -393,43 +233,35 @@ You have the right to:
 • Technology and security standards
 • Industry best practices
 
-**Notification of Changes**
+<b>Notification of Changes</b>
 • Material changes will be notified via email to registered clients
 • A prominent notice will be posted on our website for 30 days
 • The "Last Updated" date at the top of this policy will be revised
 • For significant changes affecting your rights, we will request renewed consent where required
 
-**Effective Date**
+<b>Effective Date</b>
 Changes take effect immediately upon posting unless otherwise stated. Continued use of our services after changes constitutes acceptance of the revised policy.
 
-**Previous Versions**
+<b>Previous Versions</b>
 We maintain archived versions of this Privacy Policy. Contact us to request copies of previous versions.`
     },
     {
       id: "contact",
-      icon: "mdi:email-outline",
-      title: "Contact Information",
-      content: `For questions, concerns, or requests regarding this Privacy Policy or our data practices, contact our Data Protection Officer:
-
-**Raijin Tech Hub**
-Data Protection Officer
+      icon: "mdi:contact-mail",
+      title: "Contact & Questions",
+      content: `<b>Privacy Contact</b>
+<b>Raijin Tech Hub</b>
 Email: raijintechug@gmail.com
 Phone: +256 777 982 066
 Address: Kampala, Uganda
 
-**Response Time**
-We aim to respond to all inquiries within:
-• General questions: 2-3 business days
-• Data subject requests: 30 days (as required by law)
-• Data breach notifications: Without undue delay
+<b>Response Times</b>
+• Privacy inquiries: Within 7 days
+• Data access requests: Within 30 days
+• Emergency requests: Within 24 hours
 
-**Regulatory Authority**
-If you are unsatisfied with our response, you may contact:
-
-Personal Data Protection Office of Uganda
-Address: 3rd Floor, Communications House, Plot 1 Colville Street, Kampala
-Email: info@pdpo.go.ug
-Phone: +256 414 258 060`
+<b>Complaints</b>
+If you have concerns about our privacy practices, contact us first. If unresolved, you may complain to the Uganda Personal Data Protection Office.`
     }
   ];
 
@@ -511,61 +343,9 @@ Phone: +256 414 258 060`
 
       {/* Main Content */}
       <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-(--color-bg-primary)">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-4 gap-8">
-            {/* Table of Contents - Sticky Sidebar */}
-            <div className="hidden lg:block lg:col-span-1">
-              <div className="sticky top-24">
-                <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
-                  <div className="p-4 bg-linear-to-r from-(--color-primary-600) to-(--color-secondary-600)">
-                    <h3 className="text-white font-semibold text-sm flex items-center gap-2">
-                      <Icon icon="mdi:format-list-bulleted" className="w-4 h-4" />
-                      Contents
-                    </h3>
-                  </div>
-                  <nav className="p-2 max-h-[calc(100vh-200px)] overflow-y-auto">
-                    {sections.map((section, index) => (
-                      <button
-                        key={section.id}
-                        onClick={() => {
-                          document.getElementById(section.id)?.scrollIntoView({ behavior: "smooth" });
-                          setActiveSection(section.id);
-                        }}
-                        className={`w-full text-left px-3 py-2.5 rounded-lg text-sm transition-all duration-200 flex items-center gap-2 ${
-                          activeSection === section.id
-                            ? "bg-(--color-primary-50) text-(--color-primary-700) font-medium"
-                            : "text-gray-600 hover:bg-gray-50 hover:text-(--color-primary-600)"
-                        }`}
-                      >
-                        <span className="text-xs text-gray-400 w-5">{String(index + 1).padStart(2, "0")}</span>
-                        <span className="truncate">{section.title}</span>
-                      </button>
-                    ))}
-                  </nav>
-                </div>
-
-                {/* Quick Contact Card */}
-                <div className="mt-4 bg-linear-to-br from-(--color-primary-600) to-(--color-secondary-600) rounded-2xl p-4 text-white">
-                  <h4 className="font-semibold text-sm mb-2 flex items-center gap-2">
-                    <Icon icon="mdi:help-circle" className="w-4 h-4" />
-                    Questions?
-                  </h4>
-                  <p className="text-xs text-white/70 mb-3">
-                    Contact our Data Protection Officer for privacy inquiries.
-                  </p>
-                  <a
-                    href="mailto:raijintechug@gmail.com"
-                    className="inline-flex items-center gap-2 text-sm bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg transition-colors cursor-pointer"
-                  >
-                    <Icon icon="mdi:email" className="w-4 h-4" />
-                    Get in Touch
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            {/* Main Content Area */}
-            <div className="lg:col-span-3 space-y-8">
+        <div className="max-w-4xl mx-auto">
+          {/* Main Content Area */}
+          <div className="space-y-8">
               {/* Introduction Card */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -738,7 +518,6 @@ Phone: +256 414 258 060`
                   </div>
                 </div>
               </motion.div>
-            </div>
           </div>
         </div>
       </section>
